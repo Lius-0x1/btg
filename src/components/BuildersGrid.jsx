@@ -1,20 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import builders from "@/data/builders";
 
-const deptFilters = [
-  { value: "all", label: "All" },
-  { value: "Surveying & Geoinformatics", label: "Surveying & Geoinformatics" },
-  { value: "Information & Communication Engineering", label: "ICE" },
-  { value: "Statistics", label: "Statistics" },
-  { value: "Computer Engineering", label: "Computer Engineering" },
-];
-
 export default function BuildersGrid() {
   const [search, setSearch] = useState("");
   const [dept, setDept] = useState("all");
+
+  // Derived directly from builders.js, so a new department shows up
+  // automatically the moment someone new is added — no hardcoded list to
+  // forget to update next season.
+  const deptFilters = useMemo(() => {
+    const unique = [...new Set(builders.map((b) => b.department))].sort();
+    return [{ value: "all", label: "All" }, ...unique.map((d) => ({ value: d, label: d }))];
+  }, []);
 
   const visible = builders.filter((b) => {
     const matchesSearch = b.name.toLowerCase().includes(search.toLowerCase()) || b.department.toLowerCase().includes(search.toLowerCase());
@@ -42,7 +42,7 @@ export default function BuildersGrid() {
               <Image src={b.image} className="builder-photo" alt={b.name} width={60} height={60} />
               <div>
                 <div className="builder-name">{b.name}</div>
-                <div className="builder-school">{b.department} · FUTA · 2025</div>
+                <div className="builder-school">{b.department} · FUTA · {b.season === "Season 2" ? "2026" : "2025"}</div>
                 <span className="builder-status">Archive Profile →</span>
               </div>
             </div>

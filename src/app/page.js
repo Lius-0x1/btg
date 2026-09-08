@@ -8,7 +8,7 @@ export default function HomePage() {
       <div className="hero">
         <div className="hero-inner">
           <div>
-            <div className="eyebrow hero-eyebrow-anim">Season 2 Applications Open</div>
+            <div className="eyebrow hero-eyebrow-anim">Season 2 · Episode 3 Coming Soon</div>
             <h1 className="hero-title hero-title-anim">
               What Are You <span className="accent">Building</span> Before You Graduate?
             </h1>
@@ -22,16 +22,16 @@ export default function HomePage() {
           </div>
           <div className="hero-card">
             <div className="hero-thumb">
-              <Image src="https://img.youtube.com/vi/hX5kTs5MPtw/hqdefault.jpg" alt="Ep 1" width={400} height={225} />
+              <Image src="https://img.youtube.com/vi/hG-vauNujn0/hqdefault.jpg" alt="Latest Episode" width={400} height={225} />
               <div className="hero-thumb-overlay"></div>
-              <span className="ep-pill">Season 1 · Ep 01</span>
-              <a className="play-ring" href="https://youtu.be/hX5kTs5MPtw" target="_blank" rel="noopener noreferrer">
+              <span className="ep-pill">Season 2 · Ep 02 · Latest</span>
+              <a className="play-ring" href="https://youtu.be/hG-vauNujn0" target="_blank" rel="noopener noreferrer">
                 <div className="play-icon"></div>
               </a>
             </div>
             <div className="hero-card-body">
-              <div className="hero-card-title">Akorede Adebowale Season 1, Episode 1</div>
-              <div className="hero-card-meta">Surveying & Geoinformatics · FUTA · 2025</div>
+              <div className="hero-card-title">Oluwaferanmi Oladepo Season 2, Episode 2</div>
+              <div className="hero-card-meta">Software Engineer · Founder, Kaanta AI · FUTA · 2026</div>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@ export default function HomePage() {
 
       <div className="stats-wrap">
         <div className="stats-inner">
-          <div className="stat-item"><div className="stat-num">12</div><div className="stat-label">Episodes</div></div>
-          <div className="stat-item"><div className="stat-num">12</div><div className="stat-label">Students Featured</div></div>
+          <div className="stat-item"><div className="stat-num">14</div><div className="stat-label">Episodes</div></div>
+          <div className="stat-item"><div className="stat-num">14</div><div className="stat-label">Students Featured</div></div>
           <div className="stat-item"><div className="stat-num">1</div><div className="stat-label">University So Far</div></div>
           <div className="stat-item"><div className="stat-num">∞</div><div className="stat-label">Stories to Archive</div></div>
         </div>
@@ -49,7 +49,59 @@ export default function HomePage() {
       <div className="section">
         <div className="sec-header">
           <div>
-            <div className="sec-title">Season <span>One</span></div>
+            <div className="sec-title">Season <span>Two</span></div>
+            <div className="sec-sub">New conversations, new builders. Episode 3 coming soon.</div>
+          </div>
+          <Link href="/episodes" className="see-all">All episodes →</Link>
+        </div>
+        <div className="ep-grid">
+          <a className="ep-card" href="https://youtu.be/PEIC6GcqwCo" target="_blank" rel="noopener noreferrer">
+            <div className="ep-thumb">
+              <Image src="https://img.youtube.com/vi/PEIC6GcqwCo/mqdefault.jpg" alt="S2 Ep 1" fill style={{ objectFit: "cover" }} />
+              <span className="ep-thumb-num">01</span>
+              <div className="ep-overlay"></div>
+              <span className="ep-badge">S2·E01</span>
+              <div className="ep-play-btn"><div className="tri"></div></div>
+            </div>
+            <div className="ep-body">
+              <div className="ep-num">Episode 01</div>
+              <div className="ep-title">Similoluwa Taiwo</div>
+              <div className="ep-meta">Architecture · FUTA</div>
+            </div>
+          </a>
+          <a className="ep-card" href="https://youtu.be/hG-vauNujn0" target="_blank" rel="noopener noreferrer">
+            <div className="ep-thumb">
+              <Image src="https://img.youtube.com/vi/hG-vauNujn0/mqdefault.jpg" alt="S2 Ep 2" width={400} height={225} />
+              <span className="ep-thumb-num">02</span>
+              <div className="ep-overlay"></div>
+              <span className="ep-badge">S2·E02</span>
+              <div className="ep-play-btn"><div className="tri"></div></div>
+            </div>
+            <div className="ep-body">
+              <div className="ep-num">Episode 02</div>
+              <div className="ep-title">Oluwaferanmi Oladepo</div>
+              <div className="ep-meta">Software Engineer · Founder, Kaanta AI</div>
+            </div>
+          </a>
+          <div className="ep-card" style={{ opacity: 0.55, pointerEvents: "none", cursor: "default" }}>
+            <div className="ep-thumb" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "var(--card)" }}>
+              <span className="ep-thumb-num">03</span>
+              <span className="ep-badge">S2·E03</span>
+              <div style={{ fontSize: ".75rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: ".08em" }}>Coming Soon</div>
+            </div>
+            <div className="ep-body">
+              <div className="ep-num">Episode 03</div>
+              <div className="ep-title">Coming Soon</div>
+              <div className="ep-meta">Stay tuned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="sec-header">
+          <div>
+            <div className="sec-title">Season One <span>· Archive</span></div>
             <div className="sec-sub">12 honest conversations with final year students</div>
           </div>
           <Link href="/episodes" className="see-all">All episodes →</Link>

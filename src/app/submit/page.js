@@ -38,7 +38,7 @@ export default function SubmitPage() {
         <div className="archive-card">
           <div className="archive-icon">🎥</div>
           <h3>Apply for Season 2</h3>
-          <p>Have a journey worth documenting? Apply to be featured on Before They Graduate and share your story with future students.</p>
+          <p>Season 2 is live and casting for upcoming episodes. Have a journey worth documenting? Apply to be featured on Before They Graduate and share your story with future students.</p>
           <a href="https://tally.so/r/NpOvkG" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now →</a>
         </div>
       </div>

@@ -1,16 +1,59 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import builders from "@/data/builders";
+import { searchAll } from "@/lib/searchIndex";
 
-const staticPages = [
-  { title: "How \"Before They Graduate\" Started", type: "Story", href: "/stories/how-it-started", keywords: "origin story ayinde akorede substack" },
-  { title: "Episodes", type: "Page", href: "/episodes", keywords: "season 1 videos youtube" },
-  { title: "Projects Repository", type: "Page", href: "/projects", keywords: "research startups apps tools submit" },
-  { title: "Submit Your Story or Project", type: "Page", href: "/submit", keywords: "tally nominate season 2 apply" },
-  { title: "About Before They Graduate", type: "Page", href: "/about", keywords: "mission archive futa" },
-  { title: "FAQ", type: "Page", href: "/faq", keywords: "frequently asked questions review timeline notification cost free" },
-];
+function highlight(text, q) {
+  if (!text) return text;
+  const idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark style={{ background: "var(--orange)", color: "#000", padding: "0 2px" }}>
+        {text.slice(idx, idx + q.length)}
+      </mark>
+      {text.slice(idx + q.length)}
+    </>
+  );
+}
+
+function ResultGroup({ label, items, query, onGo, renderMeta }) {
+  if (items.length === 0) return null;
+  return (
+    <div style={{ marginBottom: "1.25rem" }}>
+      <div style={{ fontSize: ".7rem", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--muted)", margin: "0 0 .5rem .25rem" }}>
+        {label} ({items.length})
+      </div>
+      {items.map((item, i) => (
+        <div key={`${item.href}-${i}`} onClick={() => onGo(item.href)} className="story-row" style={{ marginBottom: "1px", cursor: "pointer" }}>
+          {item.image && (
+            <img src={item.image} alt={item.title} style={{ width: "44px", height: "44px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+          )}
+          <div>
+            <div className="story-row-tag">{item.type}</div>
+            <div className="story-row-title">{item.title}</div>
+            {renderMeta && renderMeta(item)}
+            {item.matches.map((m, j) => (
+              <div key={j} style={{ marginTop: ".35rem" }}>
+                <div style={{ fontSize: ".68rem", color: "var(--orange)", textTransform: "uppercase", letterSpacing: ".05em" }}>
+                  in {m.label}
+                </div>
+                <div className="story-row-excerpt">{highlight(m.snippet, query)}</div>
+              </div>
+            ))}
+            {item.extraMatchCount > 0 && (
+              <div style={{ fontSize: ".7rem", color: "var(--muted)", marginTop: ".25rem" }}>
+                +{item.extraMatchCount} more match{item.extraMatchCount > 1 ? "es" : ""} in this profile
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function SearchOverlay({ onClose }) {
   const [query, setQuery] = useState("");
   const router = useRouter();
@@ -21,17 +64,8 @@ export default function SearchOverlay({ onClose }) {
     return () => window.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
-  const q = query.toLowerCase().trim();
-
-  const builderResults = q
-    ? builders.filter((b) => b.name.toLowerCase().includes(q) || b.department.toLowerCase().includes(q) || b.quote.toLowerCase().includes(q))
-    : [];
-
-  const pageResults = q
-    ? staticPages.filter((p) => p.title.toLowerCase().includes(q) || p.keywords.toLowerCase().includes(q))
-    : [];
-
-  const hasResults = builderResults.length > 0 || pageResults.length > 0;
+  const q = query.trim();
+  const results = searchAll(q);
 
   const goTo = (href) => {
     router.push(href);
@@ -39,21 +73,15 @@ export default function SearchOverlay({ onClose }) {
   };
 
   return (
-    <div
-      onClick={onClose}
-      style={{ position: "fixed", inset: 0, background: "rgba(8,8,8,0.85)", zIndex: 300, display: "flex", justifyContent: "center", paddingTop: "10vh" }}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        style={{ width: "min(600px, 90vw)", maxHeight: "70vh", display: "flex", flexDirection: "column" }}
-      >
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(8,8,8,0.85)", zIndex: 300, display: "flex", justifyContent: "center", paddingTop: "10vh" }}>
+      <div onClick={(e) => e.stopPropagation()} style={{ width: "min(600px, 90vw)", maxHeight: "70vh", display: "flex", flexDirection: "column" }}>
         <div className="search-bar" style={{ marginBottom: "1rem" }}>
           <span style={{ color: "var(--muted)", fontSize: "1.1rem" }}>⌕</span>
           <input
             autoFocus
             className="search-input"
             type="text"
-            placeholder="Search builders, stories, pages..."
+            placeholder="Search builders, stories, projects, pages..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -66,41 +94,26 @@ export default function SearchOverlay({ onClose }) {
             </div>
           )}
 
-          {q && !hasResults && (
+          {q && results.total === 0 && (
             <div style={{ color: "var(--muted)", fontSize: ".85rem", textAlign: "center", padding: "2rem" }}>
               No matches for "{query}"
             </div>
           )}
 
-          {builderResults.map((b) => (
-            <div
-              key={b.slug}
-              onClick={() => goTo(`/builders/${b.slug}`)}
-              className="story-row"
-              style={{ marginBottom: "1px" }}
-            >
-              <img src={b.image} alt={b.name} style={{ width: "44px", height: "44px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
-              <div>
-                <div className="story-row-tag">Builder</div>
-                <div className="story-row-title">{b.name}</div>
-                <div className="story-row-excerpt">{b.department}</div>
-              </div>
-            </div>
-          ))}
-
-          {pageResults.map((p) => (
-            <div
-              key={p.href}
-              onClick={() => goTo(p.href)}
-              className="story-row"
-              style={{ marginBottom: "1px" }}
-            >
-              <div>
-                <div className="story-row-tag">{p.type}</div>
-                <div className="story-row-title">{p.title}</div>
-              </div>
-            </div>
-          ))}
+          {q && results.total > 0 && (
+            <>
+              <ResultGroup
+                label="Builders"
+                items={results.builders}
+                query={q}
+                onGo={goTo}
+                renderMeta={(item) => <div className="story-row-excerpt" style={{ marginBottom: ".25rem" }}>{item.department}</div>}
+              />
+              <ResultGroup label="Stories" items={results.stories} query={q} onGo={goTo} />
+              <ResultGroup label="Projects" items={results.projects} query={q} onGo={goTo} />
+              <ResultGroup label="Pages" items={results.pages} query={q} onGo={goTo} />
+            </>
+          )}
         </div>
       </div>
     </div>

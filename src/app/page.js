@@ -1,14 +1,49 @@
 import Link from "next/link";
 import Image from "next/image";
 import StopPropLink from "@/components/StopPropLink";
+import builders from "@/data/builders";
+import { getLatestEpisode, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const latestEpisode = await getLatestEpisode();
+  const matchedBuilder = latestEpisode ? findBuilderByVideoId(latestEpisode.videoId, builders) : null;
+
+  // Hero fallback chain: matched builder > raw YouTube data > hardcoded last-known-good
+  const heroVideoId = latestEpisode?.videoId || "hG-vauNujn0";
+  const heroThumbnail = latestEpisode?.thumbnail || "https://img.youtube.com/vi/hG-vauNujn0/hqdefault.jpg";
+  const heroTitle = matchedBuilder
+    ? `${matchedBuilder.name} — ${matchedBuilder.season}, ${matchedBuilder.episode}`
+    : latestEpisode?.title || "Oluwaferanmi Oladepo — Season 2, Episode 2";
+  const heroMeta = matchedBuilder
+    ? `${matchedBuilder.department} · FUTA · ${matchedBuilder.season === "Season 2" ? "2026" : "2025"}`
+    : latestEpisode
+    ? "Full profile coming soon"
+    : "Software Engineer · Founder, Kaanta AI · FUTA · 2026";
+  const heroPill = matchedBuilder
+    ? `${matchedBuilder.season} · ${matchedBuilder.episode} · Latest`
+    : latestEpisode
+    ? "Latest Episode"
+    : "Season 2 · Ep 02 · Latest";
+
+  // Season 2 grid: derived from builders.js, not hardcoded JSX. Add a
+  // builder with season: "Season 2" and this grid picks them up automatically.
+  const season2Builders = builders
+    .filter((b) => b.season === "Season 2")
+    .sort((a, b) => episodeNumber(a.episode) - episodeNumber(b.episode));
+
+  // If the latest full episode fetched from YouTube isn't in builders.js yet,
+  // show it as a real, clickable "pending" card with its actual title and
+  // thumbnail — instead of a generic hardcoded "Coming Soon" placeholder.
+  const hasPendingEpisode = latestEpisode && !matchedBuilder;
+  const pendingEpisodeNumber =
+    Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode))) + 1;
+
   return (
     <>
       <div className="hero">
         <div className="hero-inner">
           <div>
-            <div className="eyebrow hero-eyebrow-anim">Season 2 · Episode 3 Coming Soon</div>
+            <div className="eyebrow hero-eyebrow-anim">Season 2 · New Episodes</div>
             <h1 className="hero-title hero-title-anim">
               What Are You <span className="accent">Building</span> Before You Graduate?
             </h1>
@@ -22,16 +57,16 @@ export default function HomePage() {
           </div>
           <div className="hero-card">
             <div className="hero-thumb">
-              <Image src="https://img.youtube.com/vi/hG-vauNujn0/hqdefault.jpg" alt="Latest Episode" width={400} height={225} />
+              <Image src={heroThumbnail} alt="Latest Episode" width={400} height={225} unoptimized />
               <div className="hero-thumb-overlay"></div>
-              <span className="ep-pill">Season 2 · Ep 02 · Latest</span>
-              <a className="play-ring" href="https://youtu.be/hG-vauNujn0" target="_blank" rel="noopener noreferrer">
+              <span className="ep-pill">{heroPill}</span>
+              <a className="play-ring" href={`https://youtu.be/${heroVideoId}`} target="_blank" rel="noopener noreferrer">
                 <div className="play-icon"></div>
               </a>
             </div>
             <div className="hero-card-body">
-              <div className="hero-card-title">Oluwaferanmi Oladepo Season 2, Episode 2</div>
-              <div className="hero-card-meta">Software Engineer · Founder, Kaanta AI · FUTA · 2026</div>
+              <div className="hero-card-title">{heroTitle}</div>
+              <div className="hero-card-meta">{heroMeta}</div>
             </div>
           </div>
         </div>
@@ -50,51 +85,48 @@ export default function HomePage() {
         <div className="sec-header">
           <div>
             <div className="sec-title">Season <span>Two</span></div>
-            <div className="sec-sub">New conversations, new builders. Episode 3 coming soon.</div>
+            <div className="sec-sub">New conversations, new builders</div>
           </div>
           <Link href="/episodes" className="see-all">All episodes →</Link>
         </div>
         <div className="ep-grid">
-          <a className="ep-card" href="https://youtu.be/PEIC6GcqwCo" target="_blank" rel="noopener noreferrer">
-            <div className="ep-thumb">
-              <Image src="https://img.youtube.com/vi/PEIC6GcqwCo/mqdefault.jpg" alt="S2 Ep 1" fill style={{ objectFit: "cover" }} />
-              <span className="ep-thumb-num">01</span>
-              <div className="ep-overlay"></div>
-              <span className="ep-badge">S2·E01</span>
-              <div className="ep-play-btn"><div className="tri"></div></div>
-            </div>
-            <div className="ep-body">
-              <div className="ep-num">Episode 01</div>
-              <div className="ep-title">Similoluwa Taiwo</div>
-              <div className="ep-meta">Architecture · FUTA</div>
-            </div>
-          </a>
-          <a className="ep-card" href="https://youtu.be/hG-vauNujn0" target="_blank" rel="noopener noreferrer">
-            <div className="ep-thumb">
-              <Image src="https://img.youtube.com/vi/hG-vauNujn0/mqdefault.jpg" alt="S2 Ep 2" width={400} height={225} />
-              <span className="ep-thumb-num">02</span>
-              <div className="ep-overlay"></div>
-              <span className="ep-badge">S2·E02</span>
-              <div className="ep-play-btn"><div className="tri"></div></div>
-            </div>
-            <div className="ep-body">
-              <div className="ep-num">Episode 02</div>
-              <div className="ep-title">Oluwaferanmi Oladepo</div>
-              <div className="ep-meta">Software Engineer · Founder, Kaanta AI</div>
-            </div>
-          </a>
-          <div className="ep-card" style={{ opacity: 0.55, pointerEvents: "none", cursor: "default" }}>
-            <div className="ep-thumb" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "var(--card)" }}>
-              <span className="ep-thumb-num">03</span>
-              <span className="ep-badge">S2·E03</span>
-              <div style={{ fontSize: ".75rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: ".08em" }}>Coming Soon</div>
-            </div>
-            <div className="ep-body">
-              <div className="ep-num">Episode 03</div>
-              <div className="ep-title">Coming Soon</div>
-              <div className="ep-meta">Stay tuned</div>
-            </div>
-          </div>
+          {season2Builders.map((b) => {
+            const videoId = extractVideoId(b.episodeUrl);
+            const num = episodeNumber(b.episode).toString().padStart(2, "0");
+            return (
+              <a key={b.slug} className="ep-card" href={b.episodeUrl} target="_blank" rel="noopener noreferrer">
+                <div className="ep-thumb">
+                  <Image src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} alt={b.name} fill style={{ objectFit: "cover" }} />
+                  <span className="ep-thumb-num">{num}</span>
+                  <div className="ep-overlay"></div>
+                  <span className="ep-badge">S2·E{num}</span>
+                  <div className="ep-play-btn"><div className="tri"></div></div>
+                </div>
+                <div className="ep-body">
+                  <div className="ep-num">Episode {num}</div>
+                  <div className="ep-title">{b.name}</div>
+                  <div className="ep-meta">{b.department}</div>
+                </div>
+              </a>
+            );
+          })}
+
+          {hasPendingEpisode && (
+            <a className="ep-card" href={`https://youtu.be/${latestEpisode.videoId}`} target="_blank" rel="noopener noreferrer">
+              <div className="ep-thumb">
+                <Image src={latestEpisode.thumbnail} alt={latestEpisode.title} fill style={{ objectFit: "cover" }} unoptimized />
+                <span className="ep-thumb-num">{pendingEpisodeNumber.toString().padStart(2, "0")}</span>
+                <div className="ep-overlay"></div>
+                <span className="ep-badge">S2·E{pendingEpisodeNumber.toString().padStart(2, "0")}</span>
+                <div className="ep-play-btn"><div className="tri"></div></div>
+              </div>
+              <div className="ep-body">
+                <div className="ep-num">Episode {pendingEpisodeNumber}</div>
+                <div className="ep-title">{latestEpisode.title}</div>
+                <div className="ep-meta">Full profile coming soon</div>
+              </div>
+            </a>
+          )}
         </div>
       </div>
 

@@ -1,5 +1,36 @@
 const builders = [
   {
+    slug: "arasomwan-theophilus",
+    name: "Arasomwan Theophilus",
+    department: "Architecture",
+    university: "Federal University of Technology Akure",
+    season: "Season 2",
+    episode: "Episode 3",
+    image: "/assets/builders/theo.jpg",
+    quote: "No matter where you are, try to scale up. And while scaling up, always have a backup plan.",
+    about: [
+      "Arasomwan Theophilus, a 500-level architecture student, turned his university years into a laboratory for entrepreneurship and personal branding. Rather than just focusing on his rigorous academic workload, he treated his time at the Federal University of Technology, Akure (FUTA) as an opportunity to build businesses, master financial markets, and document his journey for others.",
+      "His approach is anchored in the belief that one must learn to balance competing priorities early. From selling architectural materials to real estate and Forex trading, Theophilus navigated intense academic pressure by learning to delegate and pivot. He views his undergraduate experience not as a waiting room, but as a space to test ideas, fail, and ultimately build a legacy through content creation and community building.",
+    ],
+    whatShapedThem: [
+      "The Power of Teaching: Starting his content creation journey by documenting how he learned Forex, realizing that teaching a subject is the fastest way to master it.",
+      "Resilience through Adversity: Nearly dropping out during his 200-level due to failed international study plans and the resulting mental strain, which taught him the importance of proper documentation and seeking help from authorities.",
+      "Strategic Networking: Building genuine, non-transactional relationships by consistently showing up and being reliable for peers and community leaders.",
+    ],
+    lessons: [
+      "Balance requires systems: You cannot do everything alone. Theophilus learned to delegate his business operations, like real estate scouting, to others to maintain his academic standing.",
+      "Adaptability is key: When one business or financial venture hits a wall, having a backup plan, like moving from trading to real estate, prevents total collapse.",
+      "The \"Student\" identity is a tool: Using his status as an undergraduate to document campus life allowed him to fill a gap in online information, creating value for other students while building his own audience.",
+    ],
+    advice: "Never stay stagnant. Always look for ways to scale up your ventures, but ensure you have a safety net for when things do not go as planned. Do not fear starting small, you only need to be one step ahead to teach others and grow yourself.",
+    memorableQuote: "No matter where you are, try to scale up. And while scaling up, always have a backup plan in case you scale down in the process.",
+    whyWeRememberThem: [
+      "Theophilus' story is a testament to the fact that you can build significant value while still within the walls of a university. By bridging the gap between technical fields like architecture and the dynamic world of finance, he demonstrates that a student's potential is limited only by their willingness to take action and manage their time with intention.",
+    ],
+    episodeUrl: "https://youtu.be/XMYU2rCvsgk",
+  },
+
+  {
     slug: "oluwaferanmi-oladepo",
     name: "Oluwaferanmi Oladepo",
     department: "Software Engineering",

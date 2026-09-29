@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import StopPropLink from "@/components/StopPropLink";
 import builders from "@/data/builders";
-import { getLatestEpisode, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
+import { getFullEpisodes, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
 
 export default async function HomePage() {
-  const latestEpisode = await getLatestEpisode();
+  const fullEpisodes = await getFullEpisodes();
+  const latestEpisode = fullEpisodes[0] || null;
   const matchedBuilder = latestEpisode ? findBuilderByVideoId(latestEpisode.videoId, builders) : null;
 
   // Hero fallback chain: matched builder > raw YouTube data > hardcoded last-known-good
@@ -25,18 +26,20 @@ export default async function HomePage() {
     ? "Latest Episode"
     : "Season 2 · Ep 02 · Latest";
 
-  // Season 2 grid: derived from builders.js, not hardcoded JSX. Add a
-  // builder with season: "Season 2" and this grid picks them up automatically.
+  // Season 2 grid: profiled builders come from builders.js.
   const season2Builders = builders
     .filter((b) => b.season === "Season 2")
     .sort((a, b) => episodeNumber(a.episode) - episodeNumber(b.episode));
 
-  // If the latest full episode fetched from YouTube isn't in builders.js yet,
-  // show it as a real, clickable "pending" card with its actual title and
-  // thumbnail — instead of a generic hardcoded "Coming Soon" placeholder.
-  const hasPendingEpisode = latestEpisode && !matchedBuilder;
-  const pendingEpisodeNumber =
-    Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode))) + 1;
+  // EVERY recent full episode without a matching builder profile gets its
+  // own pending card — not just the single newest one. This is the fix:
+  // previously only the latest unmatched episode was tracked, so a second
+  // one arriving would silently replace the first instead of joining it.
+  const pendingEpisodes = fullEpisodes
+    .filter((ep) => !findBuilderByVideoId(ep.videoId, builders))
+    .sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt)); // oldest-unprofiled first
+
+  const lastKnownEpisodeNum = Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode)));
 
   return (
     <>
@@ -111,22 +114,25 @@ export default async function HomePage() {
             );
           })}
 
-          {hasPendingEpisode && (
-            <a className="ep-card" href={`https://youtu.be/${latestEpisode.videoId}`} target="_blank" rel="noopener noreferrer">
-              <div className="ep-thumb">
-                <Image src={latestEpisode.thumbnail} alt={latestEpisode.title} fill style={{ objectFit: "cover" }} unoptimized />
-                <span className="ep-thumb-num">{pendingEpisodeNumber.toString().padStart(2, "0")}</span>
-                <div className="ep-overlay"></div>
-                <span className="ep-badge">S2·E{pendingEpisodeNumber.toString().padStart(2, "0")}</span>
-                <div className="ep-play-btn"><div className="tri"></div></div>
-              </div>
-              <div className="ep-body">
-                <div className="ep-num">Episode {pendingEpisodeNumber}</div>
-                <div className="ep-title">{latestEpisode.title}</div>
-                <div className="ep-meta">Full profile coming soon</div>
-              </div>
-            </a>
-          )}
+          {pendingEpisodes.map((ep, idx) => {
+            const num = (lastKnownEpisodeNum + idx + 1).toString().padStart(2, "0");
+            return (
+              <a key={`pending-${ep.videoId}`} className="ep-card" href={`https://youtu.be/${ep.videoId}`} target="_blank" rel="noopener noreferrer">
+                <div className="ep-thumb">
+                  <Image src={ep.thumbnail} alt={ep.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <span className="ep-thumb-num">{num}</span>
+                  <div className="ep-overlay"></div>
+                  <span className="ep-badge">S2·E{num}</span>
+                  <div className="ep-play-btn"><div className="tri"></div></div>
+                </div>
+                <div className="ep-body">
+                  <div className="ep-num">Episode {num}</div>
+                  <div className="ep-title">{ep.title}</div>
+                  <div className="ep-meta">Full profile coming soon</div>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import builders from "@/data/builders";
-import { getLatestEpisode, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
+import { getFullEpisodes, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
 
 const season1Episodes = [
   { num: "01", title: "Akorede Adebowale", meta: "Surveying & Geoinformatics · FUTA", youtubeId: "hX5kTs5MPtw" },
@@ -64,21 +64,20 @@ function EpisodeCard({ num, title, meta, youtubeId, thumbnailOverride, seasonLab
 }
 
 export default async function EpisodesPage() {
-  const latestEpisode = await getLatestEpisode();
-  const matchedBuilder = latestEpisode ? findBuilderByVideoId(latestEpisode.videoId, builders) : null;
+  const fullEpisodes = await getFullEpisodes();
 
-  // Season 2 list is derived from builders.js, not hardcoded — add a
-  // builder with season: "Season 2" and it appears here automatically.
   const season2Builders = builders
     .filter((b) => b.season === "Season 2")
     .sort((a, b) => episodeNumber(a.episode) - episodeNumber(b.episode));
 
-  // A new full episode with no builder profile yet shows as a real,
-  // clickable pending card using its actual YouTube title/thumbnail,
-  // rather than a hardcoded "Coming Soon" placeholder.
-  const hasPendingEpisode = latestEpisode && !matchedBuilder;
-  const pendingEpisodeNumber =
-    Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode))) + 1;
+  // Every recent full episode without a matching builder profile gets its
+  // own pending card — fixes the earlier bug where a second unprofiled
+  // episode silently replaced the first instead of both showing.
+  const pendingEpisodes = fullEpisodes
+    .filter((ep) => !findBuilderByVideoId(ep.videoId, builders))
+    .sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt));
+
+  const lastKnownEpisodeNum = Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode)));
 
   return (
     <>
@@ -124,17 +123,17 @@ export default async function EpisodesPage() {
           );
         })}
 
-        {hasPendingEpisode && (
+        {pendingEpisodes.map((ep, idx) => (
           <EpisodeCard
-            key="s2-pending"
-            num={pendingEpisodeNumber.toString().padStart(2, "0")}
-            title={latestEpisode.title}
+            key={`pending-${ep.videoId}`}
+            num={(lastKnownEpisodeNum + idx + 1).toString().padStart(2, "0")}
+            title={ep.title}
             meta="Full profile coming soon"
-            youtubeId={latestEpisode.videoId}
-            thumbnailOverride={latestEpisode.thumbnail}
+            youtubeId={ep.videoId}
+            thumbnailOverride={ep.thumbnail}
             seasonLabel="S2"
           />
-        )}
+        ))}
       </div>
 
       <div className="section" style={{ maxWidth: "1200px", margin: "0 auto", padding: "1rem 2.5rem 0" }}>

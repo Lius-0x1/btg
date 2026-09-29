@@ -1,5 +1,63 @@
 const builders = [
   {
+    slug: "nunsi-shiaki",
+    name: "Nunsi Shiaki",
+    department: "Computer Engineering",
+    university: "Federal University of Technology Akure",
+    season: "Season 2",
+    episode: "Episode 5",
+    image: "/assets/builders/nusi.jpg",
+    quote: "Expect growth. Don't expect to stay stunted.",
+    about: [
+      "Nunsi Shiaki is a 500-level Computer Engineering student at the Federal University of Technology, Akure (FUTA) and a prolific builder in the AI, machine learning, and data science space. With over 15 hackathon wins to her name, she views the university experience as an opportunity to learn, build, and create environments where others can thrive. She is deeply committed to democratizing technical knowledge through her leadership in various student communities.",
+    ],
+    whatShapedThem: [
+      "Community Leadership: Nunsi describes community as a \"safe space\" and an act of love. Her leadership style focuses on being a mentor, which she developed by transitioning from an active member to a leader in organizations like Data Science Nigeria (FUTA), IEEE, and the Society of Petroleum Engineers.",
+      "The Power of Curiosity: Her journey is defined by relentless curiosity. She often enters fields outside her core major, such as the petroleum industry, simply by identifying challenges and reaching out to people, which has allowed her to build a diverse and influential network.",
+      "Hackathon Mentality: Winning her first hackathon in 300-level served as a major turning point. It taught her that she could achieve greatness even while scared and helped her realize that failure is a standard part of the process, not a reason to stop.",
+    ],
+    lessons: [
+      "Collaboration is key: You do not need to be a technical expert to start; she suggests partnering with others to combine different skill sets (coding, design, or management) to build scalable, impactful solutions.",
+      "Productivity over mood: Nunsi advocates for detaching productivity from mood swings. She emphasizes that one must consciously choose to remain productive even when facing emotional or academic setbacks.",
+      "Active contribution: She believes that simply joining a community isn't enough; you must be an active contributor, even if that starts with something as simple as sending meeting reminders or coordinating tasks for others.",
+    ],
+    advice: "Start now, the best time was yesterday, the next best time is today. Do not be intimidated by your environment or lack of resources; use the internet to learn, seek mentors, and study those who have achieved what you aspire to. Above all, remain resilient in the face of failure, just as a baby persists until they learn to walk.",
+    memorableQuote: "Expect growth. Don't expect to stay stunted.",
+    whyWeRememberThem: [
+      "Nunsi Shiaki's story is a testament to the idea that you can build a massive impact from a small beginning. By viewing challenges as opportunities for innovation and prioritizing the growth of those around her, she proves that students have the power to shape their own industry-ready identities long before they graduate.",
+    ],
+    episodeUrl: "https://youtu.be/Rm5TtzXSL94",
+  },
+  {
+    slug: "aaj",
+    name: "Akinwande Ayomide James",
+    department: "Mechanical Engineering",
+    university: "Federal University of Technology Akure",
+    season: "Season 2",
+    episode: "Episode 4",
+    image: "/assets/builders/aaj.jpg",
+    quote: "Proper preparation prevents poor performance.",
+    about: [
+      "Akinwande Ayomide James (AAJ), a 500-level mechanical engineering student, views university as more than just a place for academic attainment; it is a training ground for leadership, personal growth, and professional development. While balancing a demanding engineering curriculum, AAJ actively pursued various leadership roles and extracurricular ventures, including graphic design, data analysis, and virtual assistance. He advocates for a balanced life where academic success is pursued alongside the deliberate acquisition of skills and networking.",
+    ],
+    whatShapedThem: [
+      "Leadership Philosophy: AAJ believes leadership is not about managing followers but about creating more leaders. By introducing \"course reps\" to delegate tasks, he maximized efficiency and empowered his peers.",
+      "Overcoming Failure: A significant turning point occurred when he unexpectedly failed a physics course in his 100-level. This experience led to temporary depression but ultimately taught him resilience, the importance of accepting setbacks, and that failure is not the end of one's journey.",
+      "Discipline through Planning: Inspired by his uncle's organizational habits, AAJ adopted rigorous time management strategies, such as using digital tools to plan his day the night before, which has been critical to his success in various campus offices.",
+    ],
+    lessons: [
+      "Balance requires delegation: To avoid burnout, AAJ learned to delegate responsibilities in his leadership roles, ensuring he didn't try to handle everything alone.",
+      "Growth over grades: While maintaining good standing, he prioritized personal development and networking over striving for a perfect first-class degree, recognizing that real-world value comes from diverse experiences.",
+      "Proactive networking: He emphasizes that students should actively attend corporate events and engage with others rather than staying isolated, as these connections are essential for future opportunities.",
+    ],
+    advice: "Use the \"luxury of time\" available in your 100-level years to learn new skills, accumulate certifications, and build your network. Do not let your university life become a repetitive cycle of only attending classes and religious grounds; get involved and document your growth.",
+    memorableQuote: "Proper preparation prevents poor performance.",
+    whyWeRememberThem: [
+      "AAJ's journey stands as a powerful reminder that academic rigor can coexist with active leadership and skill acquisition. By reframing failure as a \"first attempt\" and intentionally managing his time, he demonstrates how undergraduates can cultivate a well-rounded and impactful life before they even graduate.",
+    ],
+    episodeUrl: "https://youtu.be/ckyIukrDnOU",
+  },
+  {
     slug: "arasomwan-theophilus",
     name: "Arasomwan Theophilus",
     department: "Architecture",

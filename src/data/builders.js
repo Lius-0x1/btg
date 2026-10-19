@@ -1,4 +1,63 @@
 const builders = [
+{
+slug: "psalmmy-adegoriola-abejoye",
+name: "Adegoriola Abejoye (Psalmmy)",
+department: "Civil Engineering ",
+university: "Federal University of Technology Akure",
+season: "Season 2",
+episode: "Episode 7",
+image: "/assets/builders/psalmmy.png",
+quote: "Power is not given, it is grabbed.",
+about: [
+"Adegoriola Abejoye, popularly known as Psalmmy, is the former 40th President of the Federal University of Technology, Akure (FUTA) Students' Union (2024/2025). Currently serving as the Chairman of the National Association of University Students (NAUS), CMC Ondo State, he is a dedicated advocate for student welfare and quality education (SDG 4). His journey reflects a commitment to serving as an effective intermediary between the student body and university management."
+],
+whatShapedThem: [
+"Leadership Inspiration: His path was defined by observing effective leadership during his early years on campus. Seeing the 'number one student' during orientation sparked a vision to lead, which he pursued through dedicated service as an advocate for academic improvement.",
+"The Price of Power: Serving as president required immense sacrifice, including the intentional decision to trade a first-class degree for the broader, real-world experience of student governance. He highlights the 'madness' or audacity required to negotiate with university management while managing the diverse expectations of over 25,000 students.",
+"Facing Reality: Transitioning from an initial course in Engineering to Mathematical Sciences, he learned early on that academic setbacks do not define one's potential, as they instead opened doors to political and social influence."
+],
+lessons: [
+"Take Charge: Leadership is not about being controlled; it is about taking advice while maintaining the autonomy to make final, bold decisions for the betterment of the student body.",
+"Value Networks over Grades: While academic excellence is admirable, Psalmmy emphasizes that building a vast, nationwide network and mastering public speaking are equally critical assets gained through extracurricular leadership.",
+"Know Your Rights: He advocates for students to be well-versed in their handbook and rights, noting that many conflicts can be resolved without needing to escalate issues to the presidential level."
+],
+advice: "Be yourself. Your DNA is unique, even if cultures and traditions change. Find your trajectory, be clear with your goals, and do not be distracted. Whatever you can conceive, you can achieve—but you must be willing to take the steps necessary to turn that vision into reality.",
+memorableQuote: "Your closeness to a king should not make you forget the crown on his head.",
+whyWeRememberThem: [
+"Psalmmy's leadership legacy at FUTA is marked by his 'talk and do' reputation, exemplified by his prompt town hall meetings and commitment to distributing resources like shop rents back into student scholarships. He remains a powerful voice for institutional accountability and student empowerment."
+],
+episodeUrl: "https://youtu.be/2KNh4zDDZXY"
+},
+
+{
+"slug": "oriade-williams-alaafin",
+"name": "Oriade Williams (Alaafin)",
+"department": "Agriculture and Resource Economics",
+"university": "Federal University of Technology Akure (FUTA)",
+"season": "Season 2",
+"episode": "Episode 6",
+"image": "/assets/builders/alaafin.png",
+"quote": "Be like water; take any form and don't complicate things.",
+"about": [
+"Oriade Williams, popularly known as Alafi, is an undergraduate at the Federal University of Technology, Akure (FUTA). Known for his easygoing nature and principled approach to life, he shares his journey of personal growth, student leadership, and the importance of maintaining focus throughout the university experience."
+],
+"whatShapedThem": [
+"Academic Path: His journey to FUTA was unconventional, choosing the university after a chance encounter that turned him away from his initial path in Benin. This shift led him to find a peaceful and productive environment to study Agriculture and Resource Economics.",
+"Military Upbringing: Growing up in a military home instilled in him a strong sense of discipline, clear boundaries, and a personal code of conduct that governs his interactions with others.",
+"Leadership Experience: Serving as a student leader—specifically as a financial secretary—provided him with a behind-the-scenes look at the complexities of governance, teaching him the balance between transparency and the need to protect sensitive information for the greater good."
+],
+"lessons": [
+"Prioritization: Academics should always be the primary assignment. Students often struggle because they prioritize non-essential tasks over their studies; success requires ensuring all activities support one's core goals.",
+"Embrace Failure: Rather than fearing failure, treat it as a 'classroom.' Every mistake is a lesson that provides insights into one's limitations and areas for improvement, which is essential for eventual success.",
+"Avoid Procrastination: Entrepreneurial and personal projects should not be postponed. Starting small and being consistent is significantly better than waiting for the 'perfect' time."
+],
+"advice": "Education provides a unique platform for growth that no money or connection can replicate. Be serious, diligent, and kind, and remember that success is not just about what you do, but how you do it.",
+"memorableQuote": "When I fail, I don't see it as failure; I take it as I'm being taught a lesson.",
+"whyWeRememberThem": [
+"Alafi is remembered for his calm, 'jovial' approach to leadership and his philosophy of flexibility. His commitment to academic excellence and his pragmatic view on overcoming setbacks serve as a reminder to students to stay focused and resilient before they graduate."
+],
+"episodeUrl": "https://youtu.be/jtvti8X0RMI"
+},
   {
     slug: "nunsi-shiaki",
     name: "Nunsi Shiaki",

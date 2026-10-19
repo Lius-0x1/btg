@@ -77,8 +77,8 @@ export default async function HomePage() {
 
       <div className="stats-wrap">
         <div className="stats-inner">
-          <div className="stat-item"><div className="stat-num">14</div><div className="stat-label">Episodes</div></div>
-          <div className="stat-item"><div className="stat-num">14</div><div className="stat-label">Students Featured</div></div>
+          <div className="stat-item"><div className="stat-num">19</div><div className="stat-label">Episodes</div></div>
+          <div className="stat-item"><div className="stat-num">19</div><div className="stat-label">Students Featured</div></div>
           <div className="stat-item"><div className="stat-num">1</div><div className="stat-label">University So Far</div></div>
           <div className="stat-item"><div className="stat-num">∞</div><div className="stat-label">Stories to Archive</div></div>
         </div>

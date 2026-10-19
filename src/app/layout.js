@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <div className="hero-glow"></div>
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );

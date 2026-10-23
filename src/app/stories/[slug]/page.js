@@ -17,13 +17,39 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const story = interviewStories.find((s) => s.slug === slug);
+
   if (!story) return {};
+
+  const imageUrl = story.image.startsWith("http")
+    ? story.image
+    : `https://beforetheygraduate.app${story.image}`;
+
   return {
     title: `${story.title} | Before They Graduate`,
     description: story.excerpt,
+    openGraph: {
+      title: `${story.title} | Before They Graduate`,
+      description: story.excerpt,
+      url: `https://beforetheygraduate.app/stories/${slug}`,
+      siteName: "Before They Graduate",
+      type: "article",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: story.imageAlt || story.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${story.title} | Before They Graduate`,
+      description: story.excerpt,
+      images: [imageUrl],
+    },
   };
 }
-
 const labelStyle = {
   fontSize: ".68rem",
   textTransform: "uppercase",

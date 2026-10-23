@@ -1,4 +1,37 @@
 const builders = [
+  {
+    slug: "how-i-lose-my-hope-for-first-class",
+    name: "Temitope Mary Ajagbe",
+    department: "Religions (Comparative Religious Studies)",
+    university: "University of Ilorin",
+    school: "UNILORIN",
+    type: "story",
+    storySlug: "how-i-lose-my-hope-for-first-class",
+    image: "/assets/builders/temmy.jpg",
+    quote: "I believe anyone can attain it.",
+    about: [
+      "Temitope Mary Ajagbe is a first-class graduate of the Department of Religions, Comparative Religious Studies at the University of Ilorin. She describes herself as a determined student, and says that once her 100-level results were uploaded, she knew she could graduate with a first class.",
+      "Behind the result were stretches a result sheet doesn't show. She says she was depressed at one point during her four years while still keeping up her smile and energy, struggled through a 200-level course on women in Africa, and resumed 400 level one week after surgery while trying to catch up. She credits research, help from coursemates, support from family and friends, and her faith for getting her through.",
+    ],
+    whatShapedThem: [
+      "An early signal: Her 100-level results convinced her a first class was possible, and that made her more determined.",
+      "Two hard semesters: A 200-level course she struggled to comprehend, and a final-year semester that began one week after surgery. She kept reading, researched more, asked a coursemate for help and pushed through.",
+      "People who pushed her: Emotional and financial support from family and friends, and friends of like minds who gear one another up for academic excellence.",
+      "Limited means: Finances meant she wasn't able to explore as much as she might have, and she relied on online and recommended learning materials rather than buying many books.",
+    ],
+    lessons: [
+      "Prepare early: Start before tests or exams are even announced. She split topics across days and read intensively until she was clear on one before moving to the next, which left her confident she could pass even an impromptu test.",
+      "Ask for help: When she didn't understand a course, she spoke to people who understood it better and researched more.",
+      "A first class isn't for a select few: She doesn't agree that it is meant for certain people. She believes anyone can attain it, and that it is based on you.",
+      "You may not have to give everything up: She didn't feel she sacrificed anything extreme, because she managed her time and made room for other things she wanted to be involved in.",
+    ],
+    advice: "Whatever you put your mind to, you can achieve. Do not neglect any part of your life for one; improve in all. Take bold steps towards your dreams, and explore opportunities, because you can never tell which one will work out. Start now. Don't wait for the \"best time\" before you do what you purposed to do. Time waits for no one.",
+    memorableQuote: "I believe anyone can attain it. It's based on YOU.",
+    whyWeRememberThem: [
+      "Temitope's story is in the BTG archive because it shows what a result sheet leaves out. An academic result tells us what someone achieved, but not everything they went through to get there.",
+      "She also shows that it can be done without giving up everything else: she managed her time, kept friends who encouraged academic excellence, and made room for the things she wanted to do.",
+    ],
+  },
 {
 slug: "psalmmy-adegoriola-abejoye",
 name: "Adegoriola Abejoye (Psalmmy)",

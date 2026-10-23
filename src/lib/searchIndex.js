@@ -1,24 +1,8 @@
 import builders from "@/data/builders";
-
+import stories from "@/data/stories";
 // Origin story content, broken into searchable paragraphs.
 // Add more entries here as new stories get approved and published.
-const stories = [
-  {
-    slug: "how-it-started",
-    title: 'How "Before They Graduate" Started',
-    href: "/stories/how-it-started",
-    author: "Ayinde",
-    paragraphs: [
-      "Funny thing is, Before They Graduate wasn't even planned. It all started when Akorede, a 500-level student from my department, saw my YouTube video with my father. That day, he just dropped a comment telling me to stay strong, joking that I should come back and tell them what daddy had to say about being resilient.",
-      "Gbam that was it. I replied immediately and told him that when I got back to school, he was going to share with us all the wahala FUTA had put him through since 100 level. At that moment, I honestly didn't mean anything serious. It was just random talk. But during their final year week, I remembered that chat and asked if he'd be available for a proper conversation. He said \"no problem.\" That's how it happened.",
-      "After that first one, I started messaging other final-year students, telling them I was working on a YouTube series and I'd love to have them on board. That's literally how Before They Graduate began. Unplanned. Unexpected. But it just felt right.",
-      "Ayinde created the series after a single YouTube comment turned into a real conversation.",
-      "Looking back, if Akorede had said no that first day, there's likely no Before They Graduate at all.",
-      'Anthony ("Thoniee") shot the entire first episode on his own phone.',
-      "Samson designed the graphics announcing the series for free.",
-    ],
-  },
-];
+
 
 // Add project data here once projects exist:
 // import projects from "@/data/projects";

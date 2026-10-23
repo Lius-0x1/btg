@@ -1,10 +1,16 @@
 import builders from "@/data/builders";
+import stories from "@/data/stories";
 
 export default function sitemap() {
   const base = "https://beforetheygraduate.app";
 
-  const staticRoutes = ["", "/episodes", "/stories", "/stories/how-it-started", "/projects", "/builders", "/submit", "/about"].map((route) => ({
+  const staticRoutes = ["", "/episodes", "/stories", "/projects", "/builders", "/submit", "/about", "/faq"].map((route) => ({
     url: `${base}${route}`,
+    lastModified: new Date(),
+  }));
+
+  const storyRoutes = stories.map((s) => ({
+    url: `${base}${s.href}`,
     lastModified: new Date(),
   }));
 
@@ -13,5 +19,5 @@ export default function sitemap() {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...builderRoutes];
+  return [...staticRoutes, ...storyRoutes, ...builderRoutes];
 }

@@ -1,11 +1,20 @@
 import Link from "next/link";
+import stories from "@/data/stories";
 
 export const metadata = {
   title: "Stories | Before They Graduate",
   description: "Undergraduate stories from Nigerian universities submitted, reviewed, and preserved permanently.",
 };
 
+const smallLink = {
+  fontSize: ".71rem",
+  textTransform: "uppercase",
+  letterSpacing: ".08em",
+};
+
 export default function StoriesPage() {
+  const nextNumber = String(stories.length + 1).padStart(2, "0");
+
   return (
     <>
       <div className="page-hero">
@@ -25,24 +34,31 @@ export default function StoriesPage() {
         </div>
 
         <div className="stories-list">
-          <div className="story-row">
-            <div className="story-row-num">01</div>
-            <div>
-              <div className="story-row-tag">✦ Origin Story · By Ayinde · October 2025</div>
-              <div className="story-row-title">How "Before They Graduate" Started</div>
-              <div className="story-row-excerpt">
-                Funny thing is, Before They Graduate wasn't even planned. It started when Akorede, a 500-level student from the same department, saw a YouTube video Ayinde made with his father and dropped a comment. That comment became a conversation. That conversation became the first episode. No plan, no big idea, no proper setup just a mic, a borrowed camera, and a friend who said yes. This is the origin story of the series, in the creator's own words.
-              </div>
-              <div className="story-row-meta" style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                <span>Ayinde (Creator) · FUTA · October 2025</span>
-                <Link href="/stories/how-it-started" style={{ color: "var(--orange)", fontSize: ".71rem", textTransform: "uppercase", letterSpacing: ".08em" }}>Read Full Story →</Link>
-                <Link href="https://soburayinde.substack.com/p/how-before-they-graduate-started" target="_blank" rel="noopener noreferrer" style={{ color: "var(--muted)", fontSize: ".71rem", textTransform: "uppercase", letterSpacing: ".08em" }}>or read on Substack</Link>
+          {stories.map((s) => (
+            <div className="story-row" key={s.slug}>
+              <div className="story-row-num">{s.number}</div>
+              <div>
+                <div className="story-row-tag">{s.tag}</div>
+                <div className="story-row-title">{s.title}</div>
+                <div className="story-row-excerpt">{s.excerpt}</div>
+                <div className="story-row-meta" style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+                  <span>{s.meta}</span>
+                  <Link href={s.href} style={{ ...smallLink, color: "var(--orange)" }}>Read Full Story →</Link>
+                  {s.builderSlug && (
+                    <Link href={`/builders/${s.builderSlug}`} style={{ ...smallLink, color: "var(--muted)" }}>View profile</Link>
+                  )}
+                  {s.externalUrl && (
+                    <Link href={s.externalUrl} target="_blank" rel="noopener noreferrer" style={{ ...smallLink, color: "var(--muted)" }}>
+                      {s.externalLabel}
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
 
           <div className="story-row" style={{ opacity: 0.55, pointerEvents: "none" }}>
-            <div className="story-row-num">02</div>
+            <div className="story-row-num">{nextNumber}</div>
             <div>
               <div className="story-row-tag">Waiting for submissions</div>
               <div className="story-row-title">The next story in this archive is yours</div>

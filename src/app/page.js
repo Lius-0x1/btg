@@ -3,6 +3,8 @@ import Image from "next/image";
 import StopPropLink from "@/components/StopPropLink";
 import builders from "@/data/builders";
 import { getFullEpisodes, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
+import HeroCarousel from "@/components/HeroCarousel";
+import stories from "@/data/stories";
 
 export default async function HomePage() {
   const fullEpisodes = await getFullEpisodes();
@@ -26,6 +28,32 @@ export default async function HomePage() {
     ? "Latest Episode"
     : "Season 2 · Ep 02 · Latest";
 
+    const latestStory = [...stories].reverse().find((s) => s.image);
+
+const heroSlides = [
+  {
+    kind: "episode",
+    image: heroThumbnail,
+    imageAlt: "Latest Episode",
+    pill: heroPill,
+    title: heroTitle,
+    meta: heroMeta,
+    href: `https://youtu.be/${heroVideoId}`,
+    unoptimized: true,
+  },
+  ...(latestStory
+    ? [{
+        kind: "story",
+        image: latestStory.heroImage || latestStory.image,
+        imageAlt: latestStory.imageAlt,
+        pill: "Latest Story",
+        title: latestStory.title,
+        meta: latestStory.meta,
+        href: latestStory.href,
+        objectPosition: latestStory.heroImagePosition || "50% 20%",
+      }]
+    : []),
+];
   // Season 2 grid: profiled builders come from builders.js.
   const season2Builders = builders
     .filter((b) => b.season === "Season 2")
@@ -58,20 +86,7 @@ export default async function HomePage() {
               <Link href="/submit" className="btn-ghost">Share your story <span>→</span></Link>
             </div>
           </div>
-          <div className="hero-card">
-            <div className="hero-thumb">
-              <Image src={heroThumbnail} alt="Latest Episode" width={400} height={225} unoptimized />
-              <div className="hero-thumb-overlay"></div>
-              <span className="ep-pill">{heroPill}</span>
-              <a className="play-ring" href={`https://youtu.be/${heroVideoId}`} target="_blank" rel="noopener noreferrer">
-                <div className="play-icon"></div>
-              </a>
-            </div>
-            <div className="hero-card-body">
-              <div className="hero-card-title">{heroTitle}</div>
-              <div className="hero-card-meta">{heroMeta}</div>
-            </div>
-          </div>
+          <HeroCarousel slides={heroSlides} />
         </div>
       </div>
 

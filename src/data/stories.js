@@ -32,7 +32,7 @@ const stories = [
     number: "02",
     format: "interview",
     href: "/stories/how-i-lose-my-hope-for-first-class",
-    builderSlug: "temitope-ajagbe",
+    builderSlug: "temmy",
     tag: "BTG Quick Conversation · University of Ilorin",
     title: "The Surgery That nearly made me lose my hope for First Class: Temitope Ajagbe's Story",
     subtitle: "Behind the First Class — A BTG Quick Conversation",

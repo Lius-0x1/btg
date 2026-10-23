@@ -1,6 +1,6 @@
 const builders = [
   {
-    slug: "how-i-lose-my-hope-for-first-class",
+    slug: "temmy",
     name: "Temitope Mary Ajagbe",
     department: "Religions (Comparative Religious Studies)",
     university: "University of Ilorin",

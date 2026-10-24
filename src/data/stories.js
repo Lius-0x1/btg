@@ -60,7 +60,7 @@ const stories = [
           "Good evening to you.",
           "I'm Temitope Mary Ajagbe, a first-class graduate from the Department of Religions, Comparative Religious Studies to be precise, University of Ilorin, Ilorin, Nigeria.",
         ],
-        reaction: "Ouuu, nice 🤭",
+        reaction: "Ouuu, nice ",
       },
       {
         q: "When you first entered university, what kind of student were you, and at what point did graduating with a first class become a real goal for you?",
@@ -78,7 +78,7 @@ const stories = [
           "A lot, they say, goes on behind the scenes.",
           "But God came through for me.",
         ],
-        reaction: "I'm sorry you had to go through that. God really came through. ❤️",
+        reaction: "I'm sorry you had to go through that. God really came through. ",
       },
       {
         pull: "“I wasn't able to explore, even though I'm not the social type.”",
@@ -91,7 +91,7 @@ const stories = [
           "We make use of learning materials online and recommended sites, as the case may be.",
           "That makes learning easy for me and others.",
         ],
-        reaction: "I'm so sorry. I can't believe I'm seeing water in my eyes already. 🥺",
+        reaction: "I'm so sorry. I can't believe I'm seeing water in my eyes already.",
       },
       {
         heading: "The semesters that tested her",
@@ -109,7 +109,7 @@ const stories = [
           "It took resilience, hard work and a focused mind to bounce back.",
           "And yes, God helped.",
         ],
-        reaction: "Oh my God, you really deserve this first class. 🥺❤️",
+        reaction: "Oh my God, you really deserve this first class.",
       },
       {
         heading: "What studying actually looked like",
@@ -127,7 +127,7 @@ const stories = [
           "The comprehension and the preparedness ahead do really work.",
           "On not understanding a course, I speak to people who understand better than I do and also research more on it to get a better understanding of it.",
         ],
-        reaction: "Seems being confident is one of the keys to achieving whatever you want. 🤭",
+        reaction: "Seems being confident is one of the keys to achieving whatever you want. ",
       },
       {
         pull: "“I don't think I gave up anything extreme.”",
@@ -138,7 +138,7 @@ const stories = [
           "I make use of my time and know how to manage it for other things I want to be involved in too.",
         ],
         reaction: "Ohh really, I want to be your friend also. 🌚",
-        reply: "You are welcome. 😊",
+        reply: "You are welcome. ",
       },
       {
         heading: "The people who helped her along the way",
@@ -163,7 +163,7 @@ const stories = [
           "I believe anyone can attain it.",
           "It's based on YOU.",
         ],
-        reaction: "YOU. 🤭",
+        reaction: "YOU. ",
       },
       {
         q: "Is there a quote you've always lived by and you'd love to pass to the person reading this?",

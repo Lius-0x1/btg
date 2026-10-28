@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
+<html lang="en" suppressHydrationWarning></html>
 
 export const metadata = {
   title: "Before They Graduate",

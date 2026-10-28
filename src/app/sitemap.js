@@ -4,7 +4,7 @@ import stories from "@/data/stories";
 export default function sitemap() {
   const base = "https://beforetheygraduate.app";
 
-  const staticRoutes = ["", "/episodes", "/stories", "/projects", "/builders", "/submit", "/about", "/faq"].map((route) => ({
+  const staticRoutes = ["", "/episodes", "/stories", "/projects", "/builders", "/submit", "/about", "/faq", "/contributors"].map((route) => ({
     url: `${base}${route}`,
     lastModified: new Date(),
   }));

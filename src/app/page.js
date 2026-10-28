@@ -5,6 +5,7 @@ import builders from "@/data/builders";
 import { getFullEpisodes, findBuilderByVideoId, extractVideoId, episodeNumber } from "@/lib/youtube";
 import HeroCarousel from "@/components/HeroCarousel";
 import stories from "@/data/stories";
+import ContributorBanner from "@/components/ContributorBanner";
 
 export default async function HomePage() {
   const fullEpisodes = await getFullEpisodes();
@@ -89,7 +90,8 @@ const heroSlides = [
           <HeroCarousel slides={heroSlides} />
         </div>
       </div>
-
+       <ContributorBanner />
+    
       <div className="stats-wrap">
         <div className="stats-inner">
           <div className="stat-item"><div className="stat-num">20</div><div className="stat-label">stories</div></div>
@@ -313,6 +315,7 @@ const heroSlides = [
               <Link href="/submit">Submit a Project</Link>
               <Link href="/submit">Apply for Season 2</Link>
               <Link href="/submit">Nominate a Student</Link>
+              <Link href="/contributors">Become a Campus Contributor</Link>
             </div>
           </div>
           <div>

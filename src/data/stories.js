@@ -3,6 +3,7 @@
 //  - format "interview" -> rendered automatically at /stories/<slug> by src/app/stories/[slug]/page.js
 // The stories list, search index and sitemap all read from this file.
 
+
 const stories = [
   {
     slug: "how-it-started",
@@ -31,6 +32,7 @@ const stories = [
     slug: "how-i-lose-my-hope-for-first-class",
     number: "02",
     format: "interview",
+    interviewee: "Temitope",
     href: "/stories/how-i-lose-my-hope-for-first-class",
     builderSlug: "temmy",
     tag: "BTG Quick Conversation · University of Ilorin",
@@ -204,6 +206,8 @@ const stories = [
     slug: "first-class-chartered-accountant-at-18-arise-blossom",
     number: "03",
     format: "interview",
+    builderSlug: "arise-blossom",
+    interviewee: "Arise Blossom",
     href: "/stories/first-class-chartered-accountant-at-18-arise-blossom",
     tag: "BTG Full Interview · University of Ilorin",
     title: "First Class, Chartered Accountant at 18: Arise Blossom's Story",

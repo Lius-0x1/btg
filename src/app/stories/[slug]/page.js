@@ -103,7 +103,9 @@ export default async function StoryPage({ params }) {
             <div style={{ ...labelStyle, color: "var(--orange)" }}>BTG</div>
             <p style={{ fontWeight: 500, marginTop: 0 }}>{item.q}</p>
 
-            <div style={{ ...labelStyle, color: "var(--muted)", marginTop: "1.1rem" }}>Temitope</div>
+            <div style={{ ...labelStyle, color: "var(--muted)", marginTop: "1.1rem" }}>
+  {story.interviewee || "Temitope"}
+</div>
             {item.a.map((line, j) => (
               <p key={j} style={{ marginTop: 0 }}>{line}</p>
             ))}

@@ -137,7 +137,7 @@ const stories = [
           "I don't think I gave up anything extreme.",
           "I make use of my time and know how to manage it for other things I want to be involved in too.",
         ],
-        reaction: "Ohh really, I want to be your friend also.",
+        reaction: "Ohh really, I want to be your friend also.u",
         reply: "You are welcome. ",
       },
       {
@@ -198,6 +198,246 @@ const stories = [
       "This is Temitope Mary Ajagbe's story.",
       "And this is Before They Graduate.",
     ],
+  },
+
+    {
+    slug: "first-class-chartered-accountant-at-18-arise-blossom",
+    number: "03",
+    format: "interview",
+    href: "/stories/first-class-chartered-accountant-at-18-arise-blossom",
+    tag: "BTG Full Interview · University of Ilorin",
+    title: "First Class, Chartered Accountant at 18: Arise Blossom's Story",
+    subtitle: "The woman behind the achievements",
+    excerpt:
+      "Arise Blossom graduated with a first class from the University of Ilorin and completed her accounting qualifications at 18. But behind the certificates was a student balancing academics, ICAN, internships, a foundation, ministry, friendships, failure, pressure and the search for a life beyond achievements.",
+    meta: "Arise Blossom · University of Ilorin",
+    image: "/assets/stories/blossom.jpg",
+    imageAlt:
+      "Arise Blossom, first-class graduate and chartered accountant from the University of Ilorin",
+    heroQuote:
+      "Failure is always part of the story.",
+    shareText:
+      "Read Arise Blossom's story on Before They Graduate",
+    footerNote: "Story 03 · The Archive · Before They Graduate",
+
+    intro: [
+      "What happens when someone graduates with a first class, becomes a chartered accountant at 18, leads a foundation, builds a ministry and still tries to make room for a life beyond achievements?",
+      "That was the conversation I had with Arise Blossom, a first-class Economics graduate of the University of Ilorin.",
+      "Behind the certificates was a much more complicated story: starting professional exams in secondary school, failing an ICAN stage, managing an intense academic workload, finding internships, building a support system and learning that achievement alone cannot define a person's life.",
+      "This is the conversation with the woman behind the achievements."
+    ],
+
+    qa: [
+      {
+        heading: "Meet Blossom",
+        q: "For someone who is just hearing about you for the first time today, who exactly is Blossom? Tell us a little about yourself.",
+        a: [
+          "My name is Blossom. I am a first-class Economics graduate from the University of Ilorin. Beyond my academic achievements, I also pursued my professional skills, so I'm also a chartered accountant. I finished all my accounting exams at 18.",
+          "I also interned at a few places, including KPMG and Credit Direct. I led a foundation called Zoe Foundation while in school, where we helped students who were in need during test and exam seasons.",
+          "I'm also a pastor. I built and led a ministry while in school called Wildfire Movement. I'm a very funny person too. I believe I'm hilarious, but it has to be my friends to know that part about me."
+        ],
+        pull: "“I'm a very funny person.”"
+      },
+
+      {
+        q: "What were you like growing up, and what were you interested in as a child?",
+        a: [
+          "I was one of those children who were old in a child's body. At age six or seven, I was already trying to be a mommy. I would take care of my younger sibling like I'm a mother.",
+          "I didn't really like toys or playing. I liked serious things, like Yoruba movies and acting mommy and daddy. I was always interested in taking care of children."
+        ],
+        reaction: "I never expected this part of the story."
+      },
+
+      {
+        q: "You entered university very young. What was that experience like?",
+        a: [
+          "I got admission at 14 and entered at 15 because there was a strike, so I graduated later than I should have.",
+          "I graduated with my elder brother. We convocated together a few days ago, and he's 21.",
+          "There was no pressure in my family. Everybody had their own personal ambitions, and we focused on what we wanted to do while supporting each other."
+        ]
+      },
+
+      {
+        heading: "The girl who started early",
+        q: "How did you start pursuing professional qualifications at such a young age?",
+        a: [
+          "I started my ICAN when I was in SS3. In SS2 I had written my external exams and done well, so SS3 just felt like, what's even the point? Let me find something else to do.",
+          "I found out about ICAN and realised I could take a professional exam. I already had the required result, so I started.",
+          "I chose Economics because I wanted to continue my ICAN without studying Accounting and repeating the same courses and costs."
+        ]
+      },
+
+      {
+        q: "You eventually failed one of your ICAN stages. What did that experience do to you?",
+        a: [
+          "I feel like ICAN can humble the smartest people. I failed one stage, and when I retook it, I passed.",
+          "That failure was tough. I checked my result on five other people's phones because I couldn't believe it. I cried every single day.",
+          "I was asking myself if I wasn't smart or if I didn't know books. But after crying, I wiped my tears, spoke to God about it, and went again.",
+          "Now I'm so glad I failed. Failure taught me a lot. I thought I wasn't going to survive it, but now I'm no longer scared to fail."
+        ],
+        pull: "“Failure is always part of the story.”"
+      },
+
+      {
+        heading: "What people don't see",
+        q: "What did a typical week look like for you while you were balancing school, ICAN, your foundation and your other responsibilities?",
+        a: [
+          "It was crazy. I don't think anybody wants to live my life.",
+          "There were some weeks I was running like a machine. I could go four weeks on a marathon of being busy, running everything, and then spend one week being sick after.",
+          "My life was always very chaotic. There were definitely times I would get overwhelmed, block out everything, and go again the next day.",
+          "One thing I always did was set structures for my day. I would plan my whole day minute by minute and prioritise by season."
+        ]
+      },
+
+      {
+        q: "What kept you going when everything became overwhelming?",
+        a: [
+          "I just know that I can't give up.",
+          "What kept me going was my goals, God and structure.",
+          "As much as you desire something, it's still better to put structures in place, because that's what will save you."
+        ],
+        pull: "“What kept me going was my goals, God and structure.”"
+      },
+
+      {
+        q: "How did you decide what deserved your time and what you had to say no to?",
+        a: [
+          "It was just times and seasons, and understanding that I'm different from everybody.",
+          "I realised I didn't particularly have the time every other person had. So I accepted the truth about myself: I'm busier than everybody. Fine. Accept it. Now work with that.",
+          "In exam periods, I would fully focus on my books. During more relaxed periods, I could go out, see people and have fun.",
+          "I didn't feel like I was missing out because I knew I was doing it for my future."
+        ]
+      },
+
+      {
+        heading: "Opportunity, career and support",
+        q: "How did you discover internships and other opportunities?",
+        a: [
+          "For internships, I had to find those myself. I realised there were a lot of opportunities people were missing out on because they did not have information.",
+          "I found friends who were interested in the same things I was interested in. When I went for the internship at KPMG, I went with two of my friends.",
+          "We joined groups that shared scholarships and internship opportunities. Whenever I saw an opportunity, I applied.",
+          "I joined a lot of groups because I knew I had to be where the information was."
+        ],
+        pull: "“Information helps you fly.”"
+      },
+
+      {
+        q: "For a student without connections, where would you advise them to start?",
+        a: [
+          "They should start by applying for internships and scholarships. That's it.",
+          "They should also focus on getting a good CGPA. Even if they're not able to get internships and scholarships in school, if they're able to get a really good CGPA after school, opportunities will open up.",
+          "You don't need connections to apply for internships and scholarships. Focus on your CGPA and come out with something good."
+        ]
+      },
+
+      {
+        q: "How important was your support system?",
+        a: [
+          "I had a group of friends. We are four girls, and the four of us led our department till we graduated.",
+          "When one person is down, everybody shows up for that person. When one person is not able to read, everybody shows up and helps.",
+          "We are always talking and sharing information. We support one another.",
+          "Your support system should be people who have like minds, just like you."
+        ],
+        reaction: "The right people around you can make a huge difference."
+      },
+
+      {
+        heading: "The person beyond the achievements",
+        q: "Do you ever feel like people see your achievements before they see you as a person?",
+        a: [
+          "Yes, very normal, and I'm already used to it.",
+          "Everybody just sees my achievements and what I do. Many people don't know me, me.",
+          "But I have friends who see me for me, so that's totally fine."
+        ]
+      },
+
+      {
+        q: "What's something most people don't know about you?",
+        a: [
+          "That I'm hilarious. I'm so funny.",
+          "I'm just a girl who wants to play most of the time, and I don't take life seriously.",
+          "Everything has to be funny. I feel like Nigeria has already had enough, so why should we be holding things to our chest? Let's just laugh about everything."
+        ]
+      },
+
+      {
+        q: "Do you have a quote or principle you live by?",
+        a: [
+          "I don't think I have a quote I live by. What I always say, and what I actually live by, is: trust God with your life.",
+          "Every single day I just know that He runs my life. So everywhere I go, I can never be stranded, because I trust God."
+        ],
+        pull: "“Trust God with your life.”"
+      },
+
+      {
+        q: "How do you know when you're being ambitious and when you're putting unnecessary pressure on yourself?",
+        a: [
+          "I think it's the motive. What's my motive? Why do I want to do what I'm about to do right now?",
+          "Is it just because I want to get better at my work and know more, or is it because I'm trying to compare myself with other people and feeling left behind?",
+          "The motive is what lets me know whether I'm being ambitious or just putting pressure on myself."
+        ]
+      },
+
+      {
+        q: "Has achieving so much changed how you define success?",
+        a: [
+          "The more certificates I gather, the more I realise that life is not really about certificates.",
+          "They are great, but they are fickle. Everybody celebrates you today, and tomorrow everybody has forgotten about it.",
+          "It makes me ambitious, but it also reminds me that there has to be more to life than certificates.",
+          "Success is not just about achieving certificates. It's about doing what God would have me do. So it's both of them. It's balance."
+        ],
+        pull: "“Life is not really about certificates.”"
+      },
+
+      {
+        q: "If you could go back to your first day in university, would you do anything differently?",
+        a: [
+          "Maybe in my 200 level I would have put less workload on myself.",
+          "I was doing so much in 200 level. That was also the year I failed ICAN. I would have told myself to reduce what I was doing and focus on a few things instead of doing everything at once."
+        ]
+      },
+
+      {
+        heading: "To the person who feels behind",
+        q: "If a young person feels behind because people their age seem to be achieving more, what would you want them to understand?",
+        a: [
+          "Everybody's journey is different.",
+          "If at 18 you're just getting admission, that's great. You just work on being the best and doing what you're supposed to do well.",
+          "The moment you begin to feel pressure, check it and control it, because we all have different journeys.",
+          "Don't compare yourself with anybody. Do better, do your work better, focus on your work, but don't compare yourself with anybody.",
+          "And also, you can trust God with your life."
+        ]
+      },
+
+      {
+        q: "What would you tell the younger Blossom who was just starting this journey?",
+        a: [
+          "I would first tell her how great a woman she was going to become.",
+          "I would tell her to never look down on herself, to never give up on God, and to always keep going no matter what."
+        ],
+        pull: "“Never look down on yourself. Never give up. Always keep going.”"
+      }
+    ],
+
+    takeawaysHeading: "A few things I took away from this conversation",
+
+    takeaways: [
+      "Blossom's story is bigger than a first-class result or a professional qualification. Behind the achievements was a student who had to learn how to manage pressure, failure, responsibility and an unusually busy schedule.",
+      "One of the strongest parts of the conversation was her experience with failure. Failing an ICAN stage made her question herself, but eventually changed how she understood failure. Instead of seeing it as something that should define her, she learned to go again.",
+      "Her approach to opportunities was also straightforward: find information, join the right communities, apply and keep looking. She believes many students miss opportunities simply because they don't have access to the information.",
+      "And perhaps the biggest lesson was about comparison. Blossom's journey started early, but she doesn't believe everyone has to follow the same timeline. Her advice is simple: focus on your own journey and keep moving."
+    ],
+
+    takeawaysPull: "“Everybody's journey is different.”",
+
+    outro: [
+      "Blossom's story is a reminder that achievements can tell us what someone has done, but they don't always tell us what it took to get there.",
+      "There was the first class. The accounting qualification. The internships. The foundation. The ministry. The opportunities.",
+      "But there was also failure, pressure, exhaustion, uncertainty, support, faith, friendship and the decision to keep going.",
+      "At Before They Graduate, we're interested in the people behind the achievements and the stories behind the milestones.",
+      "This is Arise Blossom's story.",
+      "And this is Before They Graduate."
+    ]
   },
 ];
 

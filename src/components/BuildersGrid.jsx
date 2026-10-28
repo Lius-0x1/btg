@@ -119,7 +119,9 @@ export default function BuildersGrid() {
               <Image src={b.image} className="builder-photo" alt={b.name} width={60} height={60} />
               <div>
                 <div className="builder-name">{b.name}</div>
-                <div className="builder-school">{b.department} · FUTA · {b.season === "Season 2" ? "2026" : "2025"}</div>
+                <div className="builder-school">
+                   {b.department} · {b.university} · {b.season === "Season 2" ? "2026" : "2025"}
+                 </div>
                 <span className="builder-status">Archive Profile →</span>
               </div>
             </div>

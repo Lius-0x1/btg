@@ -137,7 +137,7 @@ const stories = [
           "I don't think I gave up anything extreme.",
           "I make use of my time and know how to manage it for other things I want to be involved in too.",
         ],
-        reaction: "Ohh really, I want to be your friend also. 🌚",
+        reaction: "Ohh really, I want to be your friend also.",
         reply: "You are welcome. ",
       },
       {

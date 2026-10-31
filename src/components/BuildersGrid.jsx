@@ -120,7 +120,7 @@ export default function BuildersGrid() {
               <div>
                 <div className="builder-name">{b.name}</div>
                 <div className="builder-school">
-                   {b.department} · {b.university} · {b.season === "Season 2" ? "2026" : "2025"}
+                   {b.department} · {b.university} · {b.year}
                  </div>
                 <span className="builder-status">Archive Profile →</span>
               </div>

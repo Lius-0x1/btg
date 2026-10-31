@@ -1,5 +1,6 @@
 import Link from "next/link";
 import stories from "@/data/stories";
+import { StoryVideo } from "@/components/StoryVideo";
 
 export const metadata = {
   title: "Stories | Before They Graduate",

@@ -3,6 +3,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import ShareButton from "@/components/ShareButtons";
 import stories from "@/data/stories";
+import contributors from "@/data/contributors";
+import { StoryVideo } from "@/components/StoryVideo";
+
 
 // Only interview-format stories are rendered here. The origin story keeps its
 // own hand-built page at /stories/how-it-started, which takes precedence.
@@ -62,6 +65,15 @@ export default async function StoryPage({ params }) {
   const story = interviewStories.find((s) => s.slug === slug);
   if (!story) notFound();
 
+  const contributor = contributors.find(
+  (c) => c.slug === story.contributorSlug
+);
+
+const contributorStoryCount = contributor
+  ? stories.filter(
+      (s) => s.contributorSlug === contributor.slug
+    ).length
+  : 0;
   return (
     <div className="profile-container">
       <Link href="/stories" className="profile-back-link">← Back to All Stories</Link>
@@ -100,15 +112,24 @@ export default async function StoryPage({ params }) {
             {item.pull && <div className="profile-pull-quote">{item.pull}</div>}
             {item.heading && <h2 className="profile-section-title">{item.heading}</h2>}
 
-            <div style={{ ...labelStyle, color: "var(--orange)" }}>BTG</div>
+            <div style={{ ...labelStyle, color: "var(--orange)" }}>
+               {story.interviewer || "Ayinde-the-creator"}
+              </div>
             <p style={{ fontWeight: 500, marginTop: 0 }}>{item.q}</p>
 
             <div style={{ ...labelStyle, color: "var(--muted)", marginTop: "1.1rem" }}>
-  {story.interviewee || "Temitope"}
-</div>
+                {story.interviewee || "Temitope"}
+          </div>
             {item.a.map((line, j) => (
               <p key={j} style={{ marginTop: 0 }}>{line}</p>
             ))}
+
+            {item.video?.youtubeId && (
+  <StoryVideo
+    youtubeId={item.video.youtubeId}
+    title={item.video.title}
+  />
+)}
 
             {item.reaction && (
               <p style={{ fontStyle: "italic", color: "var(--muted2)" }}>{item.reaction}</p>
@@ -145,6 +166,66 @@ export default async function StoryPage({ params }) {
       <div className="profile-section">
         <ShareButton title={story.shareText} />
       </div>
+      
+      {story.contributorSlug && (() => {
+  const contributor = contributors.find(
+    (c) => c.slug === story.contributorSlug
+  );
+
+  if (!contributor) return null;
+
+  const storyCount = stories.filter(
+    (s) => s.contributorSlug === contributor.slug
+  ).length;
+
+  return (
+    <div className="profile-section story-credits">
+      <div className="story-contributor-card">
+        <div className="story-contributor-heading">
+          STORY CONTRIBUTOR
+        </div>
+
+        <div className="story-contributor-info">
+          {contributor.image && (
+            <Image
+              src={contributor.image}
+              alt={contributor.name}
+              width={64}
+              height={64}
+              style={{
+                borderRadius: "50%",
+                objectFit: "cover",
+              }}
+            />
+          )}
+
+          <div>
+            <h3>{contributor.name}</h3>
+            <p>{contributor.university}</p>
+
+            {contributor.teamRole && (
+              <p>{contributor.teamRole}</p>
+            )}
+
+            {contributor.handle && contributor.socialUrl && (
+              <a
+                href={contributor.socialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {contributor.handle}
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div className="story-contributor-count">
+          {storyCount} {storyCount === 1 ? "Story" : "Stories"} contributed to BTG
+        </div>
+      </div>
+    </div>
+  );
+})()}
 
       <div className="profile-footer-note">{story.footerNote}</div>
     </div>

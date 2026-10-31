@@ -1,39 +1,170 @@
 const builders = [
+
   {
-    slug: "arise-blossom",
-    name: "Arise Blossom",
-    department: "Economics",
-    university: "University of Ilorin",
-    year: "2026",
-    type: "story",
-    storySlug: "first-class-chartered-accountant-at-18-arise-blossom",
-    image: "/assets/builders/blossom.jpg",
-    quote: "Failure is always part of the story.",
-    about: [
-      "Arise Blossom is a first-class Economics graduate of the University of Ilorin who completed her accounting qualifications at 18. Alongside her academics, she interned at KPMG and Credit Direct, led Zoe Foundation, and built and led a ministry called Wildfire Movement while in school.",
-      "Behind those achievements was a demanding university experience. She balanced academics with ICAN, leadership, ministry and other responsibilities, while learning how to manage pressure, deal with failure and make room for the things that mattered to her.",
-    ],
-    whatShapedThem: [
-      "Starting early: She began ICAN in SS3 after discovering that she could pursue a professional qualification before university.",
-      "Failure that changed her: She failed one ICAN stage, cried through the experience and questioned herself, but eventually retook it and passed. She says the experience made her stronger and less afraid of failure.",
-      "A life of many responsibilities: She balanced first-class academics with ICAN, internships, a foundation, ministry and other commitments, often relying on structure and careful planning.",
-      "Information and opportunity: She actively joined groups that shared internship and scholarship opportunities and applied whenever she found something relevant.",
-      "A strong support system: She credits close friends who shared her goals and supported one another academically and personally throughout university.",
-    ],
-    lessons: [
-      "Build structure: She planned her days carefully and prioritised according to the season she was in, especially during exams.",
-      "Go again after failure: Her ICAN failure taught her that failure does not have to define you. What matters is being willing to try again.",
-      "Look for information: She believes many students miss opportunities simply because they don't know about them. Her approach was to join relevant communities, ask questions and keep applying.",
-      "Know your seasons: She accepted that she had less free time than many other students and adjusted her approach instead of constantly comparing herself with them.",
-      "Don't define success only by certificates: Her achievements made her ambitious, but also taught her that life has to be about more than qualifications and recognition.",
-    ],
-    advice: "Everybody's journey is different. If you're just getting started, focus on being the best you can be and doing what you're supposed to do well. Don't compare yourself with anybody. Do better, focus on your work, and trust God with your life.",
-    memorableQuote: "Failure is always part of the story.",
-    whyWeRememberThem: [
-      "Blossom's story belongs in the BTG archive because her achievements only tell part of the story. Behind the first class and professional qualification were failure, pressure, exhaustion, responsibility, faith, friendship and the decision to keep going.",
-      "She also represents a different kind of student journey: one where academics existed alongside professional qualifications, internships, community work, ministry and a life beyond the classroom.",
-    ],
-  },
+  slug: "oluwapelumi-aikomo",
+  name: "Oluwapelumi Aikomo",
+  department: "Surveying & Geoinformatics",
+  university: "Ajayi Crowther University",
+  year: "2026",
+  type: "story",
+  storySlug: "oluwapelumi-aikomo",
+
+  // Change this filename if her actual builder photo has a different name.
+  image: "/assets/builders/pelumi.jpg",
+
+  quote: "Always make sure you learn, unlearn and relearn.",
+
+  about: [
+    "Oluwapelumi Aikomo is a Surveying and Geoinformatics graduate of Ajayi Crowther University. Her academic journey began at the Federal School of Surveying, Oyo, where she obtained her National Diploma before proceeding to Ajayi Crowther University in 2022 through Direct Entry at 200 level. She completed her BSc programme in 2026.",
+
+    "Her interests extend beyond the traditional understanding of surveying. She is particularly interested in research and written content, and sees the discipline as one with applications across areas such as public health, space and broader earth-related challenges.",
+
+    "During her university years, she explored research, student leadership and professional opportunities. She presented research at a conference in Enugu and later travelled to South Africa for FIG, where she presented internationally and engaged with surveying professionals and students from different countries.",
+
+    "Her journey was not without difficult seasons. She navigated the transition from ND to university, underwent surgery during 300 level, experienced personal losses in her final year, and balanced examinations, project work and international travel. Through those experiences, she learned the importance of support, persistence and continuous growth."
+  ],
+
+  whatShapedThem: [
+    "An unexpected beginning: She initially wanted to study architecture, but her family's guidance led her to the Federal School of Surveying after they noticed her interest in technical drawing. What began as an unexpected direction eventually became a profession she grew to appreciate.",
+
+    "The ND-to-BSc transition: Her National Diploma was meant to take two years but lasted three because of a strike. She later entered Ajayi Crowther University through Direct Entry at 200 level, where she had to adjust to a new academic environment and different approaches to computation.",
+
+    "Learning to ask for help: The transition to university was difficult, but reaching out to friends for explanations and academic support helped her settle in. Starting with a four-point CGPA gave her the confidence to keep improving.",
+
+    "Strength through difficult seasons: She underwent surgery during 300 level and returned to school that same week because examinations were approaching. The support of her roommates, friends, department and faculty helped her through recovery.",
+
+    "Discovering research and professional opportunities: Her first conference experience and research presentation in Enugu introduced her to a wider professional environment. FIG later gave her an opportunity to present internationally and interact with people from different countries.",
+
+    "The weight of final year: Losing her aunt and a close friend during 500 level made an already demanding period more difficult. She had to navigate grief, her final-year project, examinations, FIG preparations and international travel.",
+
+    "Leadership and responsibility: Her student leadership experience, particularly Southwest coordination, taught her about availability, communication, emotional discipline and the demands of serving people.",
+
+    "Finding her own understanding of surveying: Through research and exposure, she began to see surveying as more than land measurement, recognising its wider connections with other disciplines and real-world problems."
+  ],
+
+  lessons: [
+    "Your first career choice does not have to determine your entire future. Be open to discovering a path you may not have considered initially.",
+
+    "Transitioning into a new academic environment requires humility. Ask questions, seek explanations and be willing to learn things differently.",
+
+    "A strong academic start is encouraging, but consistency matters. Do not become too comfortable with your early results.",
+
+    "Asking for help is not a weakness. The right friends, classmates, lecturers and mentors can make difficult seasons more manageable.",
+
+    "Your discipline may be broader than what you first imagined. Explore its different applications and do not limit your understanding to what is taught in class.",
+
+    "Rejection should not automatically end your pursuit of an opportunity. Her repeated FIG applications remind us that persistence can eventually open doors.",
+
+    "University life is not always predictable. Personal challenges, illness and loss can happen alongside academic responsibilities. Give yourself room to navigate difficult seasons.",
+
+    "Leadership is more than holding a position. It involves responsibility, communication, patience and being available to people.",
+
+    "Do not wait until graduation before exploring your profession. Use school breaks, internships, projects, conferences and professional networks to discover what interests you.",
+
+    "Keep learning, unlearning and relearning. Growth requires the willingness to adjust what you know and remain open to new knowledge."
+  ],
+
+  advice:
+    "Don't be shy. Start being vocal and sharing what you are learning, including on social media. Be yourself and don't allow people's opinions to stop you from trying. Keep applying for opportunities even after rejection. Use your school breaks to explore different areas of your profession, gain practical experience and discover what you actually enjoy. Surround yourself with the right people, and understand that a classmate is not automatically a friend. Most importantly, always make sure you learn, unlearn and relearn.",
+
+  memorableQuote: "Always make sure you learn, unlearn and relearn.",
+
+  whyWeRememberThem: [
+    "Oluwapelumi's story deserves a place in the Before They Graduate archive because it captures a university journey that cannot be explained by a degree certificate alone. Her experience includes an unexpected career direction, a demanding academic transition, personal loss, recovery, research, leadership and international exposure.",
+
+    "Her journey also highlights the importance of looking beyond the traditional boundaries of a discipline. Through her experiences in surveying and research, she developed a broader understanding of how different fields can contribute to solving real-world problems.",
+
+    "Perhaps most importantly, her story reminds students that growth is not always comfortable or predictable. Sometimes it means changing direction, asking for help, trying again after rejection or finding the strength to continue through a difficult season.",
+
+    "Oluwapelumi represents the graduate who understands that completing a degree is not the end of learning. It is another stage in a much longer journey of discovery, professional development and personal growth."
+  ]
+},
+
+ {
+  slug: "arise-blossom",
+  name: "Arise Blossom",
+  department: "Economics",
+  university: "University of Ilorin",
+  year: "2026",
+  type: "story",
+  storySlug: "first-class-chartered-accountant-at-18-arise-blossom",
+  image: "/assets/builders/blossom.jpg",
+
+  quote: "Failure is always part of the story.",
+
+  about: [
+    "Arise Blossom is a first-class Economics graduate of the University of Ilorin and a chartered accountant who completed her professional accounting examinations at 18. Her journey is one of academic excellence, professional ambition, faith, leadership and learning to navigate the pressure that can come with achieving things early.",
+
+    "She began pursuing ICAN while still in secondary school and continued building her professional experience alongside her university education. During her journey, she interned at KPMG and Credit Direct, led Zoe Foundation, and founded and led Wildfire Movement, a ministry she built while in school.",
+
+    "But Blossom's identity extends beyond her achievements. She describes herself as a fun-loving, humorous person with interests in acting, speaking and content creation. She has also explored filmmaking through her ministry and discovered that communicating and expressing herself creatively comes naturally to her.",
+
+    "Growing up with two professor parents gave her access to good schools and academic support, but she says her parents never dictated what she had to become. They allowed their children to explore their interests while encouraging them to do their best.",
+
+    "Her university experience included an early start, professional examinations, academic setbacks, demanding responsibilities, meaningful friendships, love, faith and moments when she had to slow down. Her story offers a fuller picture of what it means to pursue excellence without allowing achievements to become the only measure of a meaningful life."
+  ],
+
+  whatShapedThem: [
+    "A childhood shaped by responsibility: As a child, Blossom was unusually interested in caring for her younger sibling and playing the role of a mother. She describes herself as someone who seemed older than her age, although she has become much more playful as she has grown.",
+
+    "An early university start: She gained admission at 14 and began university at 15 after a strike delayed her entry. Being younger than many of her peers brought advantages, but it also meant that some people questioned her age, overlooked her opinions or did not take her seriously.",
+
+    "A family that allowed individuality: Although both her parents are professors, they did not force a particular career path on their children. They provided educational support while allowing each child to explore personal interests and ambitions.",
+
+    "Starting ICAN in secondary school: She began pursuing her professional accounting qualification in SS3, determined to become a chartered accountant at a young age. She eventually completed the qualification at 18.",
+
+    "The failure that changed her: She failed one stage of ICAN, an experience that affected her confidence and academic performance. She cried, questioned her ability and had to retake the papers. Passing afterwards changed her relationship with failure and made her more willing to take bold opportunities.",
+
+    "The pressure of doing too much: During 200 level, she combined demanding academic work with ICAN and several other responsibilities. She later reflected that she would have reduced her workload and focused on fewer things instead of trying to do everything at once.",
+
+    "Learning to manage her seasons: With responsibilities in academics, ministry, leadership and other activities, she developed a structured approach to time management. She planned her days carefully, read consistently from the beginning of each semester and learned when to prioritise examinations over other commitments.",
+
+    "People and opportunities: She actively sought information about internships and opportunities through communities and groups. Her university experience also included close friendships and a supportive relationship that encouraged her through demanding periods.",
+
+    "Discovering creative interests: Beyond Economics and accounting, she explored speaking, acting, content creation and filmmaking. A creative competition and a short film produced through her ministry helped her recognise her interest in creative expression.",
+
+    "Redefining success: As she accumulated qualifications and achievements, she began to understand that certificates and public recognition are temporary. Her definition of success increasingly became connected to purpose, faith and doing what she believes God wants her to do."
+  ],
+
+  lessons: [
+    "Failure does not have to define you. Blossom's ICAN experience taught her that setbacks can strengthen you when you choose to learn from them and try again.",
+
+    "Do not overload yourself just to prove that you can do everything. Understand your capacity, recognise your priorities and focus on what matters in each season.",
+
+    "Build structure around your responsibilities. Planning her days and reading consistently helped her balance academics with professional examinations, ministry and other commitments.",
+
+    "Do not compare your timeline with someone else's. People have different circumstances, opportunities and journeys. Focus on becoming better from wherever you are.",
+
+    "Being young does not make your ideas less valuable. Early achievements may attract attention, but you may also encounter people who underestimate you. Learn to communicate confidently and keep doing your work.",
+
+    "Look beyond the classroom. Professional qualifications, internships, communities, leadership, creative projects and other experiences can broaden your understanding of what you are capable of doing.",
+
+    "Build relationships with people who support your growth. The right friendships can provide encouragement, accountability and practical support during difficult periods.",
+
+    "Make room for life outside your achievements. Academic and professional excellence matter, but they should not become the only things that give your life meaning.",
+
+    "Understand your seasons. There are times to work intensely and times to rest, connect with people and enjoy life. Knowing the difference helps you avoid unnecessary pressure.",
+
+    "Trust God with your journey. Blossom repeatedly connects her experiences with faith, grace, favour and the belief that her life has a purpose beyond certificates."
+  ],
+
+  advice:
+    "Everybody's journey is different. If you're just getting started, focus on being the best you can be and doing what you're supposed to do well. Don't compare yourself with anybody. Do better, focus on your work and control the pressure you put on yourself. Explore opportunities, build relationships and trust God with your life. Never look down on yourself, never give up on God, and always keep going.",
+
+  memorableQuote: "Failure is always part of the story.",
+
+  whyWeRememberThem: [
+    "Blossom's story belongs in the Before They Graduate archive because her achievements only tell part of the story. Behind the first-class degree and professional accounting qualification were failure, pressure, exhaustion, responsibility, faith, friendship and the decision to keep going.",
+
+    "Her journey challenges the idea that people who achieve early have everything figured out. She experienced rejection, academic disappointment, overwhelming responsibilities and the pressure of having people constantly expect the next big achievement from her.",
+
+    "She also represents a student who refused to reduce her identity to academics alone. Alongside Economics and ICAN, she explored internships, community work, ministry, relationships, speaking, acting and creative expression.",
+
+    "Perhaps her most important lesson is that success should not become a source of endless pressure. Achievements are valuable, but they are not permanent measures of a person's worth or purpose.",
+
+    "Blossom reminds us that everyone has a different timeline, that failure can become part of growth, and that the journey matters just as much as the result."
+  ],
+},
   {
     slug: "temmy",
     name: "Temitope Mary Ajagbe",
@@ -72,6 +203,7 @@ slug: "psalmmy-adegoriola-abejoye",
 name: "Adegoriola Abejoye (Psalmmy)",
 department: "Civil Engineering ",
 university: "Federal University of Technology Akure",
+ year: "2026",
 season: "Season 2",
 episode: "Episode 7",
 image: "/assets/builders/psalmmy.png",
@@ -102,6 +234,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
 "name": "Oriade Williams (Alaafin)",
 "department": "Agriculture and Resource Economics",
 "university": "Federal University of Technology Akure (FUTA)",
+ year: "2026",
 "season": "Season 2",
 "episode": "Episode 6",
 "image": "/assets/builders/alaafin.png",
@@ -131,6 +264,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Nunsi Shiaki",
     department: "Computer Engineering",
     university: "Federal University of Technology Akure",
+     year: "2026",
     season: "Season 2",
     episode: "Episode 5",
     image: "/assets/builders/nusi.jpg",
@@ -160,6 +294,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Akinwande Ayomide James",
     department: "Mechanical Engineering",
     university: "Federal University of Technology Akure",
+     year: "2026",
     season: "Season 2",
     episode: "Episode 4",
     image: "/assets/builders/aaj.jpg",
@@ -189,6 +324,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Arasomwan Theophilus",
     department: "Architecture",
     university: "Federal University of Technology Akure",
+     year: "2026",
     season: "Season 2",
     episode: "Episode 3",
     image: "/assets/builders/theo.jpg",
@@ -220,6 +356,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Oluwaferanmi Oladepo",
     department: "Software Engineering",
     university: "Federal University of Technology Akure",
+     year: "2026",
     season: "Season 2",
     episode: "Episode 2",
     image: "/assets/builders/feranmi.jpg",
@@ -252,6 +389,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Similoluwa Taiwo",
     department: "Architecture",
     university: "Federal University of Technology Akure",
+     year: "2026",
     season: "Season 2",
     episode: "Episode 1",
     image: "/assets/builders/similoluwa.jpg",
@@ -287,6 +425,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Akorede Adebowale",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 1",
     image: "/assets/builders/akorede-adebowale.jpg",
@@ -325,6 +464,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Ajibi Mubarak",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 7",
     image: "/assets/builders/ajibi-mubarak.jpg",
@@ -364,6 +504,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Alabi Eniibukunoluwa (IBK)",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 8",
     image: "/assets/builders/alabi-eniibukunoluwa.jpg",
@@ -404,6 +545,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Awoleye Kolawole",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 2",
     image: "/assets/builders/awoleye-kolawole.jpg",
@@ -444,6 +586,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Agbange Doobee",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 12",
     image: "/assets/builders/agbange-doobee.jpg",
@@ -484,6 +627,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Grace Doyinsola Olasupo",
     department: "Computer Engineering",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 11",
     image: "/assets/builders/grace-doyinsola-olasupo.jpg",
@@ -525,6 +669,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Adebayo Ilias",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 6",
     image: "/assets/builders/adebayo-ilias.jpg",
@@ -565,6 +710,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Jimoh Ibrahim (Maka)",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 3",
     image: "/assets/builders/jimoh-ibrahim.jpg",
@@ -603,6 +749,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Ajayi Johnson",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 4",
     image: "/assets/builders/ajayi-johnson.jpg",
@@ -643,6 +790,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Oluwasoromidayo Olayemi",
     department: "Statistics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 10",
     image: "/assets/builders/oluwasoromidayo-olayemi.jpg",
@@ -683,6 +831,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Eko Rejoice",
     department: "Surveying & Geoinformatics",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 9",
     image: "/assets/builders/eko-rejoice.jpg",
@@ -723,6 +872,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
     name: "Sodiq Bashir",
     department: "Information & Communication Engineering",
     university: "Federal University of Technology Akure",
+     year: "2025",
     season: "Season 1",
     episode: "Episode 5",
     image: "/assets/builders/sodiq-bashir.jpg",

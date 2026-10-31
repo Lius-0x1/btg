@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import contributors from "@/data/contributors";
 import COHORT from "@/data/cohort";
+import stories from "@/data/stories";
 
 export const metadata = {
   title: "Campus Contributors | Before They Graduate",
@@ -168,43 +169,131 @@ export default function ContributorsPage() {
             <Heading sub="The students putting their campuses on the record">
               Our <span>Contributors</span>
             </Heading>
-            <div style={gridStyle}>
-              {contributors.map((c) => (
-                <div key={c.slug} style={{ ...cardStyle, display: "flex", alignItems: "center", gap: "1rem" }}>
-                  {c.image ? (
-                    <Image src={c.image} alt={c.name} width={56} height={56} style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
-                  ) : (
-                    <div
-                      style={{
-                        width: 56,
-                        height: 56,
-                        borderRadius: "50%",
-                        background: "var(--off)",
-                        border: "1px solid var(--border)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "var(--orange)",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {initials(c.name)}
-                    </div>
-                  )}
-                  <div>
-                    <div style={{ color: "var(--text)", fontWeight: 500 }}>{c.name}</div>
-                    <div style={{ ...bodyText, fontSize: ".8rem", lineHeight: 1.4 }}>
-                      {c.university}
-                      {c.department ? ` · ${c.department}` : ""}
-                    </div>
-                    <div style={{ color: "var(--orange)", fontSize: ".7rem", textTransform: "uppercase", letterSpacing: ".08em", marginTop: ".25rem" }}>
-                      {c.cohort || COHORT.name}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+   <div style={gridStyle}>
+  {contributors.map((c) => {
+  const contributorStories = stories.filter(
+    (story) => story.contributorSlug === c.slug
+  );
+
+  const storyCount = contributorStories.length;
+
+  return (
+    <div
+      key={c.slug}
+      style={{
+        ...cardStyle,
+        display: "flex",
+        alignItems: "center",
+        gap: "1rem",
+      }}
+    >
+      {c.image ? (
+        <Image
+          src={c.image}
+          alt={c.name}
+          width={56}
+          height={56}
+          style={{
+            borderRadius: "50%",
+            objectFit: "cover",
+            flexShrink: 0,
+          }}
+        />
+      ) : (
+        <div
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: "50%",
+            background: "var(--off)",
+            border: "1px solid var(--border)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--orange)",
+            flexShrink: 0,
+          }}
+        >
+          {initials(c.name)}
+        </div>
+      )}
+
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ color: "var(--text)", fontWeight: 500 }}>
+          {c.name}
+        </div>
+
+        <div style={{ ...bodyText, fontSize: ".8rem", lineHeight: 1.4 }}>
+          {c.university}
+          {c.department ? ` · ${c.department}` : ""}
+        </div>
+
+        <div
+          style={{
+            color: "var(--orange)",
+            fontSize: ".7rem",
+            textTransform: "uppercase",
+            letterSpacing: ".08em",
+            marginTop: ".25rem",
+          }}
+        >
+          {c.cohort || COHORT.name}
+        </div>
+
+        <div
+          style={{
+            color: "var(--muted)",
+            fontSize: ".75rem",
+            marginTop: ".4rem",
+          }}
+        >
+          {storyCount} {storyCount === 1 ? "Story" : "Stories"} contributed
+        </div>
+
+        {/* CONTRIBUTED STORIES */}
+{contributorStories.length > 0 && (
+  <details className="contributor-story-dropdown">
+    <summary className="contributor-story-toggle">
+      <span>View contributed stories</span>
+      <span className="contributor-story-chevron">⌄</span>
+    </summary>
+
+    <div className="contributor-story-list">
+      {contributorStories.map((story) => (
+        <Link
+          key={story.slug}
+          href={`/stories/${story.slug}`}
+          className="contributor-story-link"
+        >
+          <span>{story.title}</span>
+          <span className="contributor-story-arrow">→</span>
+        </Link>
+      ))}
+    </div>
+  </details>
+)}
+      {c.handle && c.socialUrl && (
+  <a
+    href={c.socialUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="contributor-social-link"
+  >
+    {c.handle}
+  </a>
+)}
+
+        {c.teamRole && (
+          <div style={{ fontSize: ".75rem", color: "var(--muted)" }}>
+            {c.teamRole}
           </div>
+        )}
+      </div>
+    </div>
+  );
+})}
+</div>
+</div> 
         )}
 
         <div>

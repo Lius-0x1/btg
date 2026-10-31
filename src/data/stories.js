@@ -35,6 +35,7 @@ const stories = [
     interviewee: "Temitope",
     href: "/stories/how-i-lose-my-hope-for-first-class",
     builderSlug: "temmy",
+    contributorSlug: "Ayinde Abdulsobur",
     tag: "BTG Quick Conversation · University of Ilorin",
     title: "The Surgery That nearly made me lose my hope for First Class: Temitope Ajagbe's Story",
     subtitle: "Behind the First Class — A BTG Quick Conversation",
@@ -202,247 +203,1043 @@ const stories = [
     ],
   },
 
+   
+{
+  slug: "first-class-chartered-accountant-at-18-arise-blossom",
+  number: "03",
+  format: "interview",
+  builderSlug: "arise-blossom",
+  interviewee: "Arise Blossom",
+   contributorSlug: "Ayinde Abdulsobur",
+  href: "/stories/first-class-chartered-accountant-at-18-arise-blossom",
+  tag: "BTG Full Interview · University of Ilorin",
+  title: "First Class, Chartered Accountant at 18: The Full Story of Arise Blossom",
+  subtitle: "Family, faith, failure, ambition, love and the journey behind the achievements",
+  excerpt:
+    "She became a first-class Economics graduate and completed her accounting exams at 18. But behind the achievements is a story of family support, failure, pressure, friendship, faith, love and learning when to slow down.",
+  image: "/assets/stories/blossom.jpg",
+   heroQuote: "Failure is always part of the story.",
+  imageAlt: "Arise Blossom",
+  video: {
+    youtubeId: "s7CZ1pDf6Jk",
+    url: "https://youtu.be/s7CZ1pDf6Jk?si=t8yHNMyJNkc7S19k",
+    embedUrl: "https://www.youtube.com/embed/s7CZ1pDf6Jk"
+  },
+
+  intro: [
+    "When people hear about Arise Blossom, they hear the achievements first: a first-class degree in Economics, a professional accounting qualification completed at 18, internships, leadership and ministry.",
+    "But achievement is only one part of a person's story. Behind the certificates are the people who shaped her, the expectations she placed on herself, the exam that made her question her ability, the friendships that carried her through university, and the love she found while still pursuing her goals.",
+    "In this conversation with Before They Graduate, Blossom opens up about growing up in a family of professors, entering university at 15, failing ICAN, learning to manage an unusually demanding life, falling in love before final year, and redefining what success means to her.",
+    "This is not just a story about being ahead. It is a story about what it takes to keep going, what failure can teach you, and why your life must mean more than the achievements people see."
+  ],
+
+  qa: [
     {
-    slug: "first-class-chartered-accountant-at-18-arise-blossom",
-    number: "03",
+      heading: "The family behind the journey",
+      q: "Before we talk about your achievements, who is Blossom, and where does your story begin?",
+      a: [
+        "My name is Blossom. I'm from Ondo State. My mum is from Akure, and my dad is from Akoko.",
+        "I'm a first-class Economics graduate, and I'm also a chartered accountant. I finished all my accounting exams at 18. I interned at KPMG and Credit Direct, led Zoe Foundation, and built and led Wildfire Movement while I was in school.",
+        "I'm also a pastor. Beyond all of that, I'm a very funny person. I'm just a fun person who likes to enjoy life."
+      ],
+      reaction:
+        "The list of achievements is impressive, but Blossom is clear that she is more than her academic record."
+    },
+    {
+      q: "Both your parents are professors. What was growing up in that kind of home like?",
+      a: [
+        "My parents did their best for us. We went to good schools, and we always had lesson teachers from primary school to secondary school.",
+        "But there was never pressure of 'this is what you must study' or 'this is what you must do.' My parents allowed us to express ourselves.",
+        "My elder brother studied computer engineering, but he's also an artist and takes his art seriously. My parents allowed us to explore other parts of our lives while still encouraging us to do our best academically."
+      ],
+      reaction:
+        "Her parents provided educational support without insisting that all their children follow the same path."
+    },
+    {
+      q: "Did the freedom your parents gave you ever become pressure of its own?",
+      a: [
+        "True. I think that's correct, actually. The pressure for me was coming from the fact that these people allowed me to do other things.",
+        "I was running a community, running a foundation, running a mission. I cannot become a pastor and be failing in school. My parents are professors working in this same school, and I have their reputation to keep.",
+        "They weren't saying I must do all these things, but I wanted them to know they hadn't made a mistake by allowing me. I wanted to show that I could handle the responsibilities I had taken on."
+      ],
+      pull:
+        "“I wanted them to know they did not make a mistake by allowing me.”"
+    },
+    {
+      q: "How did your family handle differences in achievement between you and your siblings?",
+      a: [
+        "We all have our personal ambitions in this house, and everybody is just focused on what they want to do while supporting one another.",
+        "There's no bad energy in my house at all. There's no way anybody feels like one person is doing better than another. There's no pressure. I think my parents also play a large role in that."
+      ],
+      reaction:
+        "For Blossom, family support means having room to pursue different ambitions without turning life into a competition."
+    },
+
+    {
+      heading: " The girl who started early",
+      q: "What were you like as a child?",
+      a: [
+        "I was one of those children who are old in a child's body. At age six or seven, I was already trying to be a mommy, taking care of my younger sibling and wanting to cook for her.",
+        "Everybody liked cartoons. You know what I liked? Yoruba mommy-and-daddy movies. I would watch them so that I could learn how to be a mommy.",
+        "I didn't like toys. I loved acting mommy and daddy and taking care of children. But now I'm even more playful than I was when I was a child."
+      ],
+      reaction:
+        "Her childhood interests were different from those of many children around her, and she still sees herself as someone with a playful side."
+    },
+    {
+      q: "You gained admission at 14 and entered university at 15. What was that transition like?",
+      a: [
+        "I got admission at 14. I entered at 15 because there was a strike, so I graduated later than I should have.",
+        "I graduated with my elder brother. We convocated together, and he was 21."
+      ],
+      reaction:
+        "Starting university so young shaped her experience, but she would later learn that being young could bring both opportunities and challenges."
+    },
+    {
+      q: "Did your early achievements create competition or pressure within your family?",
+      a: [
+        "I don't think so. My elder brother doesn't really care, and my younger sister doesn't really care. We all have our personal ambitions, and everybody is focused on what they want to do while supporting one another.",
+        "There's no pressure. I think my parents also play a large role in that. They don't pressure us."
+      ]
+    },
+    {
+      q: "How did you begin your ICAN journey while you were still in secondary school?",
+      a: [
+        "I started my ICAN when I was in SS3. In SS2, I had written my external exams and done well, so SS3 just felt like, what's even the point? Let me find something else to do.",
+        "I found out about ICAN and saw that I could do a professional exam. Since I was already doing ICAN, I thought it was better to study Economics instead of Accounting so that I wouldn't have the same courses twice or the same cost."
+      ],
+      reaction:
+        "She began pursuing a professional qualification before entering university, setting herself on a demanding path early."
+    },
+
+    {
+      heading: " The failure behind the success",
+      q: "Your plan was to become a chartered accountant at 17. What happened?",
+      a: [
+        "Out of my five stages, I only failed one stage, and when I retook it, I passed.",
+        "My initial plan was to be chartered at 17, not 18, but that one failure slowed me down. In ICAN, if you fail a paper, it's like an extra six months added to your ICAN journey.",
+        "Even by the time I wrote my final exams, I was actually still 17. It was when the results came out that I had clocked 18. So that's how my plan failed. But it was all good."
+      ],
+      pull: "“ICAN can humble the smartest people.”"
+    },
+    {
+      q: "What did failing ICAN feel like at the time?",
+      a: [
+        "It was my first academic failure in the whole of university. I was like, 'God, this cannot be my result.' I checked my result on five other people's phones. I was like, 'No, there has to be a mix-up somewhere.'",
+        "I cried every single day. I said, 'Oh my God, I'm not smart. I don't know books. How did this happen? What did I do wrong?'",
+        "My second-semester results came out, and they were the opposite of what I had in the first semester. My CGPA dropped a lot. At that period of my life, I was like, what am I supposed to start from?"
+      ],
+      reaction:
+        "The failure affected more than her professional timeline. It challenged the way she saw herself as a student."
+    },
+    {
+      q: "How did you find the strength to try again?",
+      a: [
+        "After crying, I wiped my tears, I spoke to God about it, and I went again.",
+        "It was very hard rereading courses you've already taken. Every time I opened the books to read again, I'd be like, 'But I read this thing,' and I would just start crying. But I continued.",
+        "I would cry with God, and I would go again, because I needed to do my before and after. What's the point of staying down and not going again? There's literally no point."
+      ],
+      pull: "“Failure is always part of the story.”"
+    },
+    {
+      q: "Looking back, how did that failure change you?",
+      a: [
+        "Now I'm so glad I failed. Failure taught me a lot. I thought I wasn't going to be able to survive it, but now I'm no longer scared to fail.",
+        "It made me learn a lot. It made me stronger. It made me braver. Now I can take on bold opportunities and not be scared about it, even though I might fail.",
+        "Sometimes, to not be scared of things, you have to face them."
+      ],
+      reaction:
+        "The experience did not erase the disappointment, but it changed her relationship with failure. She learned that a setback did not have to become her identity."
+    },
+    {
+      q: "Would you do anything differently if you could return to your 200 level?",
+      a: [
+        "Maybe in my 200 level I would have put less workload on myself. I was doing so much in 200 level. That was the year I also failed ICAN, and I was in too much school work.",
+        "I would have told myself to reduce what I was doing and focus on a few things instead of doing everything at once."
+      ],
+      reaction:
+        "Her reflection is not simply about working harder. It is also about recognising limits and choosing where to put her energy."
+    },
+
+    {
+      heading: "The cost of doing so much",
+      q: "What did a typical week look like while you were balancing school, ICAN, ministry and the foundation?",
+      a: [
+        "It's crazy. I don't think anybody wants to live my life. There were some weeks I was running like a machine.",
+        "I could go four weeks on a marathon of being busy, running everything, but I knew I would spend one week being sick after. I've landed in the hospital a number of times.",
+        "My life was always very chaotic. There were definitely times I would get overwhelmed, block out everything, and go again the next day."
+      ]
+    },
+    {
+      q: "How did you organise your time when so many people needed you?",
+      a: [
+        "One thing I always did was set structures for my day. I would literally plan my whole day minute by minute. I knew what I was doing every minute, and I prioritised by season.",
+        "In my final year, I started reading from the first day of class. Whatever the teacher taught on the first day, I would read it before the next class.",
+        "I realised I didn't particularly have the time every other person had. So I accepted the truth about myself: 'Okay, I'm busier than everybody. Fine. Accept it. Now work with that.'"
+      ],
+      pull:
+        "“What kept me going on top of all this was my goals, God and structure.”"
+    },
+    {
+      q: "Did you ever feel you were missing out on the usual university experience?",
+      a: [
+        "There are seasons. In exam period, I don't take nonsense. Even people saying they want to see me about one life issue or the other, I would tell them, 'I'm reading, come back later.'",
+        "There are also seasons that are more lenient, because, having been reading since the beginning of the semester, maybe in the middle of the semester I can say, 'Oh, I can go out. I can see people. I can have a little fun. I can relax.'",
+        "I won't feel like I'm missing out, because I know I'm doing it for my future."
+      ]
+    },
+    {
+      q: "What did carrying so many responsibilities teach you about ambition?",
+      a: [
+        "I think it's the motive. What's my motive? Why do I want to do what I'm about to do right now?",
+        "Is it just because I want to get better at my work and know more, or is it because I'm trying to compare myself with other people and feeling left behind? The motive is what lets me know whether I'm being ambitious or just putting pressure on myself."
+      ],
+      reaction:
+        "For Blossom, ambition becomes unhealthy when it is driven by comparison rather than a genuine desire to grow."
+    },
+
+    {
+      heading: "5. Love, timing and her mother's comment",
+      q: "Did you fall in love while you were in university?",
+      a: [
+        "Oh yes, I did. And I feel like it was one of the things that even helped me. I believe love is beautiful.",
+        "I fell in love in July, at the end of my 300 level, when I was about to enter final year. I was still writing ICAN then, my professional papers. I'm glad I did.",
+        "He's a nice guy, and he has supported me all the way till now. He helped me pass my exams, because he would get me nice things, support me, encourage me, encourage me, encourage me."
+      ],
+      pull: "“I believe love is beautiful.”"
+    },
+    {
+      q: "How did being in a relationship fit into a life that was already so busy?",
+      a: [
+        "I feel like it was one of the things that even helped me. He supported me and encouraged me while I was still writing my professional papers.",
+        "So I think love is even one of the things that help."
+      ],
+      reaction:
+        "In Blossom's account, her relationship was a source of support during a demanding period rather than something she described only as a distraction."
+    },
+    {
+      q: "You mentioned that your mother used to comment on dating during university. What did she say?",
+      a: [
+        "My mom used to say, 'Four years in school, zero man? It's not good.'"
+      ],
+      reaction:
+        "It is a memorable line from the interview. Blossom shared it while explaining her own experience of falling in love near the end of university."
+    },
+    {
+      q: "Did your parents set rules about dating, or make a decision about when you could be in a relationship?",
+      a: [
+        "The interview records Blossom's comment about her mother's view, but it does not establish whether her parents set a formal rule, gave permission, or made a specific decision about her relationship."
+      ],
+      editorialNote:
+        "Follow up with Blossom before publishing an answer to this question. Do not present a parental rule or approval as fact without her confirmation."
+    },
+    {
+      q: "What would you say to students who are wondering whether they should date while in university?",
+      a: [
+        "I don't advise it in the early years, but if you're almost graduating or entering final year, it's not a bad thing to consider."
+      ],
+      reaction:
+        "That is Blossom's personal view from her own experience, not a rule that every student needs to follow."
+    },
+
+    {
+      heading: "The work and purpose beyond her degree",
+      q: "What did Zoe Foundation do while you were in school?",
+      a: [
+        "I led a foundation called Zoe Foundation. While in school, I built and led the foundation. We helped students who were in need during test and exam seasons. We gave them money and foodstuff, basically money, when they needed it."
+      ],
+      reaction:
+        "Alongside her own studies, she created space to help other students facing financial need during demanding academic periods."
+    },
+    {
+      q: "You also built and led Wildfire Movement. How does ministry fit into your life?",
+      a: [
+        "I'm also a pastor. I built and led a ministry while in school called Wildfire Movement. It clocked two years in September at the time of the interview.",
+        "I think knowing God at an early age really influenced my life decisions. There's a sense of purpose that knowing God came with. God is the greatest influence of my life, honestly."
+      ]
+    },
+    {
+      q: "What role did faith play when things did not go according to plan?",
+      a: [
+        "I just know that I can't give up. God was always there rooting for me: 'Okay, girl, you have to go again. This is the goal. You have not reached where you are going.'",
+        "What kept me going was my goals, God and structure."
+      ]
+    },
+    {
+      q: "How did you discover internships and other opportunities?",
+      a: [
+        "For internships, I had to find those myself. I realised there were a lot of opportunities people were missing out on because they did not have information.",
+        "I found friends who were interested in what I was interested in. When I went for the internship at KPMG, I went with two of my friends. Only three of us were from our university, and all three of us applied: me, Zanab and Josephine.",
+        "We joined WhatsApp groups that sent links for scholarships and internships. I joined a lot, so whenever I saw any opportunity, I just applied."
+      ],
+      reaction:
+        "Her experience highlights the value of information, peer networks and applying consistently rather than waiting for opportunities to arrive."
+    },
+    {
+      q: "What would you advise a student who has no connections or anyone to guide them?",
+      a: [
+        "They should start by applying for internships and scholarships. That's it. And they should focus on getting a good CGPA.",
+        "For someone who doesn't have any connections, still apply to internships and scholarships by yourself. You don't need connections for that."
+      ]
+    },
+    {
+      q: "How important were your friends during university?",
+      a: [
+        "We are four girls, and the four of us led our department till we graduated: Toby, Zanab, me and Aobi.",
+        "We have our group. We have our meetings. When one person is down, everybody shows up for that one person. When one person is not able to read, everybody shows up for that one person and helps put the book in their head.",
+        "We're always talking, always sharing information. From my OG team, we always support one another, so it's very important."
+      ],
+      reaction:
+        "Her journey was not a solo achievement. Friendship brought encouragement, accountability and shared access to opportunities."
+    },
+
+    {
+      heading: " The person people do not always see",
+      q: "Do people sometimes see your achievements before they see you as a person?",
+      a: [
+        "Yes, very normal, and I'm already used to it. Everybody just sees my achievements and what I do, and also the fact that, 'Oh, woman of God.' Many people don't know me, me.",
+        "But I have friends who see me for me, so that's totally fine."
+      ]
+    },
+    {
+      q: "What is something people might not expect about you?",
+      a: [
+        "That I'm hilarious. I'm so funny. I'm just a girl who wants to play most of the time, and I don't take life seriously.",
+        "Every single thing has to be funny. I feel like Nigeria has already had enough, so why should we be holding things to our chest? Let's just laugh about everything."
+      ]
+    },
+    {
+      q: "Has being young ever made people underestimate you?",
+      a: [
+        "A lot of people don't believe my age. A lot. Even when I was younger, people didn't believe me.",
+        "People sometimes look at you in a weird way, overlook the things you say, or don't take you seriously. People just think, 'Oh, you're young. What are you saying?'"
+      ],
+      reaction:
+        "Being young helped her reach milestones early, but it also meant having to deal with people who questioned her age or took her less seriously."
+    },
+    {
+      q: "How do you deal with criticism and the pressure to keep achieving?",
+      a: [
+        "There's definitely pressure from every side, every angle. Everybody has advice about what I should do next.",
+        "But I don't live in pressure. I live in the will of God for my life. I've learned to block out the noise. At the end of the day, they can only advise me. They can't live my life for me."
+      ]
+    },
+    {
+      q: "You have also talked about an interest in acting and filmmaking. Where did that come from?",
+      a: [
+        "I remember that when I was younger I used to watch Yoruba mommy-and-daddy movies a lot, and I used to act every single day.",
+        "I entered a creative competition in my 300 level by mistake. I was doing spoken word, but I was also acting it out by myself. I kept thinking I would drop out because I entered by mistake, but I never dropped.",
+        "I realised I was good at it. I can think of stories, write scripts and act. It's something I'm really interested in, and I believe I'll venture into it very soon."
+      ],
+
+    video: {
+    youtubeId: "s7CZ1pDf6Jk",
+    title: "Blossom talks about her love for acting",
+},
+    },
+
+    {
+      heading: " What success means now",
+      q: "Has achieving so much changed how you define success?",
+      a: [
+        "The more certificates I gather, the more I realise that life is not really about certificates. They are great, but it is so fickle. Everybody celebrates you today, and tomorrow everybody has forgotten about it.",
+        "Success is not just about achieving certificates. It's about doing what God would have me do. So it's both of them. It's balance."
+      ],
+      pull:
+        "“Success is not just about achieving certificates. It's about doing what God would have me do.”"
+    },
+    {
+      q: "How do you know when you're being ambitious and when you're putting unnecessary pressure on yourself?",
+      a: [
+        "What's my motive? Why do I want to do what I'm about to do right now?",
+        "Is it just because I want to get better at my work and know more, or is it because I'm trying to compare myself with other people and feeling left behind?"
+      ]
+    },
+    {
+      q: "What would you tell someone who feels behind because other people their age seem to be achieving more?",
+      a: [
+        "Everybody's journey is different. You're not me. I'm not you either.",
+        "If at 18 you're just getting admission, that's great. You just work on being the best and doing what you're supposed to do well.",
+        "Don't compare yourself with anybody. You can trust God with your life. Trust God for favour, for speed, for grace, for mercy."
+      ],
+      pull: "“Everybody's journey is different.”"
+    },
+    {
+      q: "What would you tell your younger self?",
+      a: [
+        "I would first tell her how great a woman she was going to become. I would tell her to never look down on herself, to never give up on God, and to always keep going no matter what."
+      ],
+      pull:
+        "“Never look down on yourself, never give up on God, and always keep going.”"
+    }
+  ],
+
+  takeawaysHeading: "What Blossom's journey reminds us",
+  takeaways: [
+    "A supportive family can encourage ambition without forcing everyone to follow the same path.",
+    "A failure can delay a plan without ending the journey.",
+    "Doing too much has a cost. Focus and rest matter alongside ambition.",
+    "A supportive relationship can be part of someone's journey, but timing and personal circumstances differ.",
+    "Information, networks and consistent applications can help students find opportunities.",
+    "Friendship is powerful when people genuinely show up for one another.",
+    "Achievements are part of a person's story, not the whole story.",
+    "Your timeline does not have to look like anybody else's."
+  ],
+
+  takeawaysPull: "“Everybody's journey is different.”",
+
+  outro: [
+    "Blossom's story is full of milestones, but the most revealing moments are not only the ones that went according to plan. They are the moments she cried over an exam, reconsidered the workload she had placed on herself, accepted support from friends, and learned that one failure did not have to define her.",
+    "Her story also reminds us that there is a person behind every achievement: someone with a family, friendships, love, faith, interests and ambitions that may not fit neatly into a CV.",
+    "For students still finding their way, her message is simple: stop measuring your life against someone else's timeline. Keep doing your work, build the right structures, ask for help when you need it, and keep going."
+  ]
+},
+
+  {
+    slug: "oluwapelumi-aikomo",
+    number: "04",
     format: "interview",
-    builderSlug: "arise-blossom",
-    interviewee: "Arise Blossom",
-    href: "/stories/first-class-chartered-accountant-at-18-arise-blossom",
-    tag: "BTG Full Interview · University of Ilorin",
-    title: "First Class, Chartered Accountant at 18: Arise Blossom's Story",
-    subtitle: "The woman behind the achievements",
+    interviewee: "Oluwapelumi Aikomo",
+
+    // Keep these two values if you already have different ones in your
+    // existing Story 04 setup.
+    href: "/stories/oluwapelumi-aikomo",
+    builderSlug: "oluwapelumi-aikomo",
+    contributorSlug: "Ayinde Abdulsobur",
+
+    tag: "BTG Full Interview · Surveying & Geoinformatics",
+
+    title: "The Long Road: The Full Story of Oluwapelumi Aikomo",
+
+    subtitle:
+      "Surveying, setbacks, loss, leadership, research, faith and the journey behind the graduate",
+
     excerpt:
-      "Arise Blossom graduated with a first class from the University of Ilorin and completed her accounting qualifications at 18. But behind the certificates was a student balancing academics, ICAN, internships, a foundation, ministry, friendships, failure, pressure and the search for a life beyond achievements.",
-    meta: "Arise Blossom · University of Ilorin",
-    image: "/assets/stories/blossom.jpg",
-    imageAlt:
-      "Arise Blossom, first-class graduate and chartered accountant from the University of Ilorin",
-    heroQuote:
-      "Failure is always part of the story.",
+      "Oluwapelumi Aikomo's journey into surveying was not exactly the plan. From wanting to study architecture to finding herself at the Federal School of Surveying, moving from ND to a BSc through Direct Entry, surviving surgery, losing people she loved, presenting research internationally and leading students, her university journey was shaped by uncertainty, resilience, people and opportunity.",
+
+    image: "/assets/stories/pelumi.jpg",
+    imageAlt: "Oluwapelumi Aikomo",
+
+    heroQuote: "Always make sure you learn, unlearn and relearn.",
+
     shareText:
-      "Read Arise Blossom's story on Before They Graduate",
-    footerNote: "Story 03 · The Archive · Before They Graduate",
+      "Read Oluwapelumi Aikomo's story on Before They Graduate",
+
+    footerNote:
+      "Story 04 · The Archive · Before They Graduate",
 
     intro: [
-      "What happens when someone graduates with a first class, becomes a chartered accountant at 18, leads a foundation, builds a ministry and still tries to make room for a life beyond achievements?",
-      "That was the conversation I had with Arise Blossom, a first-class Economics graduate of the University of Ilorin.",
-      "Behind the certificates was a much more complicated story: starting professional exams in secondary school, failing an ICAN stage, managing an intense academic workload, finding internships, building a support system and learning that achievement alone cannot define a person's life.",
-      "This is the conversation with the woman behind the achievements."
+      "Oluwapelumi Aikomo's journey through higher education did not begin with a perfectly planned career path. She once wanted to study architecture, but family circumstances redirected her towards surveying. What began as a course of study she was not initially excited about eventually became a field through which she discovered research, leadership, international opportunities and more about herself.",
+
+      "Her journey took her from the Federal School of Surveying to Ajayi Crowther University, where she entered at 200 level through Direct Entry. The transition was not easy. She had to adjust to a new environment and different approaches to computation while carrying the weight of a demanding academic programme.",
+
+      "There were also moments that had nothing to do with grades. In 300 level, she underwent surgery and returned to school just days later because examinations were approaching. In 500 level, she experienced the loss of her aunt and later lost a close friend from the Federal School of Surveying. At the same time, she was preparing for FIG, completing her project and trying to finish her degree.",
+
+      "Yet the story is not only about surviving difficult seasons. It is also about the opportunities that came afterwards: presenting research, travelling for an international conference, meeting people from different countries, discovering what surveying means beyond measuring land, taking on student leadership and learning how to make opportunities work for her.",
+
+      "This is Oluwapelumi's story in her own words — a story about changing direction, surviving difficult seasons, learning from rejection, finding support and continuing to move forward."
     ],
 
     qa: [
       {
-        heading: "Meet Blossom",
-        q: "For someone who is just hearing about you for the first time today, who exactly is Blossom? Tell us a little about yourself.",
+        heading: " Meet Oluwapelumi",
+
+        q: "Before we get into everything that happened, who is Oluwapelumi Aikomo?",
+
         a: [
-          "My name is Blossom. I am a first-class Economics graduate from the University of Ilorin. Beyond my academic achievements, I also pursued my professional skills, so I'm also a chartered accountant. I finished all my accounting exams at 18.",
-          "I also interned at a few places, including KPMG and Credit Direct. I led a foundation called Zoe Foundation while in school, where we helped students who were in need during test and exam seasons.",
-          "I'm also a pastor. I built and led a ministry while in school called Wildfire Movement. I'm a very funny person too. I believe I'm hilarious, but it has to be my friends to know that part about me."
+          "I'm a graduate. I studied Surveying and Geoinformatics.",
+
+          "I'm interested in research and writing content. I'm not really into video."
         ],
-        pull: "“I'm a very funny person.”"
+
+        reaction:
+          "A simple introduction, but there is much more behind the person and the degree."
       },
 
       {
-        q: "What were you like growing up, and what were you interested in as a child?",
+        heading: " The career she originally wanted",
+
+        q: "When you were younger, what did you originally want to become?",
+
         a: [
-          "I was one of those children who were old in a child's body. At age six or seven, I was already trying to be a mommy. I would take care of my younger sibling like I'm a mother.",
-          "I didn't really like toys or playing. I liked serious things, like Yoruba movies and acting mommy and daddy. I was always interested in taking care of children."
+          "I wanted to study architecture.",
+
+          "But my mother didn't really support the idea. I eventually got admission into LAUTECH to study Urban and Regional Planning.",
+
+          "But my family redirected me towards the Federal School of Surveying because I liked technical drawing.",
+
+          "That was actually how I started getting introduced to surveying."
         ],
-        reaction: "I never expected this part of the story."
+
+        reaction:
+          "Architecture was the original plan. Surveying was the direction life eventually pushed her towards."
       },
 
       {
-        q: "You entered university very young. What was that experience like?",
-        a: [
-          "I got admission at 14 and entered at 15 because there was a strike, so I graduated later than I should have.",
-          "I graduated with my elder brother. We convocated together a few days ago, and he's 21.",
-          "There was no pressure in my family. Everybody had their own personal ambitions, and we focused on what we wanted to do while supporting each other."
-        ]
-      },
+        q: "How did you actually discover surveying at the Federal School of Surveying?",
 
-      {
-        heading: "The girl who started early",
-        q: "How did you start pursuing professional qualifications at such a young age?",
         a: [
-          "I started my ICAN when I was in SS3. In SS2 I had written my external exams and done well, so SS3 just felt like, what's even the point? Let me find something else to do.",
-          "I found out about ICAN and realised I could take a professional exam. I already had the required result, so I started.",
-          "I chose Economics because I wanted to continue my ICAN without studying Accounting and repeating the same courses and costs."
-        ]
-      },
+          "I learned more about surveying from a woman at the Federal School of Surveying.",
 
-      {
-        q: "You eventually failed one of your ICAN stages. What did that experience do to you?",
-        a: [
-          "I feel like ICAN can humble the smartest people. I failed one stage, and when I retook it, I passed.",
-          "That failure was tough. I checked my result on five other people's phones because I couldn't believe it. I cried every single day.",
-          "I was asking myself if I wasn't smart or if I didn't know books. But after crying, I wiped my tears, spoke to God about it, and went again.",
-          "Now I'm so glad I failed. Failure taught me a lot. I thought I wasn't going to survive it, but now I'm no longer scared to fail."
+          "At first, I didn't really like the school because the campus was small. I was still thinking about architecture.",
+
+          "But I stayed. Eventually, I became more comfortable with surveying and continued with it."
         ],
-        pull: "“Failure is always part of the story.”"
+
+        pull:
+          "“I liked technical drawing, but I eventually realised surveying was what I preferred.”"
       },
 
       {
-        heading: "What people don't see",
-        q: "What did a typical week look like for you while you were balancing school, ICAN, your foundation and your other responsibilities?",
-        a: [
-          "It was crazy. I don't think anybody wants to live my life.",
-          "There were some weeks I was running like a machine. I could go four weeks on a marathon of being busy, running everything, and then spend one week being sick after.",
-          "My life was always very chaotic. There were definitely times I would get overwhelmed, block out everything, and go again the next day.",
-          "One thing I always did was set structures for my day. I would plan my whole day minute by minute and prioritise by season."
-        ]
-      },
+        heading: " The ND that took longer than expected",
 
-      {
-        q: "What kept you going when everything became overwhelming?",
+        q: "What was your experience at the Federal School of Surveying like?",
+
         a: [
-          "I just know that I can't give up.",
-          "What kept me going was my goals, God and structure.",
-          "As much as you desire something, it's still better to put structures in place, because that's what will save you."
+          "My ND was supposed to take two years, but it ended up taking three years because of the strike.",
+
+          "After finishing there, I continued my education by starting a BSc at Ajayi Crowther University in 2022 through Direct Entry at 200 level."
         ],
-        pull: "“What kept me going was my goals, God and structure.”"
+
+        reaction:
+          "The route was longer than expected, but it eventually opened the door to a second university experience."
       },
 
       {
-        q: "How did you decide what deserved your time and what you had to say no to?",
-        a: [
-          "It was just times and seasons, and understanding that I'm different from everybody.",
-          "I realised I didn't particularly have the time every other person had. So I accepted the truth about myself: I'm busier than everybody. Fine. Accept it. Now work with that.",
-          "In exam periods, I would fully focus on my books. During more relaxed periods, I could go out, see people and have fun.",
-          "I didn't feel like I was missing out because I knew I was doing it for my future."
-        ]
-      },
+        q: "What was it like moving from the Federal School of Surveying into university at 200 level?",
 
-      {
-        heading: "Opportunity, career and support",
-        q: "How did you discover internships and other opportunities?",
         a: [
-          "For internships, I had to find those myself. I realised there were a lot of opportunities people were missing out on because they did not have information.",
-          "I found friends who were interested in the same things I was interested in. When I went for the internship at KPMG, I went with two of my friends.",
-          "We joined groups that shared scholarships and internship opportunities. Whenever I saw an opportunity, I applied.",
-          "I joined a lot of groups because I knew I had to be where the information was."
+          "200 level was very tough.",
+
+          "I was entering a completely new environment and some of the computation was different from what I had already learnt at the Federal School of Surveying.",
+
+          "I had to reach out to people and ask for help. I remember reaching out to friends, including Stella Bolu.",
+
+          "I started with a 4-point CGPA, and that encouraged me because it showed me that I could actually do well in the new environment."
         ],
-        pull: "“Information helps you fly.”"
+
+        pull:
+          "“I started with a four point, and that encouraged me.”"
       },
 
       {
-        q: "For a student without connections, where would you advise them to start?",
-        a: [
-          "They should start by applying for internships and scholarships. That's it.",
-          "They should also focus on getting a good CGPA. Even if they're not able to get internships and scholarships in school, if they're able to get a really good CGPA after school, opportunities will open up.",
-          "You don't need connections to apply for internships and scholarships. Focus on your CGPA and come out with something good."
-        ]
-      },
+        heading: " 300 level — when school continued despite surgery",
 
-      {
-        q: "How important was your support system?",
+        q: "You went through surgery during your university journey. What happened?",
+
         a: [
-          "I had a group of friends. We are four girls, and the four of us led our department till we graduated.",
-          "When one person is down, everybody shows up for that person. When one person is not able to read, everybody shows up and helps.",
-          "We are always talking and sharing information. We support one another.",
-          "Your support system should be people who have like minds, just like you."
+          "I had surgery in 300 level.",
+
+          "I returned to school on a Friday after having surgery earlier that same week because examinations were starting.",
+
+          "It was not something I could simply pause school for. I had to return and continue."
         ],
-        reaction: "The right people around you can make a huge difference."
+
+        reaction:
+          "That was one of those moments where university life did not wait for you to recover."
       },
 
       {
-        heading: "The person beyond the achievements",
-        q: "Do you ever feel like people see your achievements before they see you as a person?",
-        a: [
-          "Yes, very normal, and I'm already used to it.",
-          "Everybody just sees my achievements and what I do. Many people don't know me, me.",
-          "But I have friends who see me for me, so that's totally fine."
-        ]
-      },
+        q: "What helped you get through that period?",
 
-      {
-        q: "What's something most people don't know about you?",
         a: [
-          "That I'm hilarious. I'm so funny.",
-          "I'm just a girl who wants to play most of the time, and I don't take life seriously.",
-          "Everything has to be funny. I feel like Nigeria has already had enough, so why should we be holding things to our chest? Let's just laugh about everything."
-        ]
-      },
+          "My roommates supported me.",
 
-      {
-        q: "Do you have a quote or principle you live by?",
-        a: [
-          "I don't think I have a quote I live by. What I always say, and what I actually live by, is: trust God with your life.",
-          "Every single day I just know that He runs my life. So everywhere I go, I can never be stranded, because I trust God."
+          "The department and faculty also supported me.",
+
+          "There was a particular friend who would walk me from class back to the hostel. Other people also helped me with food.",
+
+          "Those things mattered because I was dealing with recovery while still trying to keep up with school."
         ],
-        pull: "“Trust God with your life.”"
+
+        reaction:
+          "Some of the most important parts of university life are the people who show up when things become difficult."
       },
 
       {
-        q: "How do you know when you're being ambitious and when you're putting unnecessary pressure on yourself?",
-        a: [
-          "I think it's the motive. What's my motive? Why do I want to do what I'm about to do right now?",
-          "Is it just because I want to get better at my work and know more, or is it because I'm trying to compare myself with other people and feeling left behind?",
-          "The motive is what lets me know whether I'm being ambitious or just putting pressure on myself."
-        ]
-      },
+        heading: "400 level — research, conference and new opportunities",
 
-      {
-        q: "Has achieving so much changed how you define success?",
+        q: "What changed when you got to 400 level?",
+
         a: [
-          "The more certificates I gather, the more I realise that life is not really about certificates.",
-          "They are great, but they are fickle. Everybody celebrates you today, and tomorrow everybody has forgotten about it.",
-          "It makes me ambitious, but it also reminds me that there has to be more to life than certificates.",
-          "Success is not just about achieving certificates. It's about doing what God would have me do. So it's both of them. It's balance."
+          "I was excited about getting an internship.",
+
+          "I also attended my first conference in Enugu and had my first experience presenting a research paper.",
+
+          "People like Peter Jola and Clementina supported me through that period."
         ],
-        pull: "“Life is not really about certificates.”"
+
+        reaction:
+          "By 400 level, the story was becoming bigger than simply passing courses."
       },
 
       {
-        q: "If you could go back to your first day in university, would you do anything differently?",
+        q: "What did those opportunities mean to you?",
+
         a: [
-          "Maybe in my 200 level I would have put less workload on myself.",
-          "I was doing so much in 200 level. That was also the year I failed ICAN. I would have told myself to reduce what I was doing and focus on a few things instead of doing everything at once."
+          "They exposed me to a different side of surveying and research.",
+
+          "It was my first conference experience and my first time presenting research in that kind of environment.",
+
+          "It made me realise that there were opportunities outside the normal classroom experience."
         ]
       },
 
       {
-        heading: "To the person who feels behind",
-        q: "If a young person feels behind because people their age seem to be achieving more, what would you want them to understand?",
-        a: [
-          "Everybody's journey is different.",
-          "If at 18 you're just getting admission, that's great. You just work on being the best and doing what you're supposed to do well.",
-          "The moment you begin to feel pressure, check it and control it, because we all have different journeys.",
-          "Don't compare yourself with anybody. Do better, do your work better, focus on your work, but don't compare yourself with anybody.",
-          "And also, you can trust God with your life."
-        ]
-      },
+        heading: " 500 level — the hardest chapter",
 
-      {
-        q: "What would you tell the younger Blossom who was just starting this journey?",
+        q: "You described 500 level as the toughest part of your university journey. Why?",
+
         a: [
-          "I would first tell her how great a woman she was going to become.",
-          "I would tell her to never look down on herself, to never give up on God, and to always keep going no matter what."
+          "500 level was really tough.",
+
+          "I had planned to attend FIG and I also wanted a research topic that would not make the final year unnecessarily stressful.",
+
+          "Then, in December, I lost my aunt while I was preparing for examinations.",
+
+          "In the second semester, I also lost a very close friend from the Federal School of Surveying who was studying at Ajayi Crowther University with me.",
+
+          "He was my classmate and reading partner, and we were very close. Losing him affected me deeply."
         ],
-        pull: "“Never look down on yourself. Never give up. Always keep going.”"
+
+        pull:
+          "“Education became a very toxic relationship for me.”"
+      },
+
+      {
+        q: "What made that period even harder?",
+
+        a: [
+          "At the same time, I was dealing with FIG, the application and grant process, travel preparations, final examinations and my project.",
+
+          "There were so many things happening at once.",
+
+          "I had even taken books with me to South Africa, but I didn't really read them because I was focused on preparing for my presentation.",
+
+          "When I returned, I defended my project within days. My examinations were the following week.",
+
+          "It was a lot to handle at once."
+        ],
+
+        reaction:
+          "This was not simply a demanding academic semester. It was grief, travel, research, project work and examinations happening almost together."
+      },
+
+      {
+        q: "After everything you went through in 500 level, how did you finally finish?",
+
+        a: [
+          "I returned and defended my project within days.",
+
+          "Then I had my examinations the following week.",
+
+          "Eventually, I got a meaningful CGPA, and I was grateful to my department for everything."
+        ],
+
+        reaction:
+          "She did not describe the ending as perfect. She described it as something she was grateful to have survived."
+      },
+
+      {
+        heading: " Why she ended up liking surveying",
+
+        q: "Looking back, do you think surveying was the wrong choice compared with architecture?",
+
+        a: [
+          "My mother probably understood my personality better than I did at the time.",
+
+          "Architecture looked like a very creative field, and I didn't think I was creative. My sister is the creative one.",
+
+          "I liked technical drawing, but looking back now, I think I actually preferred surveying."
+        ],
+
+        pull:
+          "“I liked technical drawing, but I preferred surveying.”"
+      },
+
+      {
+        q: "What does surveying mean to you now?",
+
+        a: [
+          "Surveying is more than just measuring land.",
+
+          "I see it as something connected to the earth generally, including areas like public health, space and land management.",
+
+          "The more I learnt about the profession, the more I realised how broad it actually is."
+        ],
+
+        reaction:
+          "Her understanding of surveying expanded far beyond the traditional idea of simply measuring land."
+      },
+
+      {
+        heading: " FIG and seeing surveying from another perspective",
+
+        q: "What stood out to you about FIG?",
+
+        a: [
+          "FIG exposed me to an international conference environment.",
+
+          "There were breakout rooms, working groups and conversations around research.",
+
+          "I met people from different institutions and different nationalities.",
+
+          "I also learnt that surveying is not exactly the same everywhere. Different countries and institutions approach parts of the profession differently."
+        ]
+      },
+
+      {
+        q: "What was it like meeting surveyors and students from other countries?",
+
+        a: [
+          "I met a lady from South Africa who was studying mining surveying.",
+
+          "I also met people from places like Zimbabwe and people from different institutions.",
+
+          "It was interesting seeing how broad the surveying profession is and how many different directions people can take within it."
+        ],
+
+        reaction:
+          "The conference turned surveying from a university course into something much larger and more international."
+      },
+
+      {
+        heading: " Rejection and finally getting the FIG opportunity",
+
+        q: "Have you experienced rejection during your journey?",
+
+        a: [
+          "I applied for FIG mentorship opportunities several times.",
+
+          "I applied around 2023, 2024 and 2025, and there were times I kept getting rejected.",
+
+          "Eventually, I stopped applying for a while."
+        ],
+
+        reaction:
+          "Sometimes rejection doesn't just hurt once. Repeated rejection can make you stop trying."
+      },
+
+      {
+        q: "What was it like when your FIG presentation was finally accepted?",
+
+        a: [
+          "I had a feeling that something good had happened.",
+
+          "Before opening the email, I was shaking.",
+
+          "When I finally saw the acceptance, I cried because I was so happy.",
+
+          "I thanked God."
+        ],
+
+        pull:
+          "“I was shaking before I opened the email.”"
+      },
+
+      {
+        heading: " What university taught her beyond academics",
+
+        q: "Apart from academics, what has surveying and university taught you about yourself?",
+
+        a: [
+          "Surveying helped me meet people.",
+
+          "It helped me discover myself and also discover opportunities I didn't know existed.",
+
+          "The people I met and the experiences I had helped me understand more about what I could do."
+        ]
+      },
+
+      {
+        q: "If you could advise yourself before entering university, what would you say?",
+
+        a: [
+          "Study hard.",
+
+          "You can start with a four point, and you should aim for a first class if that's what you want.",
+
+          "But don't become too comfortable with your current position."
+        ],
+
+        pull:
+          "“Don't be too comfortable.”"
+      },
+
+      {
+        q: "You started strongly academically, but you didn't finish with the exact outcome you initially wanted. How do you see that now?",
+
+        a: [
+          "I started with a four point, but I didn't finish with a first class.",
+
+          "For me, that is part of the journey. It taught me not to become too comfortable and to keep working."
+        ]
+      },
+
+      {
+        heading: "How she balances academics, politics and everything else",
+
+        q: "How did you manage academics while also being involved in politics, social media and other things?",
+
+        a: [
+          "I do academics, politics, social media and other things.",
+
+          "I discovered that I don't necessarily need hours and hours before I can focus. Sometimes ten minutes of serious reading can work for me.",
+
+          "Ten to twenty minutes of focused reading can be enough for me to understand or retain something.",
+
+          "I also post about GIS because it helps me retain some of what I have learnt academically."
+        ],
+
+        reaction:
+          "Her approach was not about pretending she had unlimited time. It was about finding a system that worked for her."
+      },
+
+      {
+        q: "What role does your phone and social media play in your life?",
+
+        a: [
+          "I'm always on my phone and generally available.",
+
+          "Social media has also become a way for me to share what I am learning, especially things around GIS."
+        ]
+      },
+
+      {
+        heading: "Money, private university and opportunity",
+
+        q: "How much did money affect your university experience?",
+
+        a: [
+          "Private university costs millions of naira, so money is obviously part of the experience.",
+
+          "Food was one of the main things that money went towards.",
+
+          "My parents and other people also supported me, especially when opportunities like conferences required additional money."
+        ],
+
+        reaction:
+          "Academic opportunities are not always only about qualification. Sometimes there is a financial barrier attached to simply being able to attend."
+      },
+
+      {
+        heading: "The uncertainty that started long before university",
+
+        q: "Did you always see yourself as a brilliant student?",
+
+        a: [
+          "No. As a child, I wasn't the child everyone considered particularly bright.",
+
+          "At one point, my parents were even asked to allow me to repeat a primary school class, but my father refused."
+        ]
+      },
+
+      {
+        q: "What was secondary school and WAEC like for you?",
+
+        a: [
+          "WAEC came with a lot of anxiety.",
+
+          "I prayed that I would not be the first person in my family to have to write it twice."
+        ]
+      },
+
+      {
+        q: "Did your family have a particular career path they wanted for you?",
+
+        a: [
+          "My parents wanted me to go into the commercial class and study something like accounting.",
+
+          "My grandmother told me to pray about whether I should go towards science or accounting.",
+
+          "I believed God was telling me I should become an architect."
+        ],
+
+        reaction:
+          "Ironically, architecture did not happen — and surveying became the path she eventually embraced."
+      },
+
+      {
+        q: "Was there already an architecture connection in your family?",
+
+        a: [
+          "My grandfather, who was actually my mother's cousin but whom we called grandpa, was an architect.",
+
+          "My grandmother studied civil engineering.",
+
+          "My grandfather even gave me an architectural table."
+        ]
+      },
+
+      {
+        heading: " Leadership and the pressure that comes with it",
+
+        q: "You also took on leadership responsibilities. What was that experience like?",
+
+        a: [
+          "I didn't really experience discrimination because I was a woman.",
+
+          "But student leadership, especially Southwest coordination, was stressful.",
+
+          "There were times I considered giving up.",
+
+          "People could send messages at 3 a.m. You had to keep your data on and remain available.",
+
+          "You also had to learn how to control your emotions because people were always coming to you with different issues."
+        ],
+
+        reaction:
+          "Leadership taught her that being responsible for people can demand a different kind of emotional discipline."
+      },
+
+      {
+        heading: "15. The question she answered very quickly",
+
+        q: "And what about love in university?",
+
+        a: [
+          "No, there's no love in that school.",
+
+          "Don't even bother looking for it."
+        ],
+
+        reaction:
+          "That answer did not need much explanation."
+      },
+
+      {
+        heading: " The advice she wishes students would hear earlier",
+
+        q: "What advice would you give students who are still in university?",
+
+        a: [
+          "Don't be shy.",
+
+          "Start being vocal on social media early.",
+
+          "Don't care too much about what people are going to say about you. Be yourself and be authentic.",
+
+          "Keep trying even after rejection. I'm still trying things myself."
+        ]
+      },
+
+      {
+        q: "What made you keep trying after people told you that you hadn't achieved the things you said you would?",
+
+        a: [
+          "Someone once told me that I hadn't achieved what I said I would achieve.",
+
+          "But I kept going. I wrote a book and finished it.",
+
+          "Sometimes you just have to keep working even when the people around you don't see the result yet."
+        ],
+
+        reaction:
+          "The point was not that everything worked immediately. It was that she kept moving."
+      },
+
+      {
+        q: "What should students do during school breaks if they are unsure about their career direction?",
+
+        a: [
+          "Use the breaks to explore different career options.",
+
+          "Get experience in engineering projects or cadastral work.",
+
+          "Try different areas of the profession instead of waiting until graduation before finding out what you actually like.",
+
+          "There are areas I haven't tried myself, like hydrography, partly because I'm scared of water and I live in Ibadan."
+        ]
+      },
+
+      {
+        q: "How important is the kind of people you surround yourself with?",
+
+        a: [
+          "Surround yourself with the right people.",
+
+          "You also need to understand the difference between a classmate and a friend.",
+
+          "Your friends may be people who want scholarships, want to leave the country, want to create content or want to pursue different opportunities.",
+
+          "The important thing is having people around you who are also trying to become better."
+        ],
+
+        pull:
+          "“Know the difference between a classmate and a friend.”"
+      },
+
+      {
+        heading: " Her final message",
+
+        q: "If you could leave one message for students coming behind you, what would it be?",
+
+        a: [
+          "Always make sure you learn, unlearn and relearn."
+        ],
+
+        pull:
+          "“Always make sure you learn, unlearn and relearn.”"
+      },
+
+      {
+        q: "Is there anything else you are working on that people should look forward to?",
+
+        a: [
+          "I'm working on a book.",
+
+          "It will be released as an ebook, and the link will be attached when it is available."
+        ]
       }
     ],
 
-    takeawaysHeading: "A few things I took away from this conversation",
+    takeawaysHeading: "What Oluwapelumi's journey reminds us",
 
     takeaways: [
-      "Blossom's story is bigger than a first-class result or a professional qualification. Behind the achievements was a student who had to learn how to manage pressure, failure, responsibility and an unusually busy schedule.",
-      "One of the strongest parts of the conversation was her experience with failure. Failing an ICAN stage made her question herself, but eventually changed how she understood failure. Instead of seeing it as something that should define her, she learned to go again.",
-      "Her approach to opportunities was also straightforward: find information, join the right communities, apply and keep looking. She believes many students miss opportunities simply because they don't have access to the information.",
-      "And perhaps the biggest lesson was about comparison. Blossom's journey started early, but she doesn't believe everyone has to follow the same timeline. Her advice is simple: focus on your own journey and keep moving."
+      "A career path does not always begin with certainty. Oluwapelumi wanted architecture, but surveying became the path she eventually embraced.",
+
+      "Changing direction does not automatically mean choosing the wrong path. Sometimes the path you did not initially plan for becomes the one you eventually understand and appreciate.",
+
+      "Academic success is not a straight line. Her journey included a strong start, difficult semesters, surgery, grief, examinations, research, project work and moments of uncertainty.",
+
+      "Support matters. Friends, roommates, classmates, lecturers, departments and family members all played different roles at different points in her journey.",
+
+      "Opportunities often require persistence. Her repeated FIG applications and eventual acceptance show that rejection does not necessarily mean the opportunity is not for you.",
+
+      "International exposure can change how you understand your profession. FIG allowed her to see surveying through the experiences of people from different countries and institutions.",
+
+      "Students should not wait until graduation before exploring their profession. Internships, engineering projects, cadastral work, research, conferences and other experiences can help reveal what direction actually fits.",
+
+      "Leadership comes with a cost. Being available for people, handling messages at odd hours and suppressing emotional reactions can become part of the responsibility.",
+
+      "Your university journey is not only about your CGPA. It is also about the people you meet, the opportunities you discover, the failures you survive and the person you become.",
+
+      "The lesson she leaves behind is simple: keep learning, keep adjusting and keep growing."
     ],
 
-    takeawaysPull: "“Everybody's journey is different.”",
+    takeawaysPull: "“Always make sure you learn, unlearn and relearn.”",
 
     outro: [
-      "Blossom's story is a reminder that achievements can tell us what someone has done, but they don't always tell us what it took to get there.",
-      "There was the first class. The accounting qualification. The internships. The foundation. The ministry. The opportunities.",
-      "But there was also failure, pressure, exhaustion, uncertainty, support, faith, friendship and the decision to keep going.",
-      "At Before They Graduate, we're interested in the people behind the achievements and the stories behind the milestones.",
-      "This is Arise Blossom's story.",
+      "Oluwapelumi's story is not a straight success story. It is a story of changing direction, struggling with transition, surviving difficult academic seasons, losing people she loved and still finding reasons to keep moving.",
+
+      "She entered surveying through a path she did not originally choose. Years later, that same profession took her into research, conferences, international conversations and opportunities she could not have seen at the beginning.",
+
+      "There were moments when things did not work out: the ND that took longer than expected, the difficult transition to university, surgery, grief, rejection and the pressure of finishing everything at once.",
+
+      "But there were also people who showed up, opportunities that eventually opened, and experiences that helped her understand herself better.",
+
+      "For students still trying to figure things out, perhaps the most important part of her story is that the path does not have to make perfect sense from the beginning.",
+
+      "You can change direction. You can fail. You can be rejected. You can discover something new about yourself halfway through the journey.",
+
+      "What matters is that you keep learning, unlearning and relearning.",
+
+      "This is Oluwapelumi Aikomo's story.",
+
       "And this is Before They Graduate."
     ]
   },
+
 ];
 
 // Every story gets a flat `paragraphs` array for the search index.
@@ -458,6 +1255,7 @@ const withSearchText = stories.map((s) => ({
       ...(s.takeaways || []),
       ...(s.outro || []),
     ],
+    
 }));
 
 export default withSearchText;

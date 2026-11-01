@@ -113,7 +113,7 @@ const contributorStoryCount = contributor
             {item.heading && <h2 className="profile-section-title">{item.heading}</h2>}
 
             <div style={{ ...labelStyle, color: "var(--orange)" }}>
-               {story.interviewer || "Ayinde-the-creator"}
+               {story.interviewer || "Ayinde"}
               </div>
             <p style={{ fontWeight: 500, marginTop: 0 }}>{item.q}</p>
 

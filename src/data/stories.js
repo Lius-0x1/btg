@@ -1240,6 +1240,221 @@ const stories = [
     ]
   },
 
+  
+{
+  slug: "building-quant-while-in-university-malik",
+  number: "05",
+  format: "interview",
+  interviewee: "Malik",
+  href: "/stories/building-quant-while-in-university-malik",
+  builderSlug: "malik",
+  contributorSlug: "Ayinde Abdulsobur",
+  tag: "BTG Full Interview · Lagos State University",
+  title: "The Idea That Couldn't Sell Itself:How Malik on Building Quant While in University",
+  subtitle: "Building a startup, finding the right people, and learning to make an idea visible",
+  
+  excerpt:
+    "Malik is a 400-level Electronics and Computer Engineering student at LASU and a founder of Quant. He is not the technical person behind the product. Instead, he leads its brand design and product direction. We spoke about the student problem that inspired Quant, building with limited funds, managing a team, handling rejection, and why even a good idea needs someone willing to push it into the world.",
+  meta: "Malik · Lagos State University",
+  image: "/assets/stories/malik.jpg",
+  imageAlt: "Malik, founder of Quant and undergraduate at Lagos State University",
+  heroQuote: "A good idea will just sit there. It can't sell itself.",
+  shareText: "Read Malik's story on Before They Graduate",
+  footerNote: "Story 05 · The Archive · Before They Graduate",
+
+  intro: [
+    "Not every founder writes code. Not every person building a product is the one developing its technical features. Sometimes, the person helping to move an idea forward is the one thinking about how people experience it, how it is presented, and how to make it useful.",
+    "Malik is a 400-level student of Electronics and Computer Engineering at Lagos State University (LASU), a freelance brand designer, and a co-founder of Quant.",
+    "The idea behind Quant came from a problem he and his roommate experienced as students: getting academic information and learning materials often depended on knowing the right people and being comfortable enough to ask. They wanted to make that process easier.",
+    "In this conversation, Malik talks about building a product without being its technical developer, working with a team of students, balancing university with a startup, and learning that having a good idea is only the beginning."
+  ],
+
+  qa: [
+    {
+      heading: "The problem that started Quant",
+      pull: "“How can we solve this and make it simpler?”",
+      q: "Let's start with you. Who is Malik, and what are you currently doing at university?",
+      a: [
+        "My name is Malik. I'm a 400-level student at Lagos State University (LASU), in the Department of Electronics and Computer Engineering."
+      ],
+      reaction: "And alongside engineering, you're building a startup. That's already a lot to carry."
+    },
+    {
+      q: "Where did the idea for Quant come from? What problem were you trying to solve?",
+      a: [
+        "The whole idea started with me and my friend, my roommate, who is also a co-founder. We're both introverted, and talking to people was something we had in common.",
+        "In our early university days, we had issues with talking to people and getting updates. It affected us academically. We started thinking about how we could get academic information and materials without always having to talk to somebody.",
+        "We could get updates through WhatsApp, but getting materials was different. You either knew people or had to go and meet them.",
+        "We also noticed that students struggled with monthly subscriptions and navigating different apps. So we thought about how to make the whole process simpler. That's why we started Quant."
+      ],
+      reaction: "So the idea came from a problem you had personally experienced, not just a random business idea."
+    },
+    {
+      heading: "Not the technical founder",
+      pull: "“I'm the brand designer, and I'm also the product manager.”",
+      q: "You're building a technology product, but you mentioned that you're not the technical person. What exactly is your role?",
+      a: [
+        "I'm the brand designer, and I'm also the product manager.",
+        "Even if I'm not technical, I still decide the flow of things, like student registration. I make decisions on how to make things easier because our goal is to help students get things faster.",
+        "Apart from being a designer, I'm the product manager, so I make decisions about how the product should work. I'm also in charge of the brand design and most of the designs."
+      ],
+      reaction: "That's an important distinction. You don't have to be the person writing the code to have a meaningful role in building a product."
+    },
+    {
+      q: "Before Quant, what were you doing, and how did those experiences prepare you for this?",
+      a: [
+        "Apart from Quant, I'm a designer. I'm a freelancer. Design is something I'm comfortable with.",
+        "I've worked with different startups before Quant. Through those experiences, I've learned from some of their mistakes. Sometimes, I attended their stand-up meetings and listened to how things were done. I've been able to implement some of those processes."
+      ],
+      reaction: "So some of what you're applying now came from observing how other teams operated."
+    },
+    {
+      heading: "From an idea to a public launch",
+      pull: "“The whole concept is just to build fast and also make people know what you're doing.”",
+      q: "You spoke about founders delaying things because they want everything to be perfect. What do you think they get wrong?",
+      a: [
+        "The mistake I feel founders make is trying to delay and perfect everything. The fact is that everything can't be perfect.",
+        "When you're trying to get everything to 100%, another person may already be thinking about the same idea.",
+        "When you build a presence, you're letting people know what you're building. People become familiar with it. Building in public can also make you want to build faster because people keep asking when you're going to launch.",
+        "The whole concept is just to build fast and also make people know what you're doing."
+      ],
+      reaction: "There's a difference between preparing properly and using perfection as an excuse not to launch."
+    },
+    {
+      q: "At the time of this conversation, Quant had recently launched. What was that experience like, and what kind of response had you received?",
+      a: [
+        "I'm not the technical person, but there have been many mistakes, bugs, complaints and comments. And that's just for the development part. There's still the marketing part, so it's a lot.",
+        "We launched on Monday. At the time of this conversation, it had been about five to six days. We had over 500 early signups, and 200 students had started using it."
+      ],
+      reaction: "A launch is exciting, but the work clearly doesn't stop once people start signing up."
+    },
+    {
+      q: "What has been more meaningful to you: seeing the number of signups or hearing from people who have actually used Quant?",
+      a: [
+        "You might see the 500 users, but for me, I count things from small.",
+        "Once I do something and it's actually working, or I watch something and try it and it works, that's a big achievement for me.",
+        "We launched Quant, people used it, and they gave us positive feedback. We also got some negative feedback, but that's more about making small changes.",
+        "When people use it and it actually works, that's a lot to me. I think that's the biggest achievement."
+      ],
+      reaction: "That's a better way to look at early traction. Signups matter, but actual use tells you whether you're solving a problem."
+    },
+    {
+      pull: "“The material is delivered immediately, without any friction.”",
+      q: "Have you received feedback that showed you the product was genuinely helping someone?",
+      a: [
+        "Yes. There's somebody who is always reading ahead of class. He's my junior.",
+        "He said he was surprised that when he asked for a material, it was delivered immediately, without any friction. He liked the fact that he could get it easily.",
+        "That also made me understand that there's still more to how we can organise materials in one place and help students get things faster."
+      ],
+      reaction: "That's the kind of feedback that can help a product become better. It shows you what users value and what else they need."
+    },
+    {
+      heading: "Building with people, not just money",
+      q: "How have you managed the financial side of building Quant?",
+      a: [
+        "I believe that in terms of startups, people are more than money at times. When you have people, development becomes easier.",
+        "The people I've worked with, volunteered with, and met through communities have contributed a lot to Quant. There are people who, even if they don't believe in my idea, will still want to help me because of the kind of help I've given them before.",
+        "We had not spent any money on marketing at the time we got those early users. I still believe that with little or no money, you can build something, but you have to have the right people."
+      ],
+      reaction: "Money can make things easier, but your relationships and the trust you've built can also open doors."
+    },
+    {
+      q: "What has building a team taught you about working with different people?",
+      a: [
+        "Being able to speak with your team is something people should consider. You're not the one who is going to build everything. There are people you have to talk to.",
+        "Most of the people in my team, apart from my co-founder, are my seniors. I made some mistakes earlier while trying to relate with them. From those mistakes, I learned how to communicate better.",
+        "For example, our CTO doesn't really like online meetings. I've noticed that he doesn't contribute much during meetings, so I take the minutes of what we discussed and send them to him. Sometimes, he sends a voice note explaining what he's done.",
+        "You should know the people you're dealing with for who they are and try to adapt to them. You're the one who found them, so you still have to change your behaviour and learn how to relate with them."
+      ],
+      reaction: "That's a lesson many first-time founders learn late: managing people is not the same as managing tasks."
+    },
+    {
+      heading: "The student behind the startup",
+      q: "What has building Quant changed about your experience as an undergraduate?",
+      a: [
+        "Building Quant has improved me academically.",
+        "When we started, I became more intentional. I used to be a very active gamer, but I stopped doing many of those things because I realised I needed to be intentional.",
+        "I started planning myself. If I do this, I still have to read for this course. Building it has made me plan my daily routine better. Apart from school, I still have other engagements, so it has made me more intentional."
+      ],
+      reaction: "It sounds like the startup has also forced you to become more deliberate about how you use your time."
+    },
+    {
+      q: "Have you ever felt that being shy or being a student made it harder to get people to believe in what you were building?",
+      a: [
+        "Before I started this, I was a very shy person. When I tried to explain things to people, they didn't really understand me.",
+        "There's a way you pitch something to people, and they automatically believe your idea is nothing, or that it's not something they can use.",
+        "I don't know if I wasn't able to pitch well or if they just didn't buy the idea, but I still believe in what I have in mind. There have been many rejections."
+      ],
+      reaction: "Not everyone will understand what you're trying to build at the beginning. But rejection should also make you examine how you're communicating the idea."
+    },
+    {
+      q: "Do you think being a student has limited the growth of Quant?",
+      a: [
+        "I don't think so. As a student, I have more ways to increase Quant's publicity and make students know about it.",
+        "I've volunteered in different associations in school, so I know people through those experiences.",
+        "If I don't start now and wait until I graduate, I might not have the same opportunities for Quant's publicity and development that I have now."
+      ],
+      reaction: "That's a useful way to see university: not just as a place to study, but also as an environment where you can test ideas and meet people."
+    },
+    {
+      heading: "What comes next",
+      q: "If someone asked you to explain Quant to a ten-year-old, how would you describe it?",
+      a: [
+        "I'll say Quant is like a WhatsApp library, where you can just go inside and get any book you want, right in front of you."
+      ],
+      reaction: "A WhatsApp library. Simple enough to understand."
+    },
+    {
+      pull: "“A good idea will just sit there. It can't sell itself.”",
+      q: "What's one belief about building a business that you disagree with?",
+      a: [
+        "I believe many people think that a good idea will sell itself.",
+        "No matter how good the idea is, no matter how strategic you think you are or how well you think it solves a problem, you still have to push it out.",
+        "You have to let people know. You have to increase the publicity. A good idea will just sit there. It can't sell itself."
+      ],
+      reaction: "That might be one of the most important lessons from this conversation."
+    },
+    {
+      q: "If you could start your undergraduate journey again, would you choose the same course?",
+      a: [
+        "No, I would have studied Computer Science. The stress engineering is giving me is a lot, though it's challenging me.",
+        "I believe I'd connect with more technical people. I would also have started thinking of an idea to build around campus in 100 level.",
+        "I feel that if I were a Computer Science student at LASU, I'd have more opportunities and more people to connect with."
+      ],
+      reaction: "It sounds less like rejecting engineering and more like recognising the kind of environment you think would have helped you build earlier."
+    },
+    {
+      pull: "“There's nothing I cannot do once I put my mind to it.”",
+      q: "What's a personal principle you try to live by?",
+      a: [
+        "I believe there's nothing I cannot do once I put my mind to it. I don't think there's something I cannot do, except if I'm not interested in it.",
+        "Once I put my interest in it, there's nothing I cannot do, and I don't mind what people say about it. I'll try to do it."
+      ],
+      reaction: "Thank you for sharing your story, Malik."
+    }
+  ],
+
+  takeawaysHeading: "A few things I took away from this conversation",
+  takeaways: [
+    "A founder does not have to be the technical person. Malik's role in Quant shows how product thinking, brand design and understanding the user can contribute to building a technology product.",
+    "Some useful ideas begin with ordinary problems. Quant came from the difficulty Malik and his roommate experienced when trying to access academic information and materials.",
+    "Building in public can help people become familiar with a product, create accountability and encourage a team to move towards launch. But visibility must be backed by a product that works.",
+    "Early signups are encouraging, but actual use and honest feedback tell a founder much more about whether a product is helping people.",
+    "A team is made up of different people with different working styles. Good leadership involves understanding those differences and adapting communication instead of expecting everyone to work the same way.",
+    "Relationships can be valuable resources when money is limited. Malik's experience shows how volunteering, design work and community involvement helped him build a network.",
+    "University does not have to be a waiting room before real work begins. It can be an environment to test ideas, meet collaborators and build something useful."
+  ],
+  takeawaysPull: "A good idea needs people willing to build it, communicate it and put it in front of the world.",
+
+  outro: [
+    "Malik's story is still unfolding. Quant is at an early stage, and there is no reason to pretend that a launch or a few hundred early users means the hard part is over. There are bugs to fix, feedback to understand, people to coordinate and a product that still has room to improve.",
+    "What stood out to me was not simply that a student had started a company. It was how he had found a role in building something despite not being its technical developer, how he was learning to work with people, and how he was using the environment around him to move an idea forward.",
+    "He also left us with a reminder worth taking seriously: having an idea is not the same as building something people know about and can use. You have to do the work, communicate it and keep improving it.",
+    "This is Malik's story, and this is Before They Graduate."
+  ]
+},
+
+
 ];
 
 // Every story gets a flat `paragraphs` array for the search index.

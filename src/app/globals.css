@@ -160,21 +160,462 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .byline-name{font-size:.71rem;color:var(--muted);font-weight:300}
 
 /* PROJECT CARDS */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.proj-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;cursor:pointer;transition:border-color .2s,transform .15s}
-.proj-card:hover{border-color:var(--orange-border);transform:translateY(-3px)}
-.proj-card.featured{border-color:var(--orange-border);background:var(--orange-dim)}
-.proj-type-badge{font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border-radius:2px;display:inline-block;width:fit-content}
-.type-research{background:rgba(59,139,212,0.12);color:#5BA3E0;border:1px solid rgba(59,139,212,0.25)}
-.type-startup{background:rgba(245,88,0,0.1);color:var(--orange);border:1px solid var(--orange-border)}
-.type-app{background:rgba(29,158,117,0.1);color:#2DBF8E;border:1px solid rgba(29,158,117,0.25)}
-.type-project{background:rgba(255,255,255,0.05);color:var(--muted2);border:1px solid var(--border2)}
-.proj-title{font-size:.97rem;font-weight:500;line-height:1.4}
-.proj-desc{font-size:.8rem;color:var(--muted2);font-weight:300;line-height:1.65;flex:1}
-.proj-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.5rem}
-.proj-author{font-size:.72rem;color:var(--muted)}
-.proj-link{font-size:.7rem;color:var(--orange);text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;gap:.3rem;transition:opacity .2s}
-.proj-link:hover{opacity:.75}
+/* =============================================================
+   grids.css: extra polish for the card grids.
+   Import it in src/app/layout.js AFTER globals.css, so it layers on top
+   of the existing styles instead of replacing them.
+
+   Everything derives from your own --orange, --card, --border variables.
+   Layout changes are scoped to .proj-grid--bento (the Projects page only),
+   so the homepage's project strip keeps its current layout.
+   Hover lifts use the `translate` / `scale` properties rather than `transform`,
+   so they stack on top of any transform your existing CSS already sets.
+   ============================================================= */
+
+/* ---------- shared bits ---------- */
+
+@keyframes grid-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+  }
+}
+
+/* Cards fade up as they scroll into view. Browsers without scroll-driven
+   animations simply show the cards as normal. */
+@supports (animation-timeline: view()) {
+  .proj-grid--bento .proj-card,
+  .builders-grid .builder-card,
+  .ep-grid .ep-card {
+    animation: grid-rise linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+/* ---------- projects: bento layout + spotlight ---------- */
+
+.proj-grid--bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.1rem;
+  grid-auto-flow: dense;
+}
+
+.proj-grid--bento .proj-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 14px;
+  transition:
+    translate 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Cursor-following spotlight. --mx / --my are set by ProjectsGrid on mouse move. */
+.proj-grid--bento .proj-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--orange) 24%, transparent),
+    transparent 62%
+  );
+}
+
+.proj-grid--bento .proj-card:hover {
+  translate: 0 -5px;
+  border-color: color-mix(in srgb, var(--orange) 55%, var(--border));
+  box-shadow: 0 22px 44px -22px color-mix(in srgb, var(--orange) 50%, transparent);
+}
+
+.proj-grid--bento .proj-card:hover::before {
+  opacity: 1;
+}
+
+/* The featured project takes a double-wide slot and a bigger title. */
+.proj-grid--bento .proj-card.featured {
+  grid-column: span 2;
+}
+
+.proj-grid--bento .proj-card.featured .proj-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.1;
+}
+
+@media (max-width: 700px) {
+  .proj-grid--bento .proj-card.featured {
+    grid-column: auto;
+  }
+}
+
+/* "Launched / Prototype / Idea" pill, pinned top-right so it never shifts the layout. */
+.proj-grid--bento .proj-stage {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted2);
+}
+
+.proj-grid--bento .proj-stage--live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: proj-pulse 2.2s ease-out infinite;
+}
+
+@keyframes proj-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--orange) 60%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+}
+
+/* Invitation cards ("submit yours") look like open slots, not finished projects. */
+.proj-grid--bento .proj-card--invite {
+  background: transparent;
+  border: 1px dashed color-mix(in srgb, var(--muted) 55%, transparent);
+}
+
+.proj-grid--bento .proj-card--invite::after {
+  content: "+";
+  position: absolute;
+  top: 0.4rem;
+  right: 1.1rem;
+  font-family: var(--display);
+  font-size: 3.6rem;
+  line-height: 1;
+  color: var(--orange);
+  opacity: 0.14;
+  transition: opacity 0.35s ease, rotate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.proj-grid--bento .proj-card--invite:hover {
+  border-style: solid;
+}
+
+.proj-grid--bento .proj-card--invite:hover::after {
+  opacity: 0.45;
+  rotate: 90deg;
+}
+
+/* ---------- builders ---------- */
+
+.builders-grid .builder-card {
+  position: relative;
+  border-radius: 14px;
+  transition:
+    translate 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* An orange bar grows in on the left edge on hover. */
+.builders-grid .builder-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16%;
+  bottom: 16%;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--orange);
+  scale: 1 0;
+  transition: scale 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.builders-grid .builder-card:hover {
+  translate: 0 -4px;
+  border-color: color-mix(in srgb, var(--orange) 45%, var(--border));
+  box-shadow: 0 18px 38px -22px color-mix(in srgb, var(--orange) 45%, transparent);
+}
+
+.builders-grid .builder-card:hover::before {
+  scale: 1 1;
+}
+
+.builders-grid .builder-photo {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--border);
+  transition: scale 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.builders-grid .builder-card:hover .builder-photo {
+  scale: 1.07;
+  box-shadow:
+    0 0 0 2px var(--orange),
+    0 0 24px color-mix(in srgb, var(--orange) 45%, transparent);
+}
+
+.builders-grid .builder-status {
+  display: inline-block;
+  transition: translate 0.3s ease;
+}
+
+.builders-grid .builder-card:hover .builder-status {
+  translate: 5px 0;
+}
+
+/* ---------- episodes ---------- */
+
+.ep-grid .ep-card {
+  transition: translate 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.ep-grid .ep-card:hover {
+  translate: 0 -5px;
+  box-shadow: 0 22px 44px -24px color-mix(in srgb, var(--orange) 50%, transparent);
+}
+
+.ep-grid .ep-thumb img {
+  transition: scale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ep-grid .ep-card:hover .ep-thumb img {
+  scale: 1.07;
+}
+
+.ep-grid .ep-play-btn {
+  transition: scale 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ep-grid .ep-card:hover .ep-play-btn {
+  scale: 1.15;
+}
+
+/* ---------- respect reduced-motion settings ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-grid--bento .proj-card,
+  .builders-grid .builder-card,
+  .ep-grid .ep-card {
+    animation: none !important;
+  }
+
+  .proj-grid--bento .proj-card,
+  .proj-grid--bento .proj-card--invite::after,
+  .builders-grid .builder-card,
+  .builders-grid .builder-card::before,
+  .builders-grid .builder-photo,
+  .builders-grid .builder-status,
+  .ep-grid .ep-card,
+  .ep-grid .ep-thumb img,
+  .ep-grid .ep-play-btn {
+    transition: none !important;
+  }
+
+  .proj-grid--bento .proj-stage--live::before {
+    animation: none;
+  }
+}
+
+
+/* PROJECTS GRID */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.proj-card {
+  min-width: 0;
+  min-height: 260px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, transform .2s, background .2s;
+}
+
+.proj-card:hover {
+  border-color: var(--orange-border);
+  transform: translateY(-3px);
+}
+
+.proj-card.featured {
+  grid-column: span 2;
+  background: var(--orange-dim);
+  border-color: var(--orange-border);
+  min-height: 300px;
+  padding: 2rem;
+}
+
+.proj-type-badge {
+  font-size: .63rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.type-research {
+  background: rgba(59,139,212,.12);
+  color: #5BA3E0;
+  border: 1px solid rgba(59,139,212,.25);
+}
+
+.type-startup {
+  background: rgba(245,88,0,.1);
+  color: var(--orange);
+  border: 1px solid var(--orange-border);
+}
+
+.type-app {
+  background: rgba(29,158,117,.1);
+  color: #2DBF8E;
+  border: 1px solid rgba(29,158,117,.25);
+}
+
+.type-project {
+  background: rgba(255,255,255,.05);
+  color: var(--muted2);
+  border: 1px solid var(--border2);
+}
+
+.proj-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.proj-card.featured .proj-title {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  max-width: 600px;
+}
+
+.proj-desc {
+  font-size: .8rem;
+  color: var(--muted2);
+  font-weight: 300;
+  line-height: 1.7;
+  flex: 1;
+  max-width: 650px;
+}
+
+.proj-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .85rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: auto;
+}
+
+.proj-author {
+  font-size: .72rem;
+  color: var(--muted);
+}
+
+.proj-link {
+  font-size: .7rem;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  transition: opacity .2s;
+}
+
+.proj-link:hover {
+  opacity: .75;
+}
+
+/* FILTERS */
+.proj-filters {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-pill {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: .45rem .95rem;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+  background: var(--orange-dim);
+  border-color: var(--orange-border);
+  color: var(--orange);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .proj-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proj-card.featured {
+    grid-column: span 2;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+    gap: .9rem;
+  }
+
+  .proj-card,
+  .proj-card.featured {
+    grid-column: span 1;
+    min-height: 230px;
+    padding: 1.25rem;
+  }
+
+  .proj-card.featured .proj-title {
+    font-size: 1.2rem;
+  }
+
+  .proj-filters {
+    gap: .45rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .filter-pill {
+    font-size: .64rem;
+    padding: .4rem .75rem;
+  }
+}
+
 
 /* BUILDERS GRID (homepage/builders listing) */
 .builders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}

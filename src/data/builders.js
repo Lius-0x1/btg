@@ -1,6 +1,45 @@
 const builders = [
 
   {
+    slug: "malik",
+    name: "Malik", // add his full name once confirmed ("Mik" in the file name, "Malik" in the document)
+    department: "Electronics and Computer Engineering",
+    university: "Lagos State University",
+    school: "LASU",
+    year: "2026",
+    type: "story",
+    projectSlug: "quant",
+    storySlug: "building-quant-while-in-university-malik",
+    // storySlug: "set-this-once-the-full-interview-is-published",
+    image: "/assets/builders/malik.jpg", // the photo file must exist at this path before you paste this entry
+    quote: "A good idea will just sit there. It can't sell itself.",
+    about: [
+      "Malik is a 400-level Electronics and Computer Engineering student at Lagos State University (LASU) and Founder of Quant, a WhatsApp-based library for academic materials. He describes himself as a designer first: a freelance brand designer who is also Quant's product manager, deciding how the product flows even though he isn't the technical one on the team.",
+      "Quant grew out of a problem he and his Founder lived through. Early in university, both found it hard to talk to people and get class updates, and it affected their academics. They wanted a way to get materials without having to chase people for them. The idea came long before the product. They delayed building it, saw gaps in what already existed, and decided to do it better.",
+      "Building Quant changed how he runs his own life. He says he was a very active gamer, and that having a product people could question him about made him stop and become more intentional, planning his days around both school and the startup. Within the first week of launch he reported more than 500 early signups, with no money spent on marketing.",
+    ],
+    whatShapedThem: [
+      "Watching other startups up close: Before Quant, he worked with other startups as a designer. He says he learned from their mistakes by sitting in on their standup meetings and adopting their processes.",
+      "Shyness: Finding it hard to talk to people early in university pushed him toward building something that removes the need to chase people for materials. He says he has since worked on speaking up in meetings.",
+      "Rejection: He pitched the idea to people who didn't see its value, and describes many rejections. He kept believing in what he had in mind.",
+      "Volunteering: Volunteering in student associations gave him a network of people who helped Quant along, which he says mattered more than the money.",
+    ],
+    lessons: [
+      "Build in public: Letting people know what you're building makes them familiar with it, and their questions about when you'll launch push you to build faster.",
+      "Don't wait for perfect: Trying to perfect everything is what kills some founders, because everything can't be perfect.",
+      "People matter more than money: In his words, people are more than money at times. Quant's early numbers came with no marketing spend.",
+      "Know your team: Learn who each person is and adapt to them. Even if you're the aggressive type, you're the one who found them.",
+      "A good idea won't sell itself: However good it is, you still have to push it out, let people know and increase the publicity.",
+    ],
+    advice: "Don't wait until you graduate to start. As a student, you have access to publicity and to people that you won't have later. Let people know what you're building, and don't wait for it to be perfect. Find the right people, because people are more than money when you're building a startup. Learn who your teammates are and adapt to them. And remember that a good idea won't sell itself, so you have to push it out.",
+    memorableQuote: "I believe there's nothing I cannot do once I put my mind to it.",
+    whyWeRememberThem: [
+      "Malik's story is in the BTG archive because it shows a student building a real product with limited money and a team made up mostly of senior students, and being honest about the rejections, mistakes and shyness along the way.",
+      "He is also clear about what a good idea can't do on its own. For him, building in public, choosing the right people and pushing a product out matter as much as the idea. Quant is early, and this profile documents the beginning.",
+    ],
+  },
+
+  {
   slug: "oluwapelumi-aikomo",
   name: "Oluwapelumi Aikomo",
   department: "Surveying & Geoinformatics",

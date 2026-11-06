@@ -2,12 +2,15 @@ import ShareButton from "./ShareButtons";
 import Image from "next/image";
 import Link from "next/link";
 import stories from "@/data/stories";
-
+import builders from "@/data/builders";
+import projects from "@/data/projects";
 export default function BuilderProfile({ builder }) {
   // Story-only builders (no YouTube episode) point at a story in stories.js.
   // If storySlug doesn't match a real story, `story` is undefined and we fall
   // through to the episode block instead of rendering a broken link.
   const story = builder.storySlug ? stories.find((s) => s.slug === builder.storySlug) : null;
+
+  const project = builder.projectSlug ? projects.find((p) => p.slug === builder.projectSlug) : null;
 
   const metaParts = [
     builder.department,
@@ -58,6 +61,14 @@ export default function BuilderProfile({ builder }) {
         <h2 className="profile-section-title">Why We Remember Them</h2>
         {builder.whyWeRememberThem.map((p, i) => <p key={i}>{p}</p>)}
       </div>
+
+         {project && (
+     <div className="profile-section">
+       <h2 className="profile-section-title">The Project</h2>
+       <p>{project.tagline}</p>
+       <Link href={project.href} className="profile-watch-btn">View {project.title} →</Link>
+     </div>
+   )}
 
       {story ? (
         <div className="profile-section">

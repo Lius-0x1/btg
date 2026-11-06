@@ -1,12 +1,12 @@
 import builders from "@/data/builders";
 import stories from "@/data/stories";
+import projects from "@/data/projects";
 // Origin story content, broken into searchable paragraphs.
 // Add more entries here as new stories get approved and published.
 
 
 // Add project data here once projects exist:
 // import projects from "@/data/projects";
-const projects = [];
 
 const staticPages = [
   { title: "Episodes", type: "Page", href: "/episodes", keywords: "season 1 videos youtube episodes founding 12" },

@@ -150,14 +150,13 @@ const contributorStoryCount = contributor
         {story.outro.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
-      </div>
-
-      {story.builderSlug && (
+            </div>
+        {story.builderSlug && (
         <div className="profile-section">
-          <h2 className="profile-section-title">Her Profile</h2>
+          <h2 className="profile-section-title">Builder's Profile</h2>
           <div className="profile-links">
             <Link href={`/builders/${story.builderSlug}`} className="profile-link-pill">
-              View her BTG profile →
+              View Builder Profile →
             </Link>
           </div>
         </div>

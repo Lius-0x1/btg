@@ -8,7 +8,7 @@ const builders = [
   school: "LASU",
   department: "Computer Science",
   type: "story",
-  storySlug: "hasbiyallah-oyebo-building-beyond-the-code",
+  storySlug: "this-undergraduate-won-10-hackathons-hasbiyallah-oyebo",
   image: "/assets/builders/hash.jpeg",
 
   quote: "My goal is to become someone I am proud of, not someone other people are impressed by.",

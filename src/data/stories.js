@@ -1454,6 +1454,266 @@ const stories = [
   ]
 },
 
+  {
+    slug: "this-undergraduate-won-10-hackathons-hasbiyallah-oyebo",
+    number: "06",
+    format: "interview",
+    interviewee: "Hasbiyallah Oyebo",
+    href: "/stories/this-undergraduate-won-10-hackathons-hasbiyallah-oyebo",
+    builderSlug: "hasbiyallah-oyebo",
+    contributorSlug: "Ayinde Abdulsobur",
+    tag: "BTG Full Interview · Lagos State University",
+    title: "This Undergraduate Won 10 Hackathons, Then Stopped So Beginners Could Win: Hasbiyallah Oyebo's Story",
+    subtitle: "From fighting for a second chance at JAMB to building software, winning hackathons and creating opportunities for other students",
+    excerpt: "Hasbiyallah Oyebo's journey runs from a disrupted JAMB exam and a determined fight for another chance to an international hackathon, her first software engineering opportunity, production lessons and ten hackathon wins. Then she made a deliberate decision to stop competing and start creating opportunities for beginners.",
+    meta: "Hasbiyallah Oyebo · Lagos State University",
+    image: "/assets/stories/hasb.jpeg",
+    imageAlt: "Hasbiyallah Oyebo in a black-and-white portrait with the BTG orange headline panel",
+    heroQuote: "My goal is to become someone I am proud of, not someone other people are impressed by.",
+    shareText: "Read Hasbiyallah Oyebo's story on Before They Graduate",
+    footerNote: "Story 06 · The Archive · Before They Graduate",
+
+    intro: [
+      "The headline sounds like the kind of achievement people would want to repeat: ten hackathon wins while still an undergraduate. But Hasbiyallah Oyebo's story takes an unexpected turn. After winning ten hackathons, she deliberately stopped participating so that beginners could have a better chance of winning.",
+      "That decision makes more sense when you hear the experiences that came before it. Her journey includes a JAMB technical issue that nearly delayed her university admission, repeated attempts to get another chance to write the exam, an international Google-sponsored hackathon that did not end in the trip her team expected, and a LinkedIn post that eventually connected her to her first professional opportunity.",
+      "In this conversation with Before They Graduate, Hasbiyallah talks about discovering technology, learning to work with experienced engineers, breaking and fixing a production system, building teams, hosting hackathons, handling the pressure of leadership and finding a healthier relationship with work. She also shares what she would tell a beginner who wants to enter tech.",
+      "This is not simply a story about winning competitions. It is about persistence, exposure, problem-solving and what it means to make room for the next person."
+    ],
+
+    qa: [
+      {
+        heading: "The exam that nearly changed her path",
+        pull: "“Whenever I want something, I go the extra mile to achieve what I want to do.”",
+        q: "Before we get into your work and leadership experiences, who exactly is Hasbiyallah?",
+        a: [
+          "I'm a young girl aspiring to aspire. I personally just love doing stuff because I can, even before now. Back then I had the brain but I didn't have the resources. Now I think I have all the resources I need. I have always wanted to try new things, even if it meant doing something a little crazy.",
+          "I also love solving problems. Whenever I see a problem, I try my best to see how to solve it."
+        ],
+        reaction: "Before the titles and achievements, she describes herself as someone who is curious, willing to try things and drawn to solving problems."
+      },
+      {
+        q: "You mentioned that you had issues with JAMB. What happened?",
+        a: [
+          "I was supposed to write JAMB on a Tuesday, but the computer I was assigned wasn't working. I was told I would have to come back to write the exam. I cried that day because I had prepared properly, and it was shocking. Everyone around me was writing while I sat there for about 45 minutes before I was told to leave. They said they would reschedule me.",
+          "The difficult part was that I didn't have a phone, SIM card or email of my own. I was still in secondary school, so I used my dad's email address and phone number. The message about the rescheduled exam came very close to the exam time, and I did not see it until it was too late. My family also did not know how best to approach the situation."
+        ]
+      },
+      {
+        q: "What did you do when you realised you might lose the opportunity to write the exam?",
+        a: [
+          "I stayed close to the librarian at the Federal University of Agriculture. She had a mosque, and I heard her talking about someone connected to JAMB. I felt this was someone who might be able to help, so I explained my situation and told her how badly I wanted to write the exam. I couldn't imagine staying at home for a whole year without doing anything.",
+          "I also sent up to nine emails to JAMB. I kept writing and reaching out. I contacted people who could help, including people on the internal team. Eventually, on a Saturday morning, I received an email asking me to come and write the exam."
+        ],
+        reaction: "She did not treat the first setback as the final answer. She kept looking for a route forward."
+      },
+      {
+        q: "Did the experience change anything beyond your own admission?",
+        a: [
+          "The whole JAMB story did not end with me getting another chance. Mine was the first time JAMB was going to reschedule an exam for a large group of students because of issues like technical problems. Since then, they have continued rescheduling exams for people who miss them or experience technical issues.",
+          "I felt it didn't make sense for me to get out of the situation while other people kept facing the same problem every year. I started paying attention to people who needed help with the process and following the issue. I believe it has become better for people since then."
+        ],
+        pull: "“It doesn't make sense that only I get out of it and then year in, year out, people still keep facing it.”"
+      },
+      {
+        q: "What did that experience teach you about opportunities and access?",
+        a: [
+          "Opportunities exist, but sometimes we don't see them. It is only the opportunities you see that you can access and benefit from. People gatekeep opportunities, and I understand that people may have their reasons, but I don't think opportunities should be limited to privileged individuals.",
+          "Access and exposure matter, especially for people who are underrepresented. A lot of young people are boxed into what they can imagine because they have not seen what else is possible. When people see someone doing something they thought was impossible, it changes what they believe they can attempt."
+        ]
+      },
+      {
+        heading: "Finding her way into technology",
+        q: "How did your interest in computer science and software engineering begin?",
+        a: [
+          "I had made up my mind that I wanted to do something that would give me more control over my time. Both of my parents worked 9-to-5 jobs. Growing up, my dad worked in Lagos and my mum had a job far from home. She could leave before 6 a.m. and return after 8 p.m. A lot of the responsibility at home fell on my siblings and me. I understood that it was their reality, but I did not see myself choosing the same arrangement if I could help it.",
+          "There was someone in my area who worked remotely and rarely left his house. I was young and curious about what he did. I asked him about his work, and that introduced me to technology. I was already someone who liked solving problems, so tech became a way to work on problems I cared about."
+        ],
+        reaction: "Her interest began with curiosity about remote work, but it grew into something deeper: using technology to solve problems."
+      },
+      {
+        q: "You were still an undergraduate when you got your first professional opportunity. How did it happen?",
+        a: [
+          "My first professional opportunity came when I was in 100 level. My team won an international hackathon sponsored by Google, and we were meant to represent Nigeria in Ethiopia. The programme clashed with our LASU exams, and at first we were asked to choose between writing the exams and travelling.",
+          "I chose to write my exam because I had fought hard to gain admission. The person coordinating the opportunity later helped move the programme by two weeks so that we could participate. But the situation changed again. Ethiopia introduced restrictions affecting Nigerian travellers that week, and we only got the information shortly before our planned departure. We had to rush the visa process.",
+          "Our visas were approved on Saturday, but we were meant to fly on Friday. We had already checked in, and the airline said we would have to pay 70% of the flight cost. The trip was sponsored, and my parents could not afford that additional amount. My two teammates and I could not travel."
+        ]
+      },
+      {
+        q: "What came out of an opportunity that you could not attend?",
+        a: [
+          "The person in charge of the programme made a LinkedIn post and tagged the three of us because of all the effort that had gone into the opportunity. Someone saw the post, read my story and sent me a message. That was how I got my first professional opportunity.",
+          "I was happy because I was able to support myself better. I could afford transport around school and take care of things without being as careful with every bit of money. More importantly, I got to work with senior engineers and gain actual professional experience."
+        ],
+        pull: "Her first professional opportunity came from a story about an opportunity she could not physically attend."
+      },
+      {
+        q: "How long did that first professional experience last, and what did it teach you?",
+        a: [
+          "I spent about six months with them before another opportunity came along. The person who brought me in was invested in my future and felt the next opportunity was better for me, so he encouraged me to move on.",
+          "Aside from the money, I gained professional experience. I worked with senior engineers and a team lead who cared about my growth. I was taking the problem-solving I had been doing with friends and bringing it into a professional environment. I was actually solving a problem, and that was the major highlight for me."
+        ]
+      },
+      {
+        q: "Have you ever felt technically inadequate while working with people who had more experience?",
+        a: [
+          "I have worked with people who have more professional experience and deeper industry exposure than I do. I don't think you should measure your value only by how much experience you have compared with everyone else in the room.",
+          "I make sure I take responsibilities that require me to collaborate, contribute technically and also think about business decisions. A lot of people join a company and only want to build products. I think about building features that make money and create business value. If you can suggest a feature, implement it and show that it is making the business more money, you become relevant to the company."
+        ],
+        reaction: "Her point is not that experience does not matter. It is that contribution, curiosity and business understanding matter too."
+      },
+      {
+        q: "You mentioned that you once broke a production system. What happened?",
+        a: [
+          "It was a very crazy experience. I had to be on a call for close to six hours, and I fixed it myself. The same way I broke it was the same way I fixed it. The CTO joined the call so we could resolve it faster.",
+          "The issue involved a scheduling feature and time-zone conversion. Something that looked fine during testing caused a problem in production. It taught me to be much more careful, especially when dealing with dates, time, pricing and anything involving money."
+        ]
+      },
+      {
+        heading: "Ten hackathon wins, and the decision to stop",
+        pull: "“When you have access to an opportunity, you pave the way for some other person to also benefit from it.”",
+        q: "Your profile says you are a ten-time hackathon winner. Have you continued participating?",
+        a: [
+          "The last time I participated was around April of the previous year. It was a deliberate decision. At some point, I asked myself what I was still looking for. I think many people participate in hackathons for the prize money, and I no longer needed that in the same way.",
+          "If I go to a hackathon with a beginner, there is a high possibility that I will win over that beginner because I already understand how these things work. When you can open the way for other people to succeed, why block it? Some students need that prize money and the opportunity much more than I do."
+        ]
+      },
+      {
+        q: "What did you do after deciding to stop competing?",
+        a: [
+          "I started hosting hackathons. I hosted one in Lagos in September 2025, another in February 2026 across five states in Nigeria, and a third one powered by Google Gemini. I wanted to create opportunities for people who needed the experience, exposure and prize money.",
+          "That is why I stopped participating. If you already have what you need, you can give someone else the opportunity to benefit."
+        ],
+        reaction: "The shift is significant: instead of collecting more wins, she began creating the conditions for other people to have their first."
+      },
+      {
+        q: "Which hackathon challenged you the most?",
+        a: [
+          "The Ethiopian hackathon challenged me the most. We were building a solution for the African ecosystem, and it required machine learning. We were working with a predictive model, and we had to do fine-tuning and training. It was my first experience doing that kind of work.",
+          "The project lasted close to five months and had five rounds or sprints. It tested me because I was learning and delivering at the same time. During part of that period, my apartment had no electricity for months. I had to go to the school senate building or find offices where I could work and charge my devices. LASU did not have enough comfortable sitting and charging spaces, so I had to find ways to keep going."
+        ]
+      },
+      {
+        q: "Does that mean you are moving into machine learning and AI?",
+        a: [
+          "That was my first experience with it. I can work with it, and if I ever wanted to switch careers, I might explore machine learning and AI. But that is not my current direction. The experience taught me a lot about learning something new because the problem required it."
+        ]
+      },
+      {
+        q: "You often say 'we' when you talk about hackathons. How did you build your team?",
+        a: [
+          "I have friends I work with, and we bring different strengths to the work. The team matters because you cannot do everything alone. You need people who can contribute different skills, learn together and stay committed through difficult parts of a project.",
+          "Some of the people I work with brought me into the team, and over time we kept building together."
+        ]
+      },
+      {
+        heading: "Leadership, pressure and learning to pause",
+        q: "You've held several leadership positions at LASU. Have those responsibilities ever taken too much away from your personal growth or academics?",
+        a: [
+          "There have been times when I was doing too much. I used to take on many responsibilities and keep pushing because I wanted to learn new things and make an impact. Sometimes I would put my personal time last.",
+          "I have had to learn that there are seasons when you need to focus on yourself. The world will continue moving whether or not you respond to every message or solve every problem immediately."
+        ]
+      },
+      {
+        q: "How have you started managing the pressure and your personal time?",
+        a: [
+          "I have been trying to give myself personal time and separate my personal life from work. I used to respond to messages every day, but now I respond in batches, usually on Saturdays. If I do not respond immediately, the message waits until the next time I set aside for it.",
+          "I receive a lot of messages, and it can become difficult when you feel responsible for replying to everyone. I am still figuring out how to separate the different parts of my life."
+        ],
+        reaction: "Her approach is still evolving, but the boundary is deliberate: being accessible to people cannot mean being available every minute."
+      },
+      {
+        heading: "Skills, money and careers in tech",
+        q: "What would you tell someone with technical skills who is struggling to make money from them?",
+        a: [
+          "Money is important, but it is not everything. Having a skill and being able to make money from that skill are two different things. You can be a very good developer, designer or problem-solver and still struggle financially.",
+          "Sometimes the issue is that you have not figured out how to position your skills and communicate their value to people who are willing to pay. The focus should not only be on learning more skills. You should also learn how to turn the skills you already have into value for someone. And you do not have to wait until you know everything before you start charging for your work."
+        ]
+      },
+      {
+        q: "When you got your first international project, was it difficult to decide what to charge?",
+        a: [
+          "At first, I was not the one who named the amount. They made an offer, and it felt like a huge amount to me at the time. It was a major change from what I had been earning before.",
+          "As you gain experience, you also need to understand the market and the value of your work. Do not assume that the first amount someone offers is automatically the right measure of what you are worth."
+        ]
+      },
+      {
+        heading: "Looking back, and what she wants to leave behind",
+        q: "If you could return to the beginning of your 100 level, what would you do differently?",
+        a: [
+          "I would have researched more and understood that there were other possibilities. I did not have enough exposure to know that I could apply to schools outside Nigeria or explore international scholarships. I had not seen enough examples around me to understand that those options were available.",
+          "For my tech journey, I would focus more on building real teams. Initially, I spent too much time trying to learn many things and perfect what I already knew. You do not need to perfect everything before you start building. You learn a lot in the process of solving a real problem."
+        ]
+      },
+      {
+        q: "What has university taught you about relationships and personal choices?",
+        a: [
+          "I am a strong believer in doing things once and doing them right. I would not say I have never experienced love, but I have not found someone completely in line with what I want. I am not interested in doing things just because other people are doing them. I also believe that people have different priorities and timelines.",
+          "I have learned that the people around you matter, but you also have to understand what you want and what you are ready to give your time to."
+        ]
+      },
+      {
+        q: "Is there someone whose journey inspires you?",
+        a: [
+          "I look up to people whose stories make sense to me. One person I mentioned is Adora, who worked at Microsoft at some point in her career and later moved to the UK. Her story and the things she achieved before leaving Nigeria are inspiring to me."
+        ]
+      },
+      {
+        q: "When you eventually graduate, what would make your time at LASU feel worthwhile?",
+        a: [
+          "The impact. I aspire to graduate with a first class, and I believe that is possible. But when I look at the things I do every semester, I am sometimes surprised that I have been able to maintain my academic standing.",
+          "I want to see a stronger ecosystem at LASU where students can pursue their careers, build things and still have room to complete their academic responsibilities. I want students to have access to the kind of opportunities and exposure they see in other universities. Even if that larger change does not happen immediately, the impact I have made in the school is enough reason for me to feel that I fulfilled something."
+        ]
+      },
+      {
+        pull: "“We don't have to copy the world to compete with it. We basically just need to understand our local problems well enough to build solutions that work for us locally.”",
+        q: "What belief about technology in Nigeria do you want people to remember?",
+        a: [
+          "We do not have to copy the world to compete with it. We need to understand our local problems well enough to build solutions that work for us locally. We have to build for the realities around us and not assume that copying what works somewhere else will automatically work here."
+        ]
+      },
+      {
+        pull: "“My goal is to become someone I am proud of, not someone other people are impressed by.”",
+        q: "What personal principle guides the way you want to live?",
+        a: [
+          "My goal is to become someone I am proud of, not someone other people are impressed by. The moment you start living to impress people, you begin to lose sight of what matters to you."
+        ]
+      },
+      {
+        heading: "Her advice to the beginner",
+        q: "If someone is in 100 level and does not know how to begin a path in tech, what would you tell them?",
+        a: [
+          "First, give yourself permission to be a beginner. You do not have to understand everything immediately, and you do not need to have your entire life figured out in 100 level. You are still young, and you have time to determine what you want to do.",
+          "Everybody has a different starting point. The first laptop I used to learn programming was so slow that if I did not turn it on an hour before I planned to learn, I would have to shift my learning time. It was an old HP that had belonged to my dad. People have different access to resources and opportunities, so do not assume that everyone is starting from the same place.",
+          "Do not collect certificates without direction. Learn things that connect to what you want to build and understand why you are learning them. Find friends who challenge you, because if everyone around you is comfortable, you may stop seeing what else is possible.",
+          "Apply for hackathons, participate, share your work and reach out to people. Build with others. You do not have to know everything before you start, and you should not spend all your time consuming content while expecting to grow in a fast-moving field. Stay curious, keep learning and do not compare your progress with someone else's starting point."
+        ],
+        reaction: "Her advice comes back to the experiences that shaped her: begin with what you have, learn by building, seek exposure and make room for other people to grow."
+      }
+    ],
+
+    takeawaysHeading: "What stayed with me from this conversation",
+    takeaways: [
+      "Persistence can change more than one person's outcome. Hasbiyallah's JAMB experience began as a problem with her own exam, but she kept pushing because she did not want other students to face the same situation without support.",
+      "Exposure changes what people believe is possible. Her first professional opportunity came after a LinkedIn post about a trip she could not make, and she repeatedly points to access to information as a major factor in how far students can go.",
+      "A missed opportunity is not always the end of the story. The Google-sponsored trip to Ethiopia did not happen as planned because the visas were approved after the scheduled departure, but the public account of the experience connected her to work.",
+      "Professional value is not measured only by years of experience. Learning from senior engineers, taking responsibility, contributing technically and understanding how features create business value all matter.",
+      "Winning ten hackathons was not the end goal. She chose to stop competing and host hackathons because she wanted beginners to have access to opportunities she had already benefited from.",
+      "Real projects teach what tutorials cannot. Her Ethiopian hackathon experience pushed her into machine learning work, fine-tuning and predictive modelling while she navigated limited electricity and workspace.",
+      "Having a skill and earning from it are different challenges. People also need to learn how to position their skills, communicate value and understand what their work is worth.",
+      "Building with a team can accelerate learning. She would spend less time trying to perfect everything alone and more time building real solutions with people who bring different strengths.",
+      "Ambition needs boundaries. Her experience with heavy responsibilities and constant messages has taught her to protect personal time and become more intentional about availability.",
+      "A student's starting point matters. Her first laptop took close to an hour to become usable, a reminder that people do not begin with equal resources or access.",
+      "Technology in Nigeria should respond to local realities. Copying solutions from elsewhere is not enough; builders need to understand the problems around them and create solutions that work in their own context."
+    ],
+    takeawaysPull: "Stop asking only how many opportunities you can win. Ask how many more people can access them because you were there.",
+
+    outro: [
+      "Hasbiyallah's story is full of milestones: a determined fight to write JAMB, a first professional opportunity in 100 level, international work, ten hackathon wins and the decision to organise opportunities for other students. But the most revealing part of the conversation is the way she connects those experiences.",
+      "She speaks about exposure because she knows what it means not to have enough information. She speaks about building for local problems because she believes solutions should fit the realities people live with. And she speaks about making room for beginners because she understands that access should not stop with the person who got there first.",
+      "There are still things she is figuring out: how to protect her time, how to balance the many things she wants to do and what the next stage of her career will look like. She is not presenting a finished formula. She is describing a journey that is still in motion.",
+      "Perhaps that is the strongest lesson from this conversation: achievement becomes more meaningful when it creates room for someone else to begin. This is Hasbiyallah Oyebo's story, and this is Before They Graduate."
+    ]
+  },
 
 ];
 

@@ -1,5 +1,67 @@
 const builders = [
 
+  
+{
+  slug: "hasbiyallah-oyebo",
+  name: "Hasbiyallah Oyebo",
+  university: "Lagos State University",
+  school: "LASU",
+  department: "Computer Science",
+  type: "story",
+  storySlug: "hasbiyallah-oyebo-building-beyond-the-code",
+  image: "/assets/builders/hash.jpeg",
+
+  quote: "My goal is to become someone I am proud of, not someone other people are impressed by.",
+
+  about: [
+    "Hasbiyallah Oyebo is a 400 level student of Lagos State University, a software engineer, and a ten-time hackathon winner whose journey reflects persistence, problem-solving, and a commitment to creating opportunities for others.",
+    "Her journey into technology was shaped by her interest in solving problems and her desire to build a career that gives her greater control over her time. From starting her programming journey with an extremely slow hand-me-down laptop to securing professional opportunities while still in 100 level, she has consistently challenged herself to do more.",
+    "One of the defining moments of her early university journey came when her team won an international, Google-sponsored hackathon opportunity to represent Nigeria in Ethiopia. Although visa complications prevented the team from travelling, the experience eventually connected her to her first professional opportunity through a LinkedIn post.",
+    "After winning ten hackathons, Hasbiyallah made a deliberate decision to stop competing so that other students, especially beginners, could have the opportunity to win. She went on to organise three hackathons, including one that reached participants across five Nigerian states and another powered by Google Gemini.",
+    "Beyond technology and competitions, she has maintained first-class academic standing since 100 level. Her story is about using opportunities well, learning through real experiences, and ensuring that the doors opened for her do not remain closed to others."
+  ],
+
+  whatShapedThem: [
+    "The JAMB experience: A technical problem prevented her from writing JAMB on her scheduled date. Rather than give up, she sent repeated emails and reached out to people who could help. She eventually got another opportunity to sit for the examination.",
+    "A problem bigger than herself: Her experience with JAMB made her think about other students facing similar situations. She became interested in advocating for students who encountered examination-related technical problems.",
+    "Finding her path into technology: Seeing someone work remotely and independently influenced her interest in tech. Her natural desire to solve problems eventually became a deeper motivation to build solutions.",
+    "Her first professional opportunity: In 100 level, her team won an international Google-sponsored hackathon. Although visa complications prevented them from travelling to Ethiopia, a LinkedIn post about the experience connected her to someone who offered her first professional opportunity.",
+    "Learning in a professional environment: Her first professional engagement lasted about six months and gave her the opportunity to work with senior engineers, contribute to real projects, and gain practical industry experience.",
+    "A production incident: A time-zone issue in a scheduling feature affected users of an application serving a Canadian company. The team worked together to resolve it. The experience taught her to be more careful with dates, time zones, pricing, and other details in production systems.",
+    "Choosing to create opportunities: After becoming a ten-time hackathon winner, she deliberately stopped competing to give beginners more room to succeed. Instead, she organised hackathons and created opportunities for other students.",
+    "Academic consistency: She says she has maintained first-class standing since 100 level, while continuing to balance academics, professional work, and other responsibilities.",
+    "Learning to prioritise personal time: After experiencing the consequences of putting too much pressure on herself, she began making more deliberate efforts to create space for rest and personal life."
+  ],
+
+  lessons: [
+    "Give yourself permission to be a beginner. You do not need to understand everything before you start.",
+    "Do not allow setbacks to become the end of your journey. Keep reaching out and looking for another way forward.",
+    "Look beyond the opportunities immediately available to you. Exposure can change what you believe is possible.",
+    "Build real solutions with other people. Much of your learning happens while trying to solve actual problems.",
+    "Do not measure your value only by how many years of experience you have. Learn from others while making meaningful contributions of your own.",
+    "Ask questions when you do not understand something. You do not need to pretend to know everything.",
+    "Learn how to communicate the value of your skills, not just how to acquire more skills.",
+    "Be deliberate about the opportunities you take. When you have benefited from an opportunity, consider how you can make room for someone else.",
+    "Share your work and reach out to people. You never know who might discover your potential through what you put out there.",
+    "Do not collect certificates without direction. Focus on developing relevant skills and solving meaningful problems.",
+    "Find people who challenge you to grow, and do not become too comfortable with the limits of your immediate environment.",
+    "Make room for personal time. Professional and academic achievements should not come at the expense of your well-being."
+  ],
+
+  advice: "Give yourself permission to be a beginner. You don't have to understand everything immediately or have your entire life figured out in 100 level. Build real things, work with people, ask questions, and learn by solving problems. Apply for hackathons, share your work, and reach out to people. Don't get distracted by comparison or spend all your time collecting certificates without direction. Find friends who challenge you, stay open to opportunities, and remember that everyone has a different starting point.",
+
+  memorableQuote: "We don't have to copy the world to compete with it. We basically just need to understand our local problems well enough to build solutions that work for us locally.",
+
+  whyWeRememberThem: [
+    "Hasbiyallah's story represents the journey from benefiting from opportunities to deliberately creating opportunities for others.",
+    "From fighting for a second chance at JAMB to securing professional experience in her first year at university, her journey demonstrates the importance of persistence and taking initiative.",
+    "Her decision to step away from hackathon competitions after ten wins reflects her belief that opportunities should not be monopolised by people who already have access to them.",
+    "Through organising hackathons and encouraging other students to participate, she has helped create spaces for people who are still finding their feet in technology.",
+    "She reminds students that success is not only about personal achievements, but also about the impact they make and the opportunities they create for others."
+  ]
+},
+
+
   {
     slug: "malik",
     name: "Malik", // add his full name once confirmed ("Mik" in the file name, "Malik" in the document)

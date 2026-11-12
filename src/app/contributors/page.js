@@ -131,16 +131,56 @@ export default function ContributorsPage() {
   const applicationsOpen = Boolean(COHORT.applyUrl);
 
   return (
-    <>
-      <div className="page-hero">
-        <div className="eyebrow">Campus Correspondent Programme</div>
-        <div className="page-title">
-          Become a <span>Campus Contributor.</span>
-        </div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>
-          Contributor for Each campus. Text first. Video when the story earns it.
-        </p>
-      </div>
+    <main className="collection-page contributors-page">
+     
+<header className="contributor-hero">
+  <div className="contributor-hero-copy">
+    <div className="collection-kicker">
+      <span /> CAMPUS CORRESPONDENT PROGRAMME
+    </div>
+
+    <h1>
+      Your campus has
+      <br />
+      stories worth <em>telling.</em>
+    </h1>
+
+    <p>
+      Find the stories at your university, interview the people
+      behind them and help preserve the work Nigerian
+      undergraduates are doing before graduation.
+    </p>
+
+    <div className="contributor-hero-actions">
+      <a href="#how-to-contribute">
+        Discover the role ↓
+      </a>
+      <a href="#apply">
+        How to apply ↗
+      </a>
+    </div>
+
+    <div className="contributor-hero-meta">
+      <span>ONE CONTRIBUTOR PER CAMPUS</span>
+      <span>TEXT FIRST · VIDEO WHEN IT EARNS IT</span>
+    </div>
+  </div>
+
+  <aside className="contributor-hero-card">
+    <span className="contributor-card-label">COHORT STATUS</span>
+    <strong className="cohort-status-value">
+      {applicationsOpen ? "OPEN" : "SOON"}
+    </strong>
+    <div className="collection-count-rule" />
+    <p>{COHORT.name}</p>
+    <small>
+      {COHORT.closes
+        ? `Applications close ${COHORT.closes}`
+        : "Check back for application updates"}
+    </small>
+  </aside>
+</header>
+
 
       <div className="season-banner">
         <div className="banner-text">
@@ -163,13 +203,13 @@ export default function ContributorsPage() {
         )}
       </div>
 
-      <div className="section" style={{ paddingTop: "2rem", maxWidth: "1100px", margin: "0 auto" }}>
+      <section className="collection-main contributor-content" id="how-to-contribute">
         {contributors.length > 0 && (
-          <div style={{ marginBottom: "3.5rem" }}>
+          <div className="contributors-roster" style={{ marginBottom: "3.5rem" }}>
             <Heading sub="The students putting their campuses on the record">
               Our <span>Contributors</span>
             </Heading>
-   <div style={gridStyle}>
+   <div className="contributor-profile-grid" style={gridStyle}>
   {contributors.map((c) => {
   const contributorStories = stories.filter(
     (story) => story.contributorSlug === c.slug
@@ -178,21 +218,23 @@ export default function ContributorsPage() {
   const storyCount = contributorStories.length;
 
   return (
-    <div
-      key={c.slug}
-      style={{
-        ...cardStyle,
-        display: "flex",
-        alignItems: "center",
-        gap: "1rem",
-      }}
-    >
+<div
+  key={c.slug}
+  className="contributor-profile-card"
+  style={{
+    ...cardStyle,
+    display: "flex",
+    alignItems: "center",
+    gap: "1rem",
+  }}
+>
       {c.image ? (
-        <Image
-          src={c.image}
-          alt={c.name}
-          width={56}
-          height={56}
+       <Image
+  src={c.image}
+  alt={c.name}
+  width={56}
+  height={56}
+  className="contributor-avatar"
           style={{
             borderRadius: "50%",
             objectFit: "cover",
@@ -378,7 +420,7 @@ export default function ContributorsPage() {
           </div>
         </div>
 
-        <div style={{ ...blockGap, paddingBottom: "5rem" }}>
+        <div style={{ ...blockGap, paddingBottom: "5rem" }} id="apply">
           <Heading>
             How to <span>apply</span>
           </Heading>
@@ -405,7 +447,7 @@ export default function ContributorsPage() {
             )}
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }

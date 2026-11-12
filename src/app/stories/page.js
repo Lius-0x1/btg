@@ -1,89 +1,54 @@
 import Link from "next/link";
 import stories from "@/data/stories";
-import { StoryVideo } from "@/components/StoryVideo";
+import StoryArchive from "@/components/StoryArchive";
 
 export const metadata = {
-  title: "Stories | Before They Graduate",
-  description: "Undergraduate stories from Nigerian universities submitted, reviewed, and preserved permanently.",
-};
-
-const smallLink = {
-  fontSize: ".71rem",
-  textTransform: "uppercase",
-  letterSpacing: ".08em",
+  title: "Story Archive | Before They Graduate",
+  description: "Explore the stories, journeys and experiences of Nigerian undergraduates before graduation.",
 };
 
 export default function StoriesPage() {
-  const nextNumber = String(stories.length + 1).padStart(2, "0");
+  const publishedStories = stories;
+  const campuses = new Set(publishedStories.flatMap((story) => [story.meta, story.tag].filter(Boolean).flatMap((value) => value.split("·").map((part) => part.trim()))).filter((value) => /university|\bFUTA\b|\bLASU\b/i.test(value)));
 
   return (
-    <>
-      <div className="page-hero">
-        <div className="page-title">The <span>Archive.</span></div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>
-          Undergraduate stories from Nigerian universities submitted, reviewed, and preserved permanently. Any school. Any department. Any experience worth documenting.
-        </p>
-      </div>
-
-      <div className="section" style={{ paddingTop: "1rem" }}>
-        <div className="sec-header">
+    <main className="archive-page">
+      <section className="archive-hero">
+        <div className="archive-eyebrow"><span /> THE PERMANENT RECORD OF NIGERIAN UNDERGRADUATES</div>
+        <div className="archive-hero-grid">
           <div>
-            <div className="sec-title">All <span>Stories</span></div>
-            <div className="sec-sub">Growing as submissions come in</div>
-          </div>
-          <Link href="/submit" className="btn-primary" style={{ fontSize: ".75rem", padding: ".6rem 1.3rem" }}>Submit Your Story →</Link>
-        </div>
-
-        <div className="stories-list">
-          {stories.map((s) => (
-            <div className="story-row" key={s.slug}>
-              <div className="story-row-num">{s.number}</div>
-              <div>
-                <div className="story-row-tag">{s.tag}</div>
-                <div className="story-row-title">{s.title}</div>
-                <div className="story-row-excerpt">{s.excerpt}</div>
-                <div className="story-row-meta" style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                  <span>{s.meta}</span>
-                  <Link href={s.href} style={{ ...smallLink, color: "var(--orange)" }}>Read Full Story →</Link>
-                  {s.builderSlug && (
-                    <Link href={`/builders/${s.builderSlug}`} style={{ ...smallLink, color: "var(--muted)" }}>View profile</Link>
-                  )}
-                  {s.externalUrl && (
-                    <Link href={s.externalUrl} target="_blank" rel="noopener noreferrer" style={{ ...smallLink, color: "var(--muted)" }}>
-                      {s.externalLabel}
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-
-          <div className="story-row" style={{ opacity: 0.55, pointerEvents: "none" }}>
-            <div className="story-row-num">{nextNumber}</div>
-            <div>
-              <div className="story-row-tag">Waiting for submissions</div>
-              <div className="story-row-title">The next story in this archive is yours</div>
-              <div className="story-row-excerpt">
-                Stories from undergraduate students across Nigeria will appear here as submissions are reviewed and approved. Any university. Any department. Any experience that deserves to be remembered.
-              </div>
-              <div className="story-row-meta">Open to all Nigerian universities</div>
+            <h1>Every story<br />has a <em>place here.</em></h1>
+            <p>Projects, turning points, hard lessons and defining moments from students across Nigerian universities — documented before graduation.</p>
+            <div className="archive-hero-actions">
+              <a href="#archive">Explore the archive <span>↓</span></a>
+              <Link href="/submit">Submit a story <span>↗</span></Link>
             </div>
           </div>
+          <aside className="archive-stat-card">
+            <div className="archive-stat-large">{String(publishedStories.length).padStart(2, "0")}</div>
+            <div className="archive-stat-label">STORIES PRESERVED</div>
+            <div className="archive-stat-rule" />
+            <div className="archive-stat-pair"><strong>{String(campuses.size).padStart(2, "0")}</strong><span>CAMPUSES REPRESENTED*</span></div>
+            <small>*Based on university details currently recorded in published story metadata.</small>
+          </aside>
         </div>
+      </section>
 
-        <div style={{ marginTop: "3rem" }}>
-          <div className="cta-inner" style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "8px" }}>
-            <div>
-              <div style={{ fontFamily: "var(--display)", fontSize: "1.8rem", color: "var(--text)", marginBottom: ".5rem" }}>Have a story worth telling?</div>
-              <div style={{ fontSize: ".85rem", color: "var(--muted2)", fontWeight: 300, maxWidth: "480px", lineHeight: 1.7 }}>Submit your final year experience, achievement, or journey. We review every submission and publish it permanently in this archive.</div>
-            </div>
-            <div className="cta-actions">
-              <Link href="/submit" className="btn-primary">Submit Your Story →</Link>
-              <div style={{ fontSize: ".73rem", color: "var(--muted)", textAlign: "right" }}>Reviewed before publishing.<br />Open to all Nigerian universities.</div>
-            </div>
+      <section className="archive-main" id="archive">
+        <div className="archive-section-heading">
+          <div>
+            <span className="archive-section-label">THE COLLECTION</span>
+            <h2>The Story <em>Archive</em></h2>
           </div>
+          <p>Search the people, places and experiences that make up the undergraduate journey.</p>
         </div>
-      </div>
-    </>
+        <StoryArchive stories={publishedStories} />
+      </section>
+
+      <section className="archive-submit-band">
+        <div><span>YOUR EXPERIENCE BELONGS HERE</span><h2>Make the record outlive<br />your graduation.</h2></div>
+        <Link href="/submit">Submit your story <span>↗</span></Link>
+      </section>
+    </main>
   );
 }

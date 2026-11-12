@@ -80,17 +80,26 @@ export default async function EpisodesPage() {
   const lastKnownEpisodeNum = Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode)));
 
   return (
-    <>
-      <div className="page-hero">
-        <div className="page-title">
-          Every <span>Episode.</span>
+    <main className="collection-page episodes-page">
+      <header className="collection-hero">
+        <div className="collection-kicker"><span /> THE CONVERSATIONS</div>
+        <div className="collection-hero-grid">
+          <div>
+            <h1>Voices worth <em>keeping.</em></h1>
+            <p>Honest conversations with Nigerian undergraduates about the work, choices, setbacks and experiences shaping their lives before graduation.</p>
+            <div className="collection-actions"><a href="#season-two">Watch the latest season ↓</a><Link href="/submit">Nominate a student ↗</Link></div>
+          </div>
+          <aside className="collection-count-card">
+            <strong>{String(season1Episodes.length + season2Builders.length + pendingEpisodes.length).padStart(2, "0")}</strong>
+            <span>EPISODES IN THE ARCHIVE</span>
+            <div className="collection-count-rule" />
+            <div className="collection-count-pair"><b>02</b><span>SEASONS DOCUMENTED</span></div>
+            <small>Season One preserved. Season Two continues to grow.</small>
+          </aside>
         </div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>
-          Final year students at FUTA, unscripted and honest, their campus experience on record before they graduate. Season 2 is live; Season 1's 12 conversations remain archived below.
-        </p>
-      </div>
+      </header>
 
-      <div className="season-banner">
+      <div className="season-banner season-banner-editorial">
         <div className="banner-text">
           <strong>Season 2 is live.</strong> New episodes drop regularly. Nominations for
           future seasons are open to final year students from any Nigerian university.
@@ -100,62 +109,66 @@ export default async function EpisodesPage() {
         </Link>
       </div>
 
-      <div className="section" style={{ maxWidth: "1200px", margin: "0 auto", padding: "2rem 2.5rem 0" }}>
+      <section className="collection-main episode-season" id="season-two">
         <div className="sec-header">
           <div>
             <div className="sec-title">Season <span>Two</span></div>
             <div className="sec-sub">New conversations, new builders</div>
           </div>
         </div>
-      </div>
-      <div className="ep-grid" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2.5rem 3rem" }}>
-        {season2Builders.map((b) => {
-          const num = episodeNumber(b.episode).toString().padStart(2, "0");
-          return (
+        <div className="ep-grid episode-grid-editorial">
+          {season2Builders.map((b) => {
+            const num = episodeNumber(b.episode).toString().padStart(2, "0");
+            return (
+              <EpisodeCard
+                key={`s2-${b.slug}`}
+                num={num}
+                title={b.name}
+                meta={b.department}
+                youtubeId={extractVideoId(b.episodeUrl)}
+                seasonLabel="S2"
+              />
+            );
+          })}
+
+          {pendingEpisodes.map((ep, idx) => (
             <EpisodeCard
-              key={`s2-${b.slug}`}
-              num={num}
-              title={b.name}
-              meta={b.department}
-              youtubeId={extractVideoId(b.episodeUrl)}
+              key={`pending-${ep.videoId}`}
+              num={(lastKnownEpisodeNum + idx + 1).toString().padStart(2, "0")}
+              title={ep.title}
+              meta="Full profile coming soon"
+              youtubeId={ep.videoId}
+              thumbnailOverride={ep.thumbnail}
               seasonLabel="S2"
             />
-          );
-        })}
+          ))}
+        </div>
+      </section>
 
-        {pendingEpisodes.map((ep, idx) => (
-          <EpisodeCard
-            key={`pending-${ep.videoId}`}
-            num={(lastKnownEpisodeNum + idx + 1).toString().padStart(2, "0")}
-            title={ep.title}
-            meta="Full profile coming soon"
-            youtubeId={ep.videoId}
-            thumbnailOverride={ep.thumbnail}
-            seasonLabel="S2"
-          />
-        ))}
-      </div>
-
-      <div className="section" style={{ maxWidth: "1200px", margin: "0 auto", padding: "1rem 2.5rem 0" }}>
+      <section className="collection-main episode-season episode-season-archive" id="season-one">
         <div className="sec-header">
           <div>
             <div className="sec-title">Season One <span>· Archive</span></div>
             <div className="sec-sub">12 honest conversations with final year students</div>
           </div>
         </div>
-      </div>
-      <div className="ep-grid" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2.5rem 5rem" }}>
-        {season1Episodes.map((ep) => (
-          <EpisodeCard
-            key={`s1-${ep.num}`}
-            num={ep.num}
-            title={ep.title}
-            meta={ep.meta}
-            youtubeId={ep.youtubeId}
-            seasonLabel="S1"
-          />
-        ))}
-      </div>
-    </>
+        <div className="ep-grid episode-grid-editorial">
+          {season1Episodes.map((ep) => (
+            <EpisodeCard
+              key={`s1-${ep.num}`}
+              num={ep.num}
+              title={ep.title}
+              meta={ep.meta}
+              youtubeId={ep.youtubeId}
+              seasonLabel="S1"
+            />
+          ))}
+        </div>
+      </section>
+      <section className="collection-submit-band">
+        <div><span>SEASON THREE STARTS WITH A STORY</span><h2>Know a voice<br/>we should hear?</h2></div>
+        <Link href="/submit">Nominate a student <span>↗</span></Link>
+      </section>
+    </main>
   );
 }

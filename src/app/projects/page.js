@@ -1,41 +1,49 @@
 import Link from "next/link";
 import ProjectsGrid from "@/components/ProjectsGrid";
+import projects from "@/data/projects";
 
 export const metadata = {
   title: "Projects | Before They Graduate",
-  description: "Final year research, student startups, apps, and tools built by Nigerian undergraduates preserved here permanently.",
+  description: "A permanent repository of research, student startups, apps and tools built by Nigerian undergraduates.",
 };
 
 export default function ProjectsPage() {
+  const categories = new Set(projects.map((project) => project.type).filter(Boolean));
   return (
-    <>
-      <div className="page-hero">
-        <div className="page-title">Project <span>Repository.</span></div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>Final year research, student startups, apps, and tools built by Nigerian undergraduates preserved here permanently. No more projects disappearing after submission.</p>
-      </div>
-
-      <div className="section" style={{ paddingTop: "1rem" }}>
-        <div className="sec-header">
+    <main className="collection-page projects-page">
+      <header className="collection-hero">
+        <div className="collection-kicker"><span /> THE WORK THEY LEAVE BEHIND</div>
+        <div className="collection-hero-grid">
           <div>
-            <div className="sec-title">All <span>Projects</span></div>
-            <div className="sec-sub">Research · Startups · Apps · Tools · Initiatives</div>
+            <h1>Ideas made <em>real.</em></h1>
+            <p>A living repository of undergraduate research, startups, apps, tools and initiatives. Good work should not disappear after a final-year presentation.</p>
+            <div className="collection-actions"><a href="#project-directory">Explore projects ↓</a><Link href="/submit">Submit a project ↗</Link></div>
           </div>
-          <Link href="/submit" className="btn-primary" style={{ fontSize: ".75rem", padding: ".6rem 1.3rem" }}>Submit a Project →</Link>
+          <aside className="collection-count-card">
+            <strong>{String(projects.length).padStart(2, "0")}</strong>
+            <span>PROJECTS DOCUMENTED</span>
+            <div className="collection-count-rule" />
+            <div className="collection-count-pair"><b>{String(categories.size).padStart(2, "0")}</b><span>PROJECT TYPES</span></div>
+            <small>Research, products and student-built solutions in one place.</small>
+          </aside>
         </div>
-
+      </header>
+      <section className="collection-main" id="project-directory">
+        <div className="collection-section-heading">
+          <div><span>THE REPOSITORY</span><h2>Built before <em>graduation.</em></h2></div>
+          <p>Browse the work, meet the people behind it, and follow the links to explore what they have made.</p>
+        </div>
+        <div className="collection-toolbar-note"><span>FILTER THE REPOSITORY</span><Link href="/submit">Have something to add? Submit it ↗</Link></div>
         <ProjectsGrid />
-
-        <div style={{ marginTop: "3rem" }}>
-          <div style={{ background: "var(--off)", border: "1px solid var(--border)", borderRadius: "8px", padding: "2rem", textAlign: "center" }}>
-            <div style={{ fontSize: ".7rem", textTransform: "uppercase", letterSpacing: ".12em", color: "var(--orange)", marginBottom: ".75rem" }}>How the Repository Works</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.5rem", maxWidth: "700px", margin: "0 auto" }}>
-              <div><div style={{ fontFamily: "var(--display)", fontSize: "1.8rem", color: "var(--orange)", marginBottom: ".4rem" }}>01</div><div style={{ fontSize: ".82rem", color: "var(--muted2)", fontWeight: 300, lineHeight: 1.6 }}>You submit your project title, description, your name, university, and a link (Google Drive, GitHub, website, anywhere).</div></div>
-              <div><div style={{ fontFamily: "var(--display)", fontSize: "1.8rem", color: "var(--orange)", marginBottom: ".4rem" }}>02</div><div style={{ fontSize: ".82rem", color: "var(--muted2)", fontWeight: 300, lineHeight: 1.6 }}>We review it. If it's a genuine undergraduate project or student-built product, it gets approved and published.</div></div>
-              <div><div style={{ fontFamily: "var(--display)", fontSize: "1.8rem", color: "var(--orange)", marginBottom: ".4rem" }}>03</div><div style={{ fontSize: ".82rem", color: "var(--muted2)", fontWeight: 300, lineHeight: 1.6 }}>Your project lives here permanently credited to you, searchable, shareable, and visible to anyone who visits BTG.</div></div>
-            </div>
+        <div className="project-process">
+          <div className="project-process-heading"><span>FROM SUBMISSION TO ARCHIVE</span><h2>How the repository <em>works.</em></h2></div>
+          <div className="project-process-grid">
+            <article><b>01</b><h3>Submit</h3><p>Share the project, its story, the people behind it and a link where it can be explored.</p></article>
+            <article><b>02</b><h3>Editorial review</h3><p>Our team reviews submissions to make sure the work and its context are represented clearly.</p></article>
+            <article><b>03</b><h3>Preserve</h3><p>Approved work joins the repository: credited, searchable and available beyond graduation.</p></article>
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }

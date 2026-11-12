@@ -30,35 +30,30 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <>
-      <div className="page-hero">
-        <div className="page-title">Frequently Asked <span>Questions.</span></div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>Answers to the questions we get most before someone submits their story or project.</p>
-      </div>
-
-      <div className="section" style={{ paddingTop: "1rem" }}>
-        {faqs.map((item, i) => (
-          <div key={i} className="value-card" style={{ marginBottom: "1.2rem" }}>
-            <div className="value-title" style={{ fontSize: "1rem" }}>{item.q}</div>
-            <div className="value-body">{item.a}</div>
+    <main className="collection-page faq-page">
+      <header className="collection-hero">
+        <div className="collection-kicker"><span /> A FEW THINGS TO KNOW</div>
+        <div className="collection-hero-grid">
+          <div>
+            <h1>Questions, <em>answered.</em></h1>
+            <p>Everything you need to know before sharing a story, submitting a project or getting involved with Before They Graduate.</p>
+            <div className="collection-actions"><a href="#faq-list">Browse the answers ↓</a><Link href="/submit">Ready to submit? ↗</Link></div>
           </div>
-        ))}
-
-        <div style={{ marginTop: "3rem" }}>
-          <div className="cta-inner" style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "8px" }}>
-            <div>
-              <div style={{ fontFamily: "var(--display)", fontSize: "1.8rem", color: "var(--text)", marginBottom: ".5rem" }}>Still have a question?</div>
-              <div style={{ fontSize: ".85rem", color: "var(--muted2)", fontWeight: 300, maxWidth: "480px", lineHeight: 1.7 }}>Reach out directly and the BTG team will get back to you.</div>
-            </div>
-            <div className="cta-actions">
-              <Link href="/submit" className="btn-primary">Go to Submit →</Link>
-            </div>
-          </div>
+          <aside className="collection-count-card"><strong>05</strong><span>COMMON QUESTIONS</span><div className="collection-count-rule"/><small>Can't find what you're looking for? Get in touch through the submission page.</small></aside>
         </div>
-      </div>
-      <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          <Link href="/faq" style={{ color: "var(--orange)", fontSize: ".8rem", textTransform: "uppercase", letterSpacing: ".08em" }}>Read the FAQ →</Link>
+      </header>
+      <section className="collection-main faq-content" id="faq-list">
+        <div className="collection-section-heading"><div><span>BEFORE YOU SUBMIT</span><h2>Good to <em>know.</em></h2></div><p>Clear answers about the process, eligibility and what happens after you send something in.</p></div>
+        <div className="faq-list">
+          {faqs.map((item, i) => (
+            <details key={i} className="faq-item" open={i === 0}>
+              <summary><span className="faq-number">{String(i + 1).padStart(2, "0")}</span><span>{item.q}</span><b>＋</b></summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
         </div>
-    </>
+        <div className="faq-contact-band"><div><span>STILL UNSURE?</span><h2>Ask us directly.</h2><p>Reach out to the BTG team and we'll help you figure out the right next step.</p></div><Link href="/submit">Go to Submit <span>↗</span></Link></div>
+      </section>
+    </main>
   );
 }

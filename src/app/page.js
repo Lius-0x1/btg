@@ -70,6 +70,13 @@ const heroSlides = [
 
   const lastKnownEpisodeNum = Math.max(0, ...season2Builders.map((b) => episodeNumber(b.episode)));
 
+  const season2Preview = [
+    ...season2Builders.map((b) => ({ key: b.slug, href: b.episodeUrl, videoId: extractVideoId(b.episodeUrl), name: b.name, department: b.department, number: episodeNumber(b.episode), pending: false })),
+    ...pendingEpisodes.map((ep, idx) => ({ key: `pending-${ep.videoId}`, href: `https://youtu.be/${ep.videoId}`, videoId: ep.videoId, name: ep.title, department: "Full profile coming soon", number: lastKnownEpisodeNum + idx + 1, pending: true, thumbnail: ep.thumbnail })),
+  ].sort((a, b) => b.number - a.number).slice(0, 3);
+  const featuredBuilders = builders.filter((b) => b.image && b.name).slice(0, 4);
+  const universityCount = new Set(builders.map((b) => b.university || b.school).filter(Boolean)).size;
+
   return (
     <>
       <div className="hero">
@@ -80,7 +87,7 @@ const heroSlides = [
               What Are You <span className="accent">Building</span> Before You Graduate?
             </h1>
             <p className="hero-body hero-body-anim">
-              Real stories from Nigerian undergraduate students their experiences, their projects, their research, and everything they created before graduation. An archive built to last.
+              A living archive of Nigerian undergraduates: their stories, projects, research, setbacks and breakthroughs — documented before graduation, preserved long after it.
             </p>
             <div className="hero-actions hero-actions-anim">
               <Link href="/episodes" className="btn-primary">Watch Episodes</Link>
@@ -94,9 +101,9 @@ const heroSlides = [
     
       <div className="stats-wrap">
         <div className="stats-inner">
-          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">stories</div></div>
-          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">Students Featured</div></div>
-          <div className="stat-item"><div className="stat-num">4</div><div className="stat-label">University So Far</div></div>
+          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">Stories archived</div></div>
+          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">Builders featured</div></div>
+          <div className="stat-item"><div className="stat-num">4</div><div className="stat-label">Universities represented</div></div>
           <div className="stat-item"><div className="stat-num">∞</div><div className="stat-label">Stories to Archive</div></div>
         </div>
       </div>
@@ -107,49 +114,26 @@ const heroSlides = [
             <div className="sec-title">Season <span>Two</span></div>
             <div className="sec-sub">New conversations, new builders</div>
           </div>
-          <Link href="/episodes" className="see-all">All episodes →</Link>
+          <Link href="/episodes" className="see-all">Explore all Season 2 →</Link>
         </div>
-        <div className="ep-grid">
-          {season2Builders.map((b) => {
-            const videoId = extractVideoId(b.episodeUrl);
-            const num = episodeNumber(b.episode).toString().padStart(2, "0");
-            return (
-              <a key={b.slug} className="ep-card" href={b.episodeUrl} target="_blank" rel="noopener noreferrer">
-                <div className="ep-thumb">
-                  <Image src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} alt={b.name} fill style={{ objectFit: "cover" }} />
-                  <span className="ep-thumb-num">{num}</span>
-                  <div className="ep-overlay"></div>
-                  <span className="ep-badge">S2·E{num}</span>
-                  <div className="ep-play-btn"><div className="tri"></div></div>
-                </div>
-                <div className="ep-body">
-                  <div className="ep-num">Episode {num}</div>
-                  <div className="ep-title">{b.name}</div>
-                  <div className="ep-meta">{b.department}</div>
-                </div>
-              </a>
-            );
-          })}
-
-          {pendingEpisodes.map((ep, idx) => {
-            const num = (lastKnownEpisodeNum + idx + 1).toString().padStart(2, "0");
-            return (
-              <a key={`pending-${ep.videoId}`} className="ep-card" href={`https://youtu.be/${ep.videoId}`} target="_blank" rel="noopener noreferrer">
-                <div className="ep-thumb">
-                  <Image src={ep.thumbnail} alt={ep.title} fill style={{ objectFit: "cover" }} unoptimized />
-                  <span className="ep-thumb-num">{num}</span>
-                  <div className="ep-overlay"></div>
-                  <span className="ep-badge">S2·E{num}</span>
-                  <div className="ep-play-btn"><div className="tri"></div></div>
-                </div>
-                <div className="ep-body">
-                  <div className="ep-num">Episode {num}</div>
-                  <div className="ep-title">{ep.title}</div>
-                  <div className="ep-meta">Full profile coming soon</div>
-                </div>
-              </a>
-            );
-          })}
+        <div className="ep-grid home-episode-grid">
+          {season2Preview.map((ep) => (
+            <a key={ep.key} className="ep-card home-episode-card" href={ep.href} target="_blank" rel="noopener noreferrer">
+              <div className="ep-thumb">
+                <Image src={ep.pending ? ep.thumbnail : `https://img.youtube.com/vi/${ep.videoId}/mqdefault.jpg`} alt={ep.name} fill unoptimized style={{ objectFit: "cover" }} />
+                <span className="ep-thumb-num">{String(ep.number).padStart(2, "0")}</span>
+                <div className="ep-overlay"></div>
+                <span className="ep-badge">S2 · E{String(ep.number).padStart(2, "0")}</span>
+                <div className="ep-play-btn"><div className="tri"></div></div>
+              </div>
+              <div className="ep-body">
+                <div className="ep-num">SEASON 2 · EPISODE {String(ep.number).padStart(2, "0")}</div>
+                <div className="ep-title">{ep.name}</div>
+                <div className="ep-meta">{ep.department}</div>
+              </div>
+            </a>
+          ))}
+          {season2Preview.length === 0 && <div className="home-episodes-empty">New Season 2 conversations are being added to the archive.</div>}
         </div>
       </div>
 
@@ -161,7 +145,7 @@ const heroSlides = [
           </div>
           <Link href="/episodes" className="see-all">All episodes →</Link>
         </div>
-        <div className="ep-grid">
+        <div className="ep-grid home-season-one-grid">
           <a className="ep-card" href="https://youtu.be/hX5kTs5MPtw" target="_blank" rel="noopener noreferrer">
             <div className="ep-thumb">
               <Image src="https://img.youtube.com/vi/hX5kTs5MPtw/mqdefault.jpg" alt="Ep 1" fill style={{ objectFit: "cover" }} />
@@ -206,6 +190,29 @@ const heroSlides = [
           </a>
         </div>
       </div>
+
+      <section className="home-builders-section">
+        <div className="home-section-topline">
+          <span className="home-kicker">The people behind the work</span>
+          <span className="home-section-index">01 / BUILDERS DIRECTORY</span>
+        </div>
+        <div className="home-builders-heading">
+          <div><h2>Meet the <em>builders.</em></h2><p>Students doing meaningful work before graduation. Discover the people, their ideas and the paths they are creating.</p></div>
+          <Link href="/builders" className="home-text-link">Explore all builders <span>↗</span></Link>
+        </div>
+        <div className="home-featured-builders">
+          {featuredBuilders.map((b, index) => (
+            <Link href={`/builders/${b.slug}`} className="home-builder-card" key={b.slug}>
+              <div className="home-builder-image-wrap">
+                <Image src={b.image} alt={b.name} fill sizes="(max-width: 700px) 50vw, 25vw" style={{ objectFit: "cover" }} />
+                <span className="home-builder-number">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <div className="home-builder-info"><span className="home-builder-dept">{b.department || "Student builder"}</span><h3>{b.name}</h3><span className="home-builder-school">{b.university || b.school || "Nigeria"}</span></div>
+              <span className="home-builder-arrow">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <div className="section" style={{ paddingTop: 0 }}>
         <div className="sec-header">

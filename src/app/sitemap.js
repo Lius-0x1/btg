@@ -11,17 +11,15 @@ export default function sitemap() {
 
   const staticRoutes = ["", "/episodes", "/stories", "/projects", "/builders", "/submit", "/about", "/faq", "/contributors"].map((route) => ({
     url: `${base}${route}`,
-    lastModified: new Date(),
   }));
 
   const storyRoutes = stories.map((s) => ({
     url: `${base}${s.href}`,
-    lastModified: new Date(),
   }));
 
   const builderRoutes = builders.map((b) => ({
     url: `${base}/builders/${b.slug}`,
-    lastModified: new Date(),
+
   }));
 
   return [...staticRoutes, ...storyRoutes, ...builderRoutes, ...projectRoutes];

@@ -2,11 +2,41 @@ import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
-<html lang="en" suppressHydrationWarning></html>
 
 export const metadata = {
-  title: "Before They Graduate",
-  description: "Documenting the stories, projects, and journeys of Nigerian undergraduates before they graduate.",
+  metadataBase: new URL("https://beforetheygraduate.app"),
+
+  title: {
+    default: "Before They Graduate",
+    template: "%s | Before They Graduate",
+  },
+
+  description:
+    "Discover the stories, journeys, projects and experiences of Nigerian undergraduates before they graduate.",
+
+  applicationName: "Before They Graduate",
+
+  openGraph: {
+    title: "Before They Graduate",
+    description:
+      "Documenting the stories, projects and journeys of Nigerian undergraduates before graduation.",
+    siteName: "Before They Graduate",
+    locale: "en_NG",
+    type: "website",
+    url: "https://beforetheygraduate.app",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Before They Graduate",
+    description:
+      "The stories, projects and journeys of Nigerian undergraduates.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {

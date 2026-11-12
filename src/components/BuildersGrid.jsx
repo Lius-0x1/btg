@@ -7,128 +7,89 @@ import builders from "@/data/builders";
 export default function BuildersGrid() {
   const [search, setSearch] = useState("");
   const [dept, setDept] = useState("all");
+  const [university, setUniversity] = useState("all");
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [universityOpen, setUniversityOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const universityRef = useRef(null);
 
-  // Derived from builders.js — a new department shows up automatically,
-  // same as before. Only the UI presentation is changing here.
-  const deptFilters = useMemo(() => {
-    const unique = [...new Set(builders.map((b) => b.department))].sort();
-    return [{ value: "all", label: "All Departments" }, ...unique.map((d) => ({ value: d, label: d }))];
-  }, []);
+  const deptFilters = useMemo(() => [
+    { value: "all", label: "All disciplines" },
+    ...[...new Set(builders.map((b) => b.department).filter(Boolean))].sort().map((d) => ({ value: d, label: d })),
+  ], []);
+  const universityFilters = useMemo(() => [
+    { value: "all", label: "All universities" },
+    ...[...new Set(builders.map((b) => b.university || b.school).filter(Boolean))].sort().map((u) => ({ value: u, label: u })),
+  ], []);
 
-  const activeLabel = deptFilters.find((f) => f.value === dept)?.label || "All Departments";
-
-  // Close the dropdown when clicking anywhere outside it.
   useEffect(() => {
     function handleClickOutside(e) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setDropdownOpen(false);
-      }
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setDropdownOpen(false);
+      if (universityRef.current && !universityRef.current.contains(e.target)) setUniversityOpen(false);
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const visible = builders.filter((b) => {
-    const matchesSearch = b.name.toLowerCase().includes(search.toLowerCase()) || b.department.toLowerCase().includes(search.toLowerCase());
-    const matchesDept = dept === "all" || b.department === dept;
-    return matchesSearch && matchesDept;
+    const term = search.trim().toLowerCase();
+    const haystack = [b.name, b.department, b.university, b.school, b.quote].filter(Boolean).join(" ").toLowerCase();
+    return (!term || haystack.includes(term))
+      && (dept === "all" || b.department === dept)
+      && (university === "all" || (b.university || b.school) === university);
   });
 
+  const activeFilters = (dept !== "all" ? 1 : 0) + (university !== "all" ? 1 : 0);
+
   return (
-    <>
-      <div className="search-bar" style={{ display: "flex", alignItems: "center", gap: ".75rem" }}>
-        <span style={{ color: "var(--muted)", fontSize: "1.1rem" }}>⌕</span>
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search by name or department..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{ flex: 1 }}
-        />
+    <div className="builders-directory">
+      <div className="builders-toolbar">
+        <label className="builders-search">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" placeholder="Search people, skills, disciplines..." value={search} onChange={(e) => setSearch(e.target.value)} aria-label="Search builders" />
+          {search && <button type="button" onClick={() => setSearch("")} aria-label="Clear search">×</button>}
+        </label>
 
-        <div ref={dropdownRef} style={{ position: "relative", flexShrink: 0 }}>
-          <button
-            onClick={() => setDropdownOpen((o) => !o)}
-            aria-label="Filter by department"
-            aria-expanded={dropdownOpen}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: ".4rem",
-              background: "transparent",
-              border: "1px solid var(--border)",
-              borderRadius: "6px",
-              padding: ".5rem .8rem",
-              cursor: "pointer",
-              color: dept === "all" ? "var(--muted)" : "var(--orange)",
-              fontSize: ".78rem",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-            </svg>
-            <span>{dept === "all" ? "Filter" : activeLabel}</span>
+        <div className="builders-filter-wrap" ref={dropdownRef}>
+          <button type="button" className={`builders-filter-button ${dept !== "all" ? "is-active" : ""}`} onClick={() => { setDropdownOpen((v) => !v); setUniversityOpen(false); }} aria-expanded={dropdownOpen}>
+            <span>Discipline</span><strong>{dept === "all" ? "All" : "Selected"}</strong><span aria-hidden="true">⌄</span>
           </button>
-
-          {dropdownOpen && (
-            <div
-              style={{
-                position: "absolute",
-                right: 0,
-                top: "calc(100% + 6px)",
-                background: "var(--card)",
-                border: "1px solid var(--border)",
-                borderRadius: "8px",
-                minWidth: "220px",
-                zIndex: 20,
-                overflow: "hidden",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
-              }}
-            >
-              {deptFilters.map((f) => (
-                <div
-                  key={f.value}
-                  onClick={() => {
-                    setDept(f.value);
-                    setDropdownOpen(false);
-                  }}
-                  style={{
-                    padding: ".65rem 1rem",
-                    fontSize: ".8rem",
-                    cursor: "pointer",
-                    color: dept === f.value ? "var(--orange)" : "var(--text)",
-                    background: dept === f.value ? "var(--off)" : "transparent",
-                  }}
-                >
-                  {f.label}
-                </div>
-              ))}
-            </div>
-          )}
+          {dropdownOpen && <div className="builders-filter-menu">
+            {deptFilters.map((f) => <button type="button" key={f.value} className={dept === f.value ? "selected" : ""} onClick={() => { setDept(f.value); setDropdownOpen(false); }}>{f.label}</button>)}
+          </div>}
         </div>
+
+        <div className="builders-filter-wrap" ref={universityRef}>
+          <button type="button" className={`builders-filter-button ${university !== "all" ? "is-active" : ""}`} onClick={() => { setUniversityOpen((v) => !v); setDropdownOpen(false); }} aria-expanded={universityOpen}>
+            <span>University</span><strong>{university === "all" ? "All" : "Selected"}</strong><span aria-hidden="true">⌄</span>
+          </button>
+          {universityOpen && <div className="builders-filter-menu">
+            {universityFilters.map((f) => <button type="button" key={f.value} className={university === f.value ? "selected" : ""} onClick={() => { setUniversity(f.value); setUniversityOpen(false); }}>{f.label}</button>)}
+          </div>}
+        </div>
+        {activeFilters > 0 && <button type="button" className="builders-clear" onClick={() => { setDept("all"); setUniversity("all"); }}>Clear filters</button>}
       </div>
 
-      <div className="builders-grid" style={{ marginTop: "1.5rem" }}>
-        {visible.map((b) => (
-          <Link key={b.slug} href={`/builders/${b.slug}`} className="builder-card">
-            <div className="builder-top">
-              <Image src={b.image} className="builder-photo" alt={b.name} width={60} height={60} />
-              <div>
-                <div className="builder-name">{b.name}</div>
-                <div className="builder-school">
-                   {b.department} · {b.university} · {b.year}
-                 </div>
-                <span className="builder-status">Archive Profile →</span>
-              </div>
+      <div className="builders-results-line"><span>{visible.length} {visible.length === 1 ? "builder" : "builders"}</span><span>STORIES, IDEAS & WORK IN PROGRESS</span></div>
+
+      {visible.length ? <div className="builders-grid builders-grid-editorial">
+        {visible.map((b, index) => (
+          <Link key={b.slug} href={`/builders/${b.slug}`} className="builder-card builder-card-editorial">
+            <div className="builder-card-image">
+              {b.image ? <Image src={b.image} className={`builder-photo-editorial ${String(b.image).split("/").pop().split(".")[0]}`} alt={b.name} fill sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" style={{ objectFit: "cover", objectPosition: "center 18%" }} /> : <div className="builder-image-fallback">{b.name?.charAt(0) || "B"}</div>}
+              <span className="builder-card-index">{String(index + 1).padStart(2, "0")}</span>
+              <span className="builder-card-open">View profile ↗</span>
             </div>
-            <div className="builder-quote"> "{b.quote}" </div>
+            <div className="builder-card-content">
+              <span className="builder-card-discipline">{b.department || "Student builder"}</span>
+              <h3 className="builder-name">{b.name}</h3>
+              <p className="builder-card-school">{b.university || b.school || "Nigeria"}{b.year ? ` · ${b.year}` : ""}</p>
+              {b.quote && <blockquote className="builder-quote-editorial">“{b.quote}”</blockquote>}
+              <div className="builder-card-bottom"><span>Read their story</span><span aria-hidden="true">↗</span></div>
+            </div>
           </Link>
         ))}
-      </div>
-    </>
+      </div> : <div className="builders-empty"><strong>No builders found.</strong><span>Try another name, discipline or university.</span><button type="button" onClick={() => { setSearch(""); setDept("all"); setUniversity("all"); }}>Reset directory</button></div>}
+    </div>
   );
 }

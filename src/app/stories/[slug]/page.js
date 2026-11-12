@@ -28,10 +28,15 @@ export async function generateMetadata({ params }) {
     : `https://beforetheygraduate.app${story.image}`;
 
   return {
-    title: `${story.title} | Before They Graduate`,
+    title: story.title,
     description: story.excerpt,
+
+    alternates: {
+      canonical: `https://beforetheygraduate.app/stories/${slug}`,
+    },
+
     openGraph: {
-      title: `${story.title} | Before They Graduate`,
+     title: story.title,
       description: story.excerpt,
       url: `https://beforetheygraduate.app/stories/${slug}`,
       siteName: "Before They Graduate",
@@ -74,85 +79,117 @@ const contributorStoryCount = contributor
       (s) => s.contributorSlug === contributor.slug
     ).length
   : 0;
+
+  const storyUrl = `https://beforetheygraduate.app/stories/${slug}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: story.title,
+  description: story.excerpt,
+  image: story.image.startsWith("http")
+    ? story.image
+    : `https://beforetheygraduate.app${story.image}`,
+  url: storyUrl,
+  inLanguage: "en-NG",
+  publisher: {
+    "@type": "Organization",
+    name: "Before They Graduate",
+    url: "https://beforetheygraduate.app",
+  },
+};
+
   return (
-    <div className="profile-container">
-      <Link href="/stories" className="profile-back-link">← Back to All Stories</Link>
-
-      <div className="profile-hero">
-        <Image
-          src={story.image}
-          alt={story.imageAlt}
-          width={1024}
-          height={1280}
-          priority
-          style={{
-            display: "block",
-            width: "100%",
-            maxWidth: "440px",
-            height: "auto",
-            margin: "0 auto 1.5rem",
-            borderRadius: "12px",
-            border: "1px solid var(--border)",
-          }}
-        />
-        <h1 className="profile-name" style={{ fontSize: "2.2rem" }}>{story.title}</h1>
-        <div className="profile-meta">{story.subtitle}</div>
-        <div className="profile-quote-highlight">"{story.heroQuote}"</div>
+    <main className="story-article-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className="story-article-topline">
+        <Link href="/stories" className="story-article-back">← The archive</Link>
+        <span>BEFORE THEY GRADUATE <i> / </i> STORY {story.number}</span>
       </div>
 
-      <div className="profile-section">
-        {story.intro.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-      </div>
+      <header className="story-article-hero">
+        <div className="story-article-heading">
+          <div className="story-article-kicker">{story.tag || "BTG FULL INTERVIEW"}</div>
+          <h1>{story.title}</h1>
+          {story.subtitle && <p className="story-article-subtitle">{story.subtitle}</p>}
+          <div className="story-article-byline"><span>{story.meta}</span><span>·</span><span>AN UNDERGRADUATE STORY</span></div>
+          <blockquote className="story-article-quote">“{story.heroQuote}”</blockquote>
+        </div>
+        <div className="story-article-image-wrap">
+          <Image src={story.image} alt={story.imageAlt} width={1024} height={1280} priority className="story-article-image" />
+          <span className="story-article-image-caption">{story.imageAlt}</span>
+        </div>
+      </header>
 
-      <div className="profile-section">
-        {story.qa.map((item, i) => (
-          <div key={i} style={{ marginBottom: "2.25rem" }}>
-            {item.pull && <div className="profile-pull-quote">{item.pull}</div>}
-            {item.heading && <h2 className="profile-section-title">{item.heading}</h2>}
+      <div className="story-reading-layout">
+        <aside className="story-chapter-nav" aria-label="In this conversation">
+          <span className="story-chapter-nav-label">IN THIS STORY</span>
+          <a href="#conversation-intro">The conversation</a>
+          {story.qa.map((item, i) => item.heading ? (
+            <a key={i} href={`#story-section-${i}`}>{item.heading}</a>
+          ) : null)}
+          <a href="#story-reflection">{story.takeawaysHeading || "A final reflection"}</a>
+        </aside>
 
-            <div style={{ ...labelStyle, color: "var(--orange)" }}>
-               {story.interviewer || "BTG"}
-              </div>
-            <p style={{ fontWeight: 500, marginTop: 0 }}>{item.q}</p>
-
-            <div style={{ ...labelStyle, color: "var(--muted)", marginTop: "1.1rem" }}>
-                {story.interviewee || "Temitope"}
+        <article className="story-article-body">
+          <div className="story-article-intro" id="conversation-intro">
+            <span className="story-article-body-label">THE CONVERSATION</span>
+            {story.intro.map((p, i) => <p key={i}>{p}</p>)}
           </div>
-            {item.a.map((line, j) => (
-              <p key={j} style={{ marginTop: 0 }}>{line}</p>
-            ))}
 
-            {item.video?.youtubeId && (
-  <StoryVideo
-    youtubeId={item.video.youtubeId}
-    title={item.video.title}
-  />
-)}
-
-            {item.reaction && (
-              <p style={{ fontStyle: "italic", color: "var(--muted2)" }}>{item.reaction}</p>
-            )}
-            {item.reply && (
-              <p style={{ marginTop: 0 }}>{item.reply}</p>
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div className="profile-section">
-        <h2 className="profile-section-title">{story.takeawaysHeading}</h2>
-        {story.takeaways.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-        {story.takeawaysPull && <div className="profile-pull-quote">{story.takeawaysPull}</div>}
-        {story.outro.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+          {story.video?.youtubeId && (
+            <div className="story-featured-video">
+              <StoryVideo youtubeId={story.video.youtubeId} title={story.title} />
             </div>
+          )}
+
+          <div className="story-article-interview">
+            {story.qa.map((item, i) => (
+              <section className="story-conversation-block" id={`story-section-${i}`} key={i}>
+                {item.heading && <h2 className="profile-section-title story-chapter-heading">{item.heading}</h2>}
+                {item.pull && <blockquote className="profile-pull-quote story-pull-quote">{item.pull}</blockquote>}
+
+                <div className="story-question">
+                  <div className="story-speaker-label story-interviewer-label">{story.interviewer || "BTG ASKS"}</div>
+                  <p className="story-question-text">{item.q}</p>
+                </div>
+
+                <div className="story-answer">
+                  <div className="story-speaker-label">{story.interviewee || "THE BUILDER"}</div>
+                  {item.a.map((line, j) => <p key={j}>{line}</p>)}
+                </div>
+
+                {item.video?.youtubeId && (
+                  <StoryVideo youtubeId={item.video.youtubeId} title={item.video.title || story.title} />
+                )}
+
+                {item.reaction && (
+                  <aside className="story-editorial-note">
+                    <span>BTG NOTE</span>
+                    <p>{item.reaction}</p>
+                  </aside>
+                )}
+                {item.reply && <p className="story-follow-up">{item.reply}</p>}
+              </section>
+            ))}
+          </div>
+
+          <section className="story-article-takeaways" id="story-reflection">
+            <span className="story-article-body-label">BEYOND THE CONVERSATION</span>
+            <h2 className="profile-section-title">{story.takeawaysHeading}</h2>
+            {story.takeaways.map((p, i) => <p key={i}>{p}</p>)}
+            {story.takeawaysPull && <blockquote className="profile-pull-quote story-pull-quote">{story.takeawaysPull}</blockquote>}
+            {story.outro.map((p, i) => <p key={i}>{p}</p>)}
+          </section>
+        </article>
+      </div>
         {story.builderSlug && (
-        <div className="profile-section">
+        <div className="profile-section story-article-related">
           <h2 className="profile-section-title">Builder's Profile</h2>
           <div className="profile-links">
             <Link href={`/builders/${story.builderSlug}`} className="profile-link-pill">
@@ -162,7 +199,7 @@ const contributorStoryCount = contributor
         </div>
       )}
 
-      <div className="profile-section">
+      <div className="profile-section story-article-share">
         <ShareButton title={story.shareText} />
       </div>
       
@@ -227,6 +264,6 @@ const contributorStoryCount = contributor
 })()}
 
       <div className="profile-footer-note">{story.footerNote}</div>
-    </div>
+    </main>
   );
 }

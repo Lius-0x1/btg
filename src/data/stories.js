@@ -607,7 +607,7 @@ const stories = [
     builderSlug: "oluwapelumi-aikomo",
     contributorSlug: "Ayinde Abdulsobur",
 
-    tag: "BTG Full Interview · Surveying & Geoinformatics",
+    tag: "BTG Full Interview · Ajayi Crowther University",
 
     title: "The Long Road: The Full Story of Oluwapelumi Aikomo",
 
@@ -1250,7 +1250,7 @@ const stories = [
   builderSlug: "malik",
   contributorSlug: "Ayinde Abdulsobur",
   tag: "BTG Full Interview · Lagos State University",
-  title: "The Idea That Couldn't Sell Itself:How Malik on Building Quant While in University",
+  title: "The Idea That Couldn't Sell Itself: How Malik Built Quant While in University",
   subtitle: "Building a startup, finding the right people, and learning to make an idea visible",
   
   excerpt:
@@ -1722,14 +1722,21 @@ const stories = [
 const withSearchText = stories.map((s) => ({
   ...s,
   href: s.href || `/stories/${s.slug}`,
-  paragraphs:
-    s.paragraphs ||
-    [
-      ...(s.intro || []),
-      ...(s.qa || []).flatMap((item) => [item.q, ...item.a]),
-      ...(s.takeaways || []),
-      ...(s.outro || []),
-    ],
+paragraphs:
+  s.paragraphs ||
+  [
+    ...(s.intro || []),
+    ...(s.qa || []).flatMap((item) => [
+      item.heading,
+      item.pull,
+      item.q,
+      ...(item.a || []),
+      item.reaction,
+    ].filter(Boolean)),
+    ...(s.takeaways || []),
+    s.takeawaysPull,
+    ...(s.outro || []),
+  ].filter(Boolean),
     
 }));
 

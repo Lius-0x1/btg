@@ -9,13 +9,33 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const builder = builders.find((b) => b.slug === slug);
+
   if (!builder) return {};
+
+  const title = `${builder.name} | Before They Graduate`;
+  const description = `Discover ${builder.name}'s story, experiences, lessons, and journey before graduation.`;
+  const url = `https://beforetheygraduate.app/builders/${slug}`;
+
   return {
-    title: `${builder.name} | Before They Graduate`,
-    description: `The story, lessons, and journey of ${builder.name} before graduation.`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Before They Graduate",
+      type: "profile",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
   };
 }
-
 export default async function BuilderPage({ params }) {
   const { slug } = await params;
   const builder = builders.find((b) => b.slug === slug);

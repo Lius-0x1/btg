@@ -307,7 +307,7 @@ university: "Federal University of Technology Akure",
  year: "2026",
 season: "Season 2",
 episode: "Episode 7",
-image: "/assets/builders/psalmmy.png",
+image: "/assets/builders/psalmmy.webp",
 quote: "Power is not given, it is grabbed.",
 about: [
 "Adegoriola Abejoye, popularly known as Psalmmy, is the former 40th President of the Federal University of Technology, Akure (FUTA) Students' Union (2024/2025). Currently serving as the Chairman of the National Association of University Students (NAUS), CMC Ondo State, he is a dedicated advocate for student welfare and quality education (SDG 4). His journey reflects a commitment to serving as an effective intermediary between the student body and university management."
@@ -334,7 +334,7 @@ episodeUrl: "https://youtu.be/2KNh4zDDZXY"
 "slug": "oriade-williams-alaafin",
 "name": "Oriade Williams (Alaafin)",
 "department": "Agriculture and Resource Economics",
-"university": "Federal University of Technology Akure (FUTA)",
+"university": "Federal University of Technology Akure",
  year: "2026",
 "season": "Season 2",
 "episode": "Episode 6",

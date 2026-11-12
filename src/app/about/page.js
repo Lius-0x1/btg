@@ -7,8 +7,20 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <div className="about-grid">
+    <main className="collection-page about-page">
+      <header className="collection-hero">
+        <div className="collection-kicker"><span /> WHY THIS ARCHIVE EXISTS</div>
+        <div className="collection-hero-grid about-hero-grid">
+          <div>
+            <h1>Before They <em>Graduate.</em></h1>
+            <p>Documenting the stories, projects and experiences of Nigerian undergraduates before they leave university. A record of what they made, what they learned and who they became.</p>
+            <div className="collection-actions"><Link href="/stories">Explore the archive ↓</Link><Link href="/submit">Add to the record ↗</Link></div>
+          </div>
+          <aside className="about-manifesto-card"><span>THE BELIEF</span><strong>Make the record outlive the moment.</strong><small>Not just the trophy. The journey behind it.</small></aside>
+        </div>
+      </header>
+      <section className="collection-main about-content">
+        <div className="about-grid">
         <div>
           <div className="eyebrow" style={{ marginBottom: "1.2rem" }}>The Mission</div>
           <div className="page-title" style={{ marginBottom: "1.4rem" }}>Before They <span>Graduate.</span></div>
@@ -28,6 +40,7 @@ export default function AboutPage() {
         </div>
       </div>
 
+      </section>
       <div className="cta-band" style={{ paddingBottom: "5rem" }}>
         <div className="cta-inner">
           <div className="cta-title">Your Story Belongs <em>in This Archive.</em></div>
@@ -37,6 +50,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 }

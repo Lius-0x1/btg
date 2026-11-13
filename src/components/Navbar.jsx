@@ -61,7 +61,7 @@ export default function Navbar() {
         {pathname !== "/" && <Link href="/" onClick={closeMenu} className="mobile-home-link">← Back to homepage</Link>}
         {links.map(([label, href]) => <Link key={href} href={href} onClick={closeMenu}>{label}</Link>)}
         <button type="button" onClick={() => { setSearchOpen(true); closeMenu(); }}>⌕ Search the archive</button>
-        <button type="button" className="mobile-theme-toggle" onClick={toggleTheme}>{theme === "dark" ? "☼ Switch to light mode" : "◐ Switch to dark mode"}</button>
+        <button type="button" className="mobile-theme-toggle" onClick={toggleTheme}>{theme === "dark" ? "☼  Light mode" : "◐ Switch to dark mode"}</button>
         <Link href="/submit" onClick={closeMenu} className="mobile-submit">Submit a story ↗</Link>
       </div>
       {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}

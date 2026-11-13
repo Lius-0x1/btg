@@ -318,17 +318,17 @@ const heroSlides = [
           <div>
             <div className="footer-col-title">Contribute</div>
             <div className="footer-links">
-              <Link href="/submit">Submit a Story</Link>
-              <Link href="/submit">Submit a Project</Link>
-              <Link href="/submit">Apply for Season 2</Link>
-              <Link href="/submit">Nominate a Student</Link>
+              <Link href="https://tally.so/r/q4N5Q9" target="_blank" rel="noopener noreferrer">Submit a Story</Link>
+              <Link href="https://tally.so/r/Bz9q61" target="_blank" rel="noopener noreferrer">Submit a Project</Link>
+              <Link href="https://tally.so/r/NpOvkG" target="_blank" rel="noopener noreferrer">Apply for Season 2</Link>
+              <Link href="https://tally.so/r/ODVZVp" target="_blank" rel="noopener noreferrer">Nominate a Student</Link>
               <Link href="/contributors">Become a Campus Contributor</Link>
             </div>
           </div>
           <div>
             <div className="footer-col-title">Follow</div>
             <div className="footer-links">
-              <a href="https://youtube.com/@ayinde.thecreator?si=r-Muh2t-Mi5eUoz6" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://youtube.com/@beforetheygraduate?si=_YF9pck6zoRB410X" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://www.instagram.com/beforetheygraduate?igsh=MXZieXRoMjQ4Y3V6ZQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://www.tiktok.com/@beforetheygraduate?_r=1&_t=ZS-97CZMLwwKpw" target="_blank" rel="noopener noreferrer">Tiktok</a>
               <a href="https://www.linkedin.com/company/beforetheygraduate/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

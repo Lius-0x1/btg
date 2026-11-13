@@ -1,56 +1,145 @@
-import Link from "next/link";
+
+const submissions = [
+  {
+    number: "01",
+    category: "PERSONAL STORIES",
+    title: "Share Your Story",
+    description:
+      "Tell us about your undergraduate journey. It could be a challenge you overcame, a lesson that changed you, a memorable experience, or an achievement you're proud of.",
+    action: "Submit Your Story",
+    url: "https://tally.so/r/q4N5Q9",
+    style: "story",
+  },
+  {
+    number: "02",
+    category: "RESEARCH & INNOVATION",
+    title: "Submit a Project",
+    description:
+      "Share your final year project, research paper, startup, app, community initiative, or any work you built during university.",
+    action: "Submit Your Project",
+    url: "https://tally.so/r/Bz9q61",
+    style: "project",
+  },
+  {
+    number: "03",
+    category: "PEOPLE WORTH DOCUMENTING",
+    title: "Nominate a Student",
+    description:
+      "Know an undergraduate doing interesting work, leading a community, building a project, conducting research, or living a story worth preserving? Tell us about them.",
+    action: "Nominate Someone",
+    url: "https://tally.so/r/ODVZVp",
+    style: "nomination",
+  },
+  {
+    number: "04",
+    category: "SEASON 02 · OPEN CASTING",
+    title: "Be Featured on BTG",
+    description:
+      "Season 2 is live and casting for upcoming episodes. Have a journey worth documenting? Apply to share your story with future students.",
+    action: "Apply for Season 2",
+    url: "https://tally.so/r/NpOvkG",
+    style: "season",
+  },
+];
+
 export const metadata = {
   title: "Submit | Before They Graduate",
-  description: "Every story, project, and conversation preserved here becomes part of a growing archive of Nigerian undergraduate life.",
+  description:
+    "Every story, project, and conversation preserved here becomes part of a growing archive of Nigerian undergraduate life.",
 };
 
 export default function SubmitPage() {
   return (
-    <>
-      <div className="submit-hero">
-        <div className="eyebrow">Open Submissions</div>
-        <div className="page-title">Add to the <span>Archive.</span></div>
-        <p className="page-desc" style={{ marginTop: "1rem" }}>Every story, project, and conversation preserved here becomes part of a growing archive of Nigerian undergraduate life.</p>
-      </div>
-
-      <div className="submit-grid" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2.5rem" }}>
-        <div className="archive-card">
-          <div className="archive-icon">📖</div>
-          <h3>Share Your Story</h3>
-          <p>Tell us about your undergraduate journey. It could be a challenge you overcame, a lesson that changed you, a memorable experience, or an achievement you're proud of.</p>
-          <a href="https://tally.so/r/q4N5Q9" target="_blank" rel="noopener noreferrer" className="btn-primary">Submit Story →</a>
+    <main className="submit-page">
+      <header className="submit-hero">
+        <div className="submit-eyebrow">
+          <span />
+          OPEN SUBMISSIONS
+          <span className="submit-eyebrow-note">YOUR CONTRIBUTION MATTERS</span>
         </div>
 
-        <div className="archive-card">
-          <div className="archive-icon">🔬</div>
-          <h3>Submit a Project</h3>
-          <p>Share your final year project, research paper, startup, app, community initiative, or any work you built during university.</p>
-          <a href="https://tally.so/r/Bz9q61" target="_blank" rel="noopener noreferrer" className="btn-primary">Submit Project →</a>
+        <h1 className="submit-page-title">
+          Every journey leaves a mark.
+          <span> Put yours on record.</span>
+        </h1>
+
+        <div className="submit-hero-bottom">
+          <p className="submit-page-desc">
+            Before They Graduate is building a living archive of Nigerian
+            undergraduate life. The stories, projects, ideas and people
+            that deserve to be remembered belong here.
+          </p>
+
+          <a href="#submission-options" className="submit-explore-link">
+            EXPLORE CONTRIBUTION OPTIONS <span>↓</span>
+          </a>
+        </div>
+      </header>
+
+      <section
+        className="submit-content"
+        id="submission-options"
+        aria-labelledby="submit-options-title"
+      >
+        <div className="submit-section-heading">
+          <div>
+            <span>HOW TO CONTRIBUTE</span>
+            <h2 id="submit-options-title">
+              Choose your <em>place in the archive.</em>
+            </h2>
+          </div>
+          <p>
+            Whether it's your own journey or someone else's work, there's
+            a place for it here.
+          </p>
         </div>
 
-        <div className="archive-card">
-          <div className="archive-icon">🌟</div>
-          <h3>Nominate a Student</h3>
-          <p>Know an undergraduate doing interesting work, leading a community, building a project, conducting research, or living a story worth preserving? Nominate them for BTG.</p>
-          <a href="https://tally.so/r/ODVZVp" target="_blank" rel="noopener noreferrer" className="btn-primary">Nominate →</a>
+        <div className="submit-grid">
+          {submissions.map((item) => (
+            <article
+              className={`archive-card archive-card-${item.style}`}
+              key={item.number}
+            >
+              <div className="archive-card-top">
+                <span className="archive-number">{item.number}</span>
+                <span className="archive-category">{item.category}</span>
+              </div>
+
+              <div className="archive-card-main">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                {item.action} <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="submit-note">
+        <div className="submit-note-label">
+          <span /> WHY THIS ARCHIVE EXISTS
         </div>
 
-        <div className="archive-card">
-          <div className="archive-icon">🎥</div>
-          <h3>Apply for Season 2</h3>
-          <p>Season 2 is live and casting for upcoming episodes. Have a journey worth documenting? Apply to be featured on Before They Graduate and share your story with future students.</p>
-          <a href="https://tally.so/r/NpOvkG" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now →</a>
-        </div>
-      </div>
+        <h2>
+          Most student stories are forgotten.
+          <span> Most student projects disappear.</span>
+        </h2>
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2.5rem 5rem" }}>
-        <div className="submit-note">
-          <strong>Why contribute?</strong><br /><br />
-          Most student stories are forgotten.<br />
-          Most student projects disappear after submission.<br /><br />
-          BTG exists to preserve both.
+        <div className="submit-note-footer">
+          <p>
+            The work matters. The process matters. The people behind it matter.
+          </p>
+          <strong>BTG exists to preserve both.</strong>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }

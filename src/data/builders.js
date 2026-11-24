@@ -71,7 +71,7 @@ const builders = [
   department: "Agricultural and Environmental Engineering",
   university: "Federal University of Technology Akure",
   year: "2026",
-  image: "/assets/builders/Tesla.jpeg",
+  image: "/assets/builders/Quadri.jpeg",
 
   quote: "You just need to find people who are as hungry as you and lock in with them.",
   about: [

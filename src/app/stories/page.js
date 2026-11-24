@@ -9,7 +9,14 @@ export const metadata = {
 
 export default function StoriesPage() {
   const publishedStories = stories;
-  const campuses = new Set(publishedStories.flatMap((story) => [story.meta, story.tag].filter(Boolean).flatMap((value) => value.split("·").map((part) => part.trim()))).filter((value) => /university|\bFUTA\b|\bLASU\b/i.test(value)));
+
+
+const campuses = new Set(
+  publishedStories
+    .map((story) => story.university?.trim().toLowerCase())
+    .filter(Boolean)
+);
+
 
   return (
     <main className="archive-page">
@@ -29,7 +36,7 @@ export default function StoriesPage() {
             <div className="archive-stat-label">STORIES PRESERVED</div>
             <div className="archive-stat-rule" />
             <div className="archive-stat-pair"><strong>{String(campuses.size).padStart(2, "0")}</strong><span>CAMPUSES REPRESENTED*</span></div>
-            <small>*Based on university details currently recorded in published story metadata.</small>
+           <small>*Based on university details recorded in published stories.</small>
           </aside>
         </div>
       </section>

@@ -101,8 +101,8 @@ const heroSlides = [
     
       <div className="stats-wrap">
         <div className="stats-inner">
-          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">Stories archived</div></div>
-          <div className="stat-item"><div className="stat-num">24</div><div className="stat-label">Builders featured</div></div>
+          <div className="stat-item"><div className="stat-num">25</div><div className="stat-label">Stories archived</div></div>
+          <div className="stat-item"><div className="stat-num">28</div><div className="stat-label">Builders featured</div></div>
           <div className="stat-item"><div className="stat-num">4</div><div className="stat-label">Universities represented</div></div>
           <div className="stat-item"><div className="stat-num">∞</div><div className="stat-label">Stories to Archive</div></div>
         </div>

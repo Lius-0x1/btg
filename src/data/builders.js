@@ -1,5 +1,139 @@
 const builders = [
 
+{
+  slug: "abdulraheem-odutola",
+  name: "Abdulraheem Odutola",
+  department: "Agricultural and Environmental Engineering",
+  university: "Federal University of Technology Akure",
+  year: "2026",
+  image: "/assets/builders/odutola.jpeg",
+  quote: "I just try to understand the course and write the exam.",
+  about: [
+    "Abdulraheem Odutola is a graduate of Agricultural and Environmental Engineering at the Federal University of Technology, Akure (FUTA). His undergraduate journey was shaped by a strong commitment to understanding his coursework and giving academics the time and attention he believed they deserved.",
+    "Outside academics, he discovered an interest in Computer-Aided Design (CAD) modelling during his 300-level entrepreneurship programme. What began as an experiment gradually became a skill he continued developing, eventually taking on CAD modelling work while navigating the demands of his final year."
+  ],
+  whatShapedThem: [
+    "Discovering CAD modelling during his 300-level entrepreneurship programme.",
+    "Building his academic approach around understanding topics individually before discussing difficult questions with friends.",
+    "Learning to balance academic responsibilities with external projects and CAD modelling work.",
+    "Finding motivation through friends who encouraged him to keep pushing, especially during difficult academic periods."
+  ],
+  lessons: [
+    "Understanding a topic matters more than simply spending time reading it.",
+    "You do not have to study in a group all the time. Understand your own learning style and ask for help when you need it.",
+    "Developing a practical skill can open another dimension of growth beyond your degree.",
+    "Be realistic about your capacity when taking on multiple responsibilities."
+  ],
+  advice: "Continue working hard, but learn how to relate with people. Network with people at every level, and don't spend your entire university experience inside your hostel room or reading room.",
+  memorableQuote: "I just try to understand this topic and write it in the exam.",
+  whyWeRememberThem: [
+    "Abdulraheem's journey shows that academic excellence can coexist with the development of practical skills. His story also highlights the importance of understanding one's learning style, asking for help, and recognising when multiple responsibilities require better preparation."
+  ],
+  storySlug: "four-friends-four-first-classes-btg-roundtable"
+},
+{
+  slug: "aanuoluwapo-samuel",
+  name: "Aanuoluwapo Samuel",
+  department: "Agricultural and Environmental Engineering",
+  university: "Federal University of Technology Akure",
+  year: "2026",
+  image: "/assets/builders/samuel.jpeg",
+  quote: "First class is not by magic.",
+  about: [
+    "Aanuoluwapo Samuel is a graduate of Agricultural and Environmental Engineering at the Federal University of Technology, Akure (FUTA). His undergraduate journey began with a strong focus on academics, but a friend's challenge in 200 level pushed him to see university as more than lectures and grades.",
+    "He went on to serve as a Zindi ambassador, help organise an AI workshop, and develop an interest in data science and data analysis. His learning journey included SQL and Python, alongside applying for scholarships and sponsorship opportunities that helped him access better learning resources.",
+    "Academically, Samuel approached each semester with clear targets. He tracked his preparation across courses, used separate class and reading notes, reviewed past questions, and paid attention to assessments, assignments, attendance and project work."
+  ],
+  whatShapedThem: [
+    "A friend's challenge to pursue leadership, networking and skills development beyond academics.",
+    "Serving as a Zindi ambassador and helping organise an AI workshop for students.",
+    "Discovering data analysis and developing an interest in data science.",
+    "Applying for scholarships and sponsorships to access learning opportunities and better equipment.",
+    "Building relationships with friends whose discipline and academic standards encouraged him to improve."
+  ],
+  lessons: [
+    "Set a target, but understand that results may not always match your expectations.",
+    "Track your understanding of each course and direct more attention to the areas where you are weakest.",
+    "Keep separate class notes and personal reading notes when that helps you learn.",
+    "Past questions, assignments, attendance and class participation are all part of academic preparation.",
+    "Look for scholarships and opportunities that can reduce the financial pressure of university life."
+  ],
+  advice: "Be self-motivated, devote time to studying, remain consistent and learn from people who understand difficult courses. Don't wait until examination week to discover what you don't understand.",
+  memorableQuote: "First class is not by magic.",
+  whyWeRememberThem: [
+    "Samuel's journey demonstrates the value of structured preparation, consistency and seeking opportunities beyond the classroom. He also reminds students that scholarships and financial support can make a meaningful difference to their university experience."
+  ],
+  storySlug: "four-friends-four-first-classes-btg-roundtable"
+},
+{
+  slug: "quadri-bashir-tesla",
+  name: "Quadri Bashir (Tesla)",
+  department: "Agricultural and Environmental Engineering",
+  university: "Federal University of Technology Akure",
+  year: "2026",
+  image: "/assets/builders/Tesla.jpeg",
+  quote: "You just need to find people who are as hungry as you and lock in with them.",
+  about: [
+    "Quadri Bashir, popularly known as Tesla, is a graduate of Agricultural and Environmental Engineering at the Federal University of Technology, Akure (FUTA). His undergraduate experience was largely centred on academics, but he also developed broad interests in history, psychology, philosophy, geopolitics, technology and African agritech.",
+    "He explored different paths outside the classroom, including data analysis, Python and machine learning. His access to a functioning laptop came later in his university journey, but he continued developing his interests and learning with the resources available to him.",
+    "Tesla describes his academic journey as a process of self-motivation, consistency and learning how to study effectively. He also credits the friendships he built at FUTA for providing encouragement, practical support and the healthy pressure to keep improving."
+  ],
+  whatShapedThem: [
+    "Early exposure to events that showed him the value of activities beyond academics.",
+    "Exploring data analysis, Python and machine learning.",
+    "Learning to distinguish between opportunities that aligned with his long-term goals and those that did not.",
+    "Developing self-motivation rather than relying on pressure from home.",
+    "Finding encouragement and accountability through friendships and shared academic goals."
+  ],
+  lessons: [
+    "Do not choose friends only because they appear academically brilliant. Find people who are as hungry for growth as you are.",
+    "Working hard matters, but understanding how you learn and retain information matters too.",
+    "A disappointing result does not mean your effort was wasted or that you have lost your ability.",
+    "Consistency requires learning how to motivate yourself, even when studying does not come naturally.",
+    "Your friends' progress can inspire you without becoming a reason to resent your own journey."
+  ],
+  advice: "Don't worry. Everything will work out. Do what you can, keep developing yourself, and leave the rest to God. Also, don't be so diverted: choose a direction, pursue opportunities and put in the work.",
+  memorableQuote: "Find people who are as hungry as you and lock in with them.",
+  whyWeRememberThem: [
+    "Tesla's story highlights the importance of self-motivation, effective study habits and choosing relationships that encourage growth. His experience also shows that hard work does not always produce the result expected, but that setbacks do not have to end the journey."
+  ],
+  storySlug: "four-friends-four-first-classes-btg-roundtable"
+},
+{
+  slug: "elliot-bernard",
+  name: "Elliot Bernard",
+  department: "Agricultural and Environmental Engineering",
+  university: "Federal University of Technology Akure",
+  year: "2026",
+  image: "/assets/builders/bernard.jpeg",
+  quote: "We started out as friends, and it had a snowballing effect.",
+  about: [
+    "Elliot Bernard is a graduate of Agricultural and Environmental Engineering at the Federal University of Technology, Akure (FUTA). Outside academics, he describes himself as a budding web developer and technology enthusiast who enjoys gaming, anime, reading and taking walks.",
+    "His interest in website development began before university, but the lack of a functioning laptop made it difficult to pursue consistently. He attended a LinkedIn Local event, connected with developers and became more interested in the technology space. During his second year, he began practising frontend development with a faulty laptop and continued learning despite the setbacks.",
+    "Elliot's university experience was also shaped by the friendships he built. What began as a group of friends who enjoyed spending time together gradually became a support system for academic work, opportunities and personal challenges."
+  ],
+  whatShapedThem: [
+    "An early interest in website development that continued despite limited access to a functioning laptop.",
+    "Attending a LinkedIn Local event and connecting with people in the technology community.",
+    "Learning frontend development and returning to consistent practice when he eventually got a functioning laptop.",
+    "Building friendships that grew into a network for sharing academic resources and opportunities.",
+    "Experiencing the practical value of friends who supported one another through difficult periods."
+  ],
+  lessons: [
+    "Your circumstances may slow you down, but they do not have to define what you can eventually achieve.",
+    "A strong support system can make difficult seasons more manageable.",
+    "Friendship can create opportunities for growth that nobody initially planned.",
+    "Explore interests beyond academics and make use of opportunities to meet people.",
+    "Do not allow a lack of resources to become a permanent reason to abandon what you want to learn."
+  ],
+  advice: "Explore early. Join teams, go out, meet people and build connections. Don't let your limitations stop you from trying. Keep improving yourself and give your goals time.",
+  memorableQuote: "We never started out saying, let's be reading together. We just said, I like the way this person talks.",
+  whyWeRememberThem: [
+    "Elliot's story captures the unexpected power of friendship. His journey reminds students that the people they meet for fun, conversation and shared interests can become an important source of support, accountability and opportunity."
+  ],
+  storySlug: "four-friends-four-first-classes-btg-roundtable"
+},
+
   
 {
   slug: "hasbiyallah-oyebo",

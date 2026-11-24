@@ -4,20 +4,35 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 
 function getCampus(story) {
-  const candidates = [story.meta, story.tag].filter(Boolean).flatMap((value) => value.split("·").map((part) => part.trim()));
-  return candidates.find((value) => /university|\bFUTA\b|\bLASU\b/i.test(value)) || "";
-  
+  return story.university?.trim() || "";
 }
-
+function normalizeCampus(value) {
+  return value.trim().toLowerCase();
+}
 export default function StoryArchive({ stories }) {
   const [query, setQuery] = useState("");
   const [campus, setCampus] = useState("all");
   const [format, setFormat] = useState("all");
 
-  const campuses = useMemo(
-    () => [...new Set(stories.map(getCampus).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
-    [stories]
+ const campuses = useMemo(() => {
+  const uniqueCampuses = new Map();
+
+  stories.forEach((story) => {
+    const university = getCampus(story).trim();
+
+    if (university) {
+      const key = university.toLowerCase();
+
+      if (!uniqueCampuses.has(key)) {
+        uniqueCampuses.set(key, university);
+      }
+    }
+  });
+
+  return [...uniqueCampuses.values()].sort((a, b) =>
+    a.localeCompare(b)
   );
+}, [stories]);
 
   const filtered = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -25,7 +40,7 @@ export default function StoryArchive({ stories }) {
       const searchable = [story.title, story.excerpt, story.meta, story.tag, story.subtitle]
         .filter(Boolean).join(" ").toLowerCase();
       return (!term || searchable.includes(term))
-        && (campus === "all" || getCampus(story) === campus)
+        && (campus === "all" || normalizeCampus(getCampus(story)) === normalizeCampus(campus))
         && (format === "all" || story.format === format);
     });
   }, [stories, query, campus, format]);

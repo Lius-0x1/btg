@@ -2909,3 +2909,45 @@ html[data-theme="light"] .home-episode-card .ep-body { background:var(--card)!im
     flex-direction: column;
   }
 }
+.story-article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Story 07 — Roundtable speaker treatment */
+
+.story-roundtable-entry {
+  margin-bottom: 1.1rem;
+}
+
+.story-roundtable-speaker-label {
+  display: inline-block;
+  color: #fb5c0d;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.story-roundtable-entry p {
+  margin-top: 0;
+}
+
+.story-roundtable-speaker-label.story-interviewer-label {
+  color: #da450a;
+}
+
+
+/* BTG editorial inline emphasis */
+
+.story-inline-highlight {
+  color: #d96b32;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: rgba(217, 107, 50, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

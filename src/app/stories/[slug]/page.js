@@ -5,6 +5,7 @@ import ShareButton from "@/components/ShareButtons";
 import stories from "@/data/stories";
 import contributors from "@/data/contributors";
 import { StoryVideo } from "@/components/StoryVideo";
+import EditorialText from "@/components/EditorialText";
 
 
 // Only interview-format stories are rendered here. The origin story keeps its
@@ -117,8 +118,10 @@ const structuredData = {
           <div className="story-article-kicker">{story.tag || "BTG FULL INTERVIEW"}</div>
           <h1>{story.title}</h1>
           {story.subtitle && <p className="story-article-subtitle">{story.subtitle}</p>}
-          <div className="story-article-byline"><span>{story.meta}</span><span>·</span><span>AN UNDERGRADUATE STORY</span></div>
-          <blockquote className="story-article-quote">“{story.heroQuote}”</blockquote>
+                <div className="story-article-byline"><span>{story.meta}</span><span>·</span><span>AN UNDERGRADUATE STORY</span></div>
+      <blockquote className="story-article-quote">
+        “<EditorialText text={story.heroQuote} />”
+      </blockquote>
         </div>
         <div className="story-article-image-wrap">
           <Image src={story.image} alt={story.imageAlt} width={1024} height={1280} priority className="story-article-image" />
@@ -139,7 +142,11 @@ const structuredData = {
         <article className="story-article-body">
           <div className="story-article-intro" id="conversation-intro">
             <span className="story-article-body-label">THE CONVERSATION</span>
-            {story.intro.map((p, i) => <p key={i}>{p}</p>)}
+          {story.intro.map((p, i) => (
+  <p key={i}>
+    <EditorialText text={p} />
+  </p>
+))}
           </div>
 
           {story.video?.youtubeId && (
@@ -152,17 +159,37 @@ const structuredData = {
             {story.qa.map((item, i) => (
               <section className="story-conversation-block" id={`story-section-${i}`} key={i}>
                 {item.heading && <h2 className="profile-section-title story-chapter-heading">{item.heading}</h2>}
-                {item.pull && <blockquote className="profile-pull-quote story-pull-quote">{item.pull}</blockquote>}
+                {item.pull && (
+  <blockquote className="profile-pull-quote story-pull-quote">
+    <EditorialText text={item.pull} />
+  </blockquote>
+)}
 
                 <div className="story-question">
                   <div className="story-speaker-label story-interviewer-label">{story.interviewer || "BTG ASKS"}</div>
-                  <p className="story-question-text">{item.q}</p>
+                 <p className="story-question-text">
+  <EditorialText text={item.q} />
+</p>
                 </div>
 
+
                 <div className="story-answer">
-                  <div className="story-speaker-label">{story.interviewee || "THE BUILDER"}</div>
-                  {item.a.map((line, j) => <p key={j}>{line}</p>)}
+                  {story.slug === "four-friends-four-first-classes-btg-roundtable" ? (
+                    <RoundtableAnswer lines={item.a} />
+                  ) : (
+                    <>
+                      <div className="story-speaker-label">
+                        {story.interviewee || "THE BUILDER"}
+                      </div>
+                      {item.a.map((line, j) => (
+  <p key={j}>
+    <EditorialText text={line} />
+  </p>
+))}
+                    </>
+                  )}
                 </div>
+
 
                 {item.video?.youtubeId && (
                   <StoryVideo youtubeId={item.video.youtubeId} title={item.video.title || story.title} />
@@ -171,10 +198,14 @@ const structuredData = {
                 {item.reaction && (
                   <aside className="story-editorial-note">
                     <span>BTG NOTE</span>
-                    <p>{item.reaction}</p>
+                    <p><EditorialText text={item.reaction} /></p>
                   </aside>
                 )}
-                {item.reply && <p className="story-follow-up">{item.reply}</p>}
+                {item.reply && (
+  <p className="story-follow-up">
+    <EditorialText text={item.reply} />
+  </p>
+)}
               </section>
             ))}
           </div>
@@ -182,9 +213,9 @@ const structuredData = {
           <section className="story-article-takeaways" id="story-reflection">
             <span className="story-article-body-label">BEYOND THE CONVERSATION</span>
             <h2 className="profile-section-title">{story.takeawaysHeading}</h2>
-            {story.takeaways.map((p, i) => <p key={i}>{p}</p>)}
-            {story.takeawaysPull && <blockquote className="profile-pull-quote story-pull-quote">{story.takeawaysPull}</blockquote>}
-            {story.outro.map((p, i) => <p key={i}>{p}</p>)}
+            {story.takeaways.map((p, i) => <p key={i}><EditorialText text={p} /></p>)}
+            {story.takeawaysPull && <blockquote className="profile-pull-quote story-pull-quote"><EditorialText text={story.takeawaysPull} /></blockquote>}
+            {story.outro.map((p, i) => <p key={i}><EditorialText text={p} /></p>)}
           </section>
         </article>
       </div>
@@ -266,4 +297,39 @@ const structuredData = {
       <div className="profile-footer-note">{story.footerNote}</div>
     </main>
   );
+}
+
+function RoundtableAnswer({ lines }) {
+  let currentSpeaker = null;
+
+  const speakerPattern = /^(Raheem|Abdulraheem|Sam|Aanuoluwapo|Tesla|Bashir|Quadri|Elliot|Bernard|BTG):\s*/i;
+
+  return lines.map((line, index) => {
+    const match = line.match(speakerPattern);
+
+    if (match) {
+      currentSpeaker = match[1];
+    }
+
+    const answerText = match ? line.slice(match[0].length) : line;
+    const isBTG = currentSpeaker?.toUpperCase() === "BTG";
+
+    return (
+      <div className="story-roundtable-entry" key={index}>
+        {match && (
+          <div
+            className={`story-speaker-label story-roundtable-speaker-label ${
+              isBTG ? "story-interviewer-label" : ""
+            }`}
+          >
+            {currentSpeaker}
+          </div>
+        )}
+
+        <p>
+  <EditorialText text={answerText} />
+</p>
+      </div>
+    );
+  });
 }

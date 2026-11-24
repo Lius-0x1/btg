@@ -72,6 +72,7 @@ const builders = [
   university: "Federal University of Technology Akure",
   year: "2026",
   image: "/assets/builders/Tesla.jpeg",
+
   quote: "You just need to find people who are as hungry as you and lock in with them.",
   about: [
     "Quadri Bashir, popularly known as Tesla, is a graduate of Agricultural and Environmental Engineering at the Federal University of Technology, Akure (FUTA). His undergraduate experience was largely centred on academics, but he also developed broad interests in history, psychology, philosophy, geopolitics, technology and African agritech.",
